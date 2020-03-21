@@ -1,0 +1,90 @@
+:root {
+  
+}
+
+html {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: white;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height: 1.35;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Days One", Verdana, Geneva, sans-serif;
+  margin: 0;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+.main-banner {
+  background: center/cover no-repeat url("../img/main-banner.jpg");
+  width: 100vw;
+  max-width: 100%;
+  height: 70px;
+}
+
+#open {
+  background-color: transparent;
+  border: none;
+  stroke: white;
+  stroke-width: 4;
+  margin: 1.5rem 0 0 .5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: auto;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.album__featured {
+  max-width: 225px;
+}
+
+.container h2 {
+  text-align: center;
+}
+
+.album-description {
+  margin: auto;
+  width: 225px;
+}
+
+.album-description p {
+  margin: .5rem 0 2.5rem;
+}
+
+.player {
+  margin: auto;
+  width: 100%;
+}
+
+.player__featured {
+  max-width: 300px;
+}
