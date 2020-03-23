@@ -6,7 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <meta name="description" content="Front Royal (the band, not the town) has an official website and this is that.">
+    <link href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <meta name="description" content="Front Royal (the band, not the town) has an official website and this is that.">
     <meta name="og:locale" content="en_US">
@@ -21,10 +21,9 @@
     <title>The Band, Not The Town | Front Royal</title>
 
     <!-- Mailchimp Code -->
-    <link href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
-    <style type="text/css">
+    <style>
     	#mc_embed_signup {
-        font: 1.4rem Verdana,Geneva,sans-serif;
+        font: 1.4rem Verdana, Geneva, sans-serif;
         width: 95%;
         max-width: 400px;
       }
@@ -144,20 +143,20 @@
 
       let clickCount = 0;
 
-      const isEven = (n) => {return n % 2 == 0;}
-      const isOdd = (n) => {return Math.abs(n % 2) == 1;}
+      const isEven = (n) => {return n % 2 == 0;};
+      const isOdd = (n) => {return Math.abs(n % 2) == 1;};
 
       const openMenu = () => {
         container.classList.remove("mobile-hide");
         nav.classList.remove("menu__closed");
         nav.classList.toggle("menu__open");
-      }
+      };
 
       const closeMenu = () => {
         container.classList.toggle("mobile-hide");
         nav.classList.remove("menu__open");
         nav.classList.toggle("menu__closed");
-      }
+      };
 
       const animateMenu = () => {
         if (isEven(clickCount)) {
@@ -168,19 +167,19 @@
           closeMenu();
         }
         clickCount++;
-      }
+      };
 
       open.addEventListener("click", animateMenu);
 
-      for (let i = 0; i < links.length; i++) {
-        if (window.innerWidth < 768) {
+      if (window.innerWidth < 768) {
+        for (let i = 0; i < links.length; i++) {
           links[i].addEventListener("click", function() {
             closeMenu();
             menu.innerHTML = bars;
             clickCount++;
           });
         }
-      }
+      };
     </script>
   </body>
 </html>

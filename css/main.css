@@ -91,6 +91,22 @@ a:hover {
   text-decoration: none;
 }
 
+.button {
+  padding: 1rem 2rem;
+  font-size: 2rem;
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: "Days One";
+}
+
+.button:hover {
+  background-color: lightblue;
+  color: black;
+  transition: .3s;
+}
+
 .italic {
   font-style: italic;
 }
