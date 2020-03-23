@@ -19,32 +19,153 @@
     <meta name="twitter:description" content="Front Royal (the band, not the town) has an official website and this is that.">
     <meta name="twitter:creator" content="@frontroyalband">
     <title>The Band, Not The Town | Front Royal</title>
+
+    <!-- Mailchimp Code -->
+    <link href="https://cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css" media="print" onload="this.media='all'">
+    <style type="text/css">
+    	#mc_embed_signup {
+        font: 1.4rem Verdana,Geneva,sans-serif;
+        width: 95%;
+        max-width: 400px;
+      }
+
+      #mc_embed_signup input.email {
+        font-family: "Days One";
+      }
+    </style>
+    <!-- End Mailchimp Code -->
+
   </head>
   <body>
-    <header class="main-banner">
+    <header class="main-banner menu__closed">
       <button id="open" aria-label="Open the navigation menu">
         <svg id="menu" width="30" height="30">
-          <path d="M0,5 30,5"></path>
-          <path d="M0,14 30,14"></path>
-          <path d="M0,23 30,23"></path>
+          <path class="svg-top" d="M0,5 30,5"></path>
+          <path class="svg-mid" d="M0,14 30,14"></path>
+          <path class="svg-bottom" d="M0,23 30,23"></path>
         </svg>
       </button>
+      <nav class="hide" id="nav-container">
+        <ul class="main-navigation">
+          <li><a href="#listen" class="nav-link">Listen</a></li>
+          <li><a href="#dates" class="nav-link">Dates</a></li>
+          <li><a href="#follow" class="nav-link">Follow Us</a></li>
+        </ul>
+      </nav>
     </header>
-    <section class="container">
+    <section class="container" id="listen">
       <header>
-        <h2>Listen</h2>
+        <h2>Out Now</h2>
       </header>
       <div class="hero">
         <img class="album__featured" src="img/ep3.jpg" alt="These Things Happen album cover">
         <div class="album-description">
           <h3>These Things Happen</h3>
-          <p class="italic">October 2016<br>alternative emo punk</p>
+          <ul>
+            <li>Streaming Everywhere</li>
+            <li>Buy on <a href="https://frontroyalmd.bandcamp.com/">Bandcamp</a></li>
+          </ul>
         </div>
         <iframe class="player player__featured"src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media" title="These Things Happen Spotify player" loading="lazy"></iframe>
       </div>
       <div class="sub-hero">
-
+        <div class="album">
+          <img class="album__secondary" src="img/more-music.jpg" alt="">
+        </div>
+        <div class="album">
+          <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here"><img class="album__secondary" src="img/ep2.jpg" alt="All Down Hill From Here album cover"></a>
+          <h4>All Down Hill From Here</h4>
+        </div>
+        <div class="album">
+          <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town"><img class="album__secondary" src="img/ep1.jpg" alt="All Down Hill From Here album cover"></a>
+          <h4>The Band, Not The Town</h4>
+        </div>
       </div>
     </section>
+    <section class="container" id="dates">
+      <h2>Dates</h2>
+      <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#fff" data-link-color="#fff" data-background-color="rgba(0,0,0,0)" data-display-limit="10" data-display-start-time="true" data-link-text-color="#000" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
+    </section>
+    <section class="container" id="follow">
+      <h2>Follow Us</h2>
+      <div class="icons">
+        <img src="img/bc.png" alt="Listen on Bandcamp">
+        <img src="img/insta.svg" alt="Follow us on Instagram">
+        <img src="img/spotify.svg" alt="Listen on Spotify">
+        <img src="img/fb.svg" alt="Like us on Facebook">
+        <img src="img/twit.svg" alt="Follow us on Twitter">
+        <img src="img/yt.svg" alt="Subscribe to our YouTube channel">
+      </div>
+    </section>
+    <section class="container newsletter">
+      <h3>Sign Up For Our Newsletter</h3>
+      <p>Like emails? Well, we send them sometimes.</p>
+      <!-- Begin Mailchimp Signup Form -->
+      <div id="mc_embed_signup">
+        <form action="https://facebook.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+      	   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4e13673cf275ea95a06b67103_fc567fa48a" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          </div>
+        </form>
+      </div>
+      <!--End Mailchimp Signup Form -->
+    </section>
+    <footer>
+      <img src="img/tth-bg.jpg" alt="">
+    </footer>
+
+    <!-- S C R I P T S -->
+    <script src="https://widget.bandsintown.com/main.min.js" async></script>
+    <script>
+      const open = document.getElementById("open");
+      const menu = document.getElementById("menu");
+      const nav = document.querySelector(".main-banner");
+      const container = document.getElementById("nav-container");
+      const links = document.querySelectorAll(".nav-link");
+
+      const x = '<path class="svg-top" d="M5,5 25,25"></path><path class="svg-bottom" d="M5,25 25,5"></path>';
+      const bars = '<path class="svg-top" d="M0,5 30,5"></path><path class="svg-mid" d="M0,14 30,14"></path><path class="svg-bottom" d="M0,23 30,23"></path>';
+
+      let clickCount = 0;
+
+      const isEven = (n) => {return n % 2 == 0;}
+      const isOdd = (n) => {return Math.abs(n % 2) == 1;}
+
+      const openMenu = () => {
+        container.classList.remove("hide");
+        nav.classList.remove("menu__closed");
+        nav.classList.toggle("menu__open");
+      }
+
+      const closeMenu = () => {
+        container.classList.toggle("hide");
+        nav.classList.remove("menu__open");
+        nav.classList.toggle("menu__closed");
+      }
+
+      const animateMenu = () => {
+        if (isEven(clickCount)) {
+          menu.innerHTML = x;
+          openMenu();
+        } else if (isOdd(clickCount)) {
+          menu.innerHTML = bars;
+          closeMenu();
+        }
+        clickCount++;
+      }
+
+      open.addEventListener("click", animateMenu);
+
+      for (let i = 0; i < links.length; i++) {
+        links[i].addEventListener("click", function() {
+          closeMenu();
+          menu.innerHTML = bars;
+          clickCount++;
+        });
+      }
+    </script>
   </body>
 </html>
