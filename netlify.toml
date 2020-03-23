@@ -1,0 +1,20 @@
+# Assign all the post-processing
+[build.processing]
+  skip_processing = false
+[build.processing.css]
+  bundle = true
+  minify = true
+[build.processing.js]
+  bundle = true
+  minify = true
+[build.processing.html]
+  pretty_urls = true
+[build.processing.images]
+  compress = false
+
+# Redirect from the default Netlify site to my custom domain
+# [[redirects]]
+  # from = "https://troyvassalotti.netlify.com/*"
+  # to = "https://troyv.dev/:splat"
+  # status = 301
+  # force = true
