@@ -41,7 +41,6 @@ h4 {
   width: 100vw;
   max-width: 100%;
   height: calc((424*100vw)/1920);
-  /* max-height: 200px; */
 }
 
 .menu__closed {
@@ -91,7 +90,7 @@ a:hover {
   color: goldenrod;
 }
 
-.main-navigation a {
+.nav-link {
   color: black;
   text-decoration: none;
 }
@@ -107,6 +106,7 @@ a:hover {
 }
 
 .album__featured {
+  width: 100%;
   max-width: 225px;
 }
 
@@ -119,7 +119,7 @@ a:hover {
 }
 
 .album-description {
-  margin: auto;
+  margin: 0;
   width: 225px;
 }
 
@@ -157,6 +157,7 @@ a:hover {
 
 .icons {
   width: 90%;
+  max-width: 800px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -173,10 +174,116 @@ a:hover {
   margin-top: 1rem;
 }
 
-.hide {
+.mobile-hide {
   display: none;
 }
 
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: 700px) {
+  nav {
+    margin-top: auto;
+  }
 
+  #open {
+    display: none;
+  }
+
+  .main-banner {
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-navigation {
+    background-color: transparent;
+  }
+
+  .mobile-hide {
+    display: block;
+  }
+
+  .logo {
+    max-width: 120px;
+    margin: 0;
+  }
+
+  .nav-link {
+    color: white;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+
+  p, ol, ul {
+    font-size: 2rem;
+  }
+
+  .nav-link {
+    font-size: 2rem;
+    padding: 0 .5rem;
+  }
+
+  .nav-link:hover {
+    background-color: white;
+    color: black;
+    transition: .3s;
+  }
+
+  .hero {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 5rem;
+  }
+
+  .album__featured {
+    max-width: 400px;
+  }
+
+  .sub-hero {
+    max-width: 800px;
+    justify-content: space-evenly;
+  }
+
+  .album__secondary {
+    width: 100%;
+    max-width: 200px;
+  }
+
+  .icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .container {
+    margin-bottom: 12rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .hero {
+    max-width: 1400px;
+    justify-content: space-evenly;
+  }
+
+  .album__featured {
+    max-width: 500px;
+    margin: 0;
+  }
+  
+  .album-description {
+    margin: 0;
+  }
 }

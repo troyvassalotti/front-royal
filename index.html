@@ -31,6 +31,7 @@
 
       #mc_embed_signup input.email {
         font-family: "Days One";
+        margin-bottom: 1rem;
       }
     </style>
     <!-- End Mailchimp Code -->
@@ -45,7 +46,9 @@
           <path class="svg-bottom" d="M0,23 30,23"></path>
         </svg>
       </button>
-      <nav class="hide" id="nav-container">
+      <h1 style="visibility: hidden; position: absolute;">Front Royal</h1>
+      <img class="mobile-hide logo" src="img/logo.png" alt="Front Royal logo">
+      <nav class="mobile-hide" id="nav-container">
         <ul class="main-navigation">
           <li><a href="#listen" class="nav-link">Listen</a></li>
           <li><a href="#dates" class="nav-link">Dates</a></li>
@@ -65,8 +68,8 @@
             <li>Streaming Everywhere</li>
             <li>Buy on <a href="https://frontroyalmd.bandcamp.com/">Bandcamp</a></li>
           </ul>
+          <iframe class="player player__featured"src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media" title="These Things Happen Spotify player" loading="lazy"></iframe>
         </div>
-        <iframe class="player player__featured"src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media" title="These Things Happen Spotify player" loading="lazy"></iframe>
       </div>
       <div class="sub-hero">
         <div class="album">
@@ -89,12 +92,12 @@
     <section class="container" id="follow">
       <h2>Follow Us</h2>
       <div class="icons">
-        <img src="img/bc.png" alt="Listen on Bandcamp">
-        <img src="img/insta.svg" alt="Follow us on Instagram">
-        <img src="img/spotify.svg" alt="Listen on Spotify">
-        <img src="img/fb.svg" alt="Like us on Facebook">
-        <img src="img/twit.svg" alt="Follow us on Twitter">
-        <img src="img/yt.svg" alt="Subscribe to our YouTube channel">
+        <a href="https://frontroyalmd.bandcamp.com/"><img src="img/bc.png" alt="Listen on Bandcamp"></a>
+        <a href="https://instagram.com/frontroyal_official/"><img src="img/insta.svg" alt="Follow us on Instagram"></a>
+        <a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg"><img src="img/spotify.svg" alt="Listen on Spotify"></a>
+        <a href="https://facebook.com/FrontRoyalMD/"><img src="img/fb.svg" alt="Like us on Facebook"></a>
+        <a href="https://twitter.com/frontroyalband"><img src="img/twit.svg" alt="Follow us on Twitter"></a>
+        <a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed"><img src="img/yt.svg" alt="Subscribe to our YouTube channel"></a>
       </div>
     </section>
     <section class="container newsletter">
@@ -135,13 +138,13 @@
       const isOdd = (n) => {return Math.abs(n % 2) == 1;}
 
       const openMenu = () => {
-        container.classList.remove("hide");
+        container.classList.remove("mobile-hide");
         nav.classList.remove("menu__closed");
         nav.classList.toggle("menu__open");
       }
 
       const closeMenu = () => {
-        container.classList.toggle("hide");
+        container.classList.toggle("mobile-hide");
         nav.classList.remove("menu__open");
         nav.classList.toggle("menu__closed");
       }
@@ -160,11 +163,13 @@
       open.addEventListener("click", animateMenu);
 
       for (let i = 0; i < links.length; i++) {
-        links[i].addEventListener("click", function() {
-          closeMenu();
-          menu.innerHTML = bars;
-          clickCount++;
-        });
+        if (window.innerWidth < 768) {
+          links[i].addEventListener("click", function() {
+            closeMenu();
+            menu.innerHTML = bars;
+            clickCount++;
+          });
+        }
       }
     </script>
   </body>
