@@ -1,7 +1,3 @@
-:root {
-
-}
-
 html {
   background-color: black;
   display: flex;
@@ -110,8 +106,8 @@ a:hover {
   max-width: 225px;
 }
 
-.container {
-  margin-bottom: 5rem;
+.arrow {
+  margin: 2.5rem auto;
 }
 
 .container h2 {
@@ -176,6 +172,15 @@ a:hover {
 
 .mobile-hide {
   display: none;
+}
+
+.arrow-down {
+  width: 100%;
+  max-width: 100px;
+}
+
+.newsletter {
+  margin: 2.5rem auto;
 }
 
 @media only screen and (min-width: 700px) {
@@ -266,9 +271,13 @@ a:hover {
     justify-content: space-around;
     align-items: center;
   }
-  
-  .container {
-    margin-bottom: 12rem;
+
+  .arrow {
+    margin: 6rem auto;
+  }
+
+  .newsletter {
+    margin: 4rem auto;
   }
 }
 
@@ -282,8 +291,16 @@ a:hover {
     max-width: 500px;
     margin: 0;
   }
-  
+
   .album-description {
     margin: 0;
+  }
+
+  .nav-link {
+    font-size: 3rem;
+  }
+
+  .newsletter {
+    margin-bottom: 6rem;
   }
 }
