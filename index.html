@@ -48,7 +48,7 @@
           <path class="svg-bottom" d="M0,23 30,23"></path>
         </svg>
       </button>
-      <h1 style="visibility: hidden; position: absolute;">Front Royal</h1>
+      <h1 style="display: none; position: absolute;">Front Royal</h1>
       <img class="mobile-hide logo" src="img/logo.png" alt="Front Royal logo">
       <nav class="mobile-hide" id="nav-container">
         <ul class="main-navigation">
@@ -58,72 +58,74 @@
         </ul>
       </nav>
     </header>
-    <section class="container" id="listen">
-      <header>
-        <h2>Out Now</h2>
-      </header>
-      <div class="hero">
-        <img class="album__featured" src="img/ep3.jpg" alt="These Things Happen album cover">
-        <div class="album-description">
-          <h3>These Things Happen</h3>
-          <ul>
-            <li>Streaming Everywhere</li>
-            <li>Buy on <a href="https://frontroyalmd.bandcamp.com/">Bandcamp</a></li>
-          </ul>
-          <iframe class="player player__featured" src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media" title="These Things Happen Spotify player" loading="lazy"></iframe>
-        </div>
-      </div>
-      <div class="sub-hero">
-        <div class="album">
-          <img class="album__secondary" src="img/more-music.jpg" alt="More Music">
-        </div>
-        <div class="album">
-          <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here"><img class="album__secondary" src="img/ep2.jpg" alt="All Down Hill From Here album cover"></a>
-          <h4>All Down Hill From Here</h4>
-        </div>
-        <div class="album">
-          <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town"><img class="album__secondary" src="img/ep1.jpg" alt="All Down Hill From Here album cover"></a>
-          <h4>The Band, Not The Town</h4>
-        </div>
-      </div>
-    </section>
-    <aside class="arrow">
-      <img class="arrow-down" src="img/arrow-down.png" alt="">
-    </aside>
-    <section class="container" id="dates">
-      <h2>Dates</h2>
-      <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#fff" data-link-color="#fff" data-background-color="rgba(0,0,0,0)" data-display-limit="10" data-display-start-time="true" data-link-text-color="#000" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
-    </section>
-    <aside class="arrow">
-      <img class="arrow-down" src="img/arrow-down-2.png" alt="">
-    </aside>
-    <section class="container" id="follow">
-      <h2>Follow Us</h2>
-      <div class="icons">
-        <a href="https://frontroyalmd.bandcamp.com/"><img src="img/bc.png" alt="Listen on Bandcamp"></a>
-        <a href="https://instagram.com/frontroyal_official/"><img src="img/insta.svg" alt="Follow us on Instagram"></a>
-        <a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg"><img src="img/spotify.svg" alt="Listen on Spotify"></a>
-        <a href="https://facebook.com/FrontRoyalMD/"><img src="img/fb.svg" alt="Like us on Facebook"></a>
-        <a href="https://twitter.com/frontroyalband"><img src="img/twit.svg" alt="Follow us on Twitter"></a>
-        <a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed"><img src="img/yt.svg" alt="Subscribe to our YouTube channel"></a>
-      </div>
-    </section>
-    <section class="container newsletter">
-      <h3>Sign Up For Our Newsletter</h3>
-      <p>Like emails? Well, we send them sometimes.</p>
-      <!-- Begin Mailchimp Signup Form -->
-      <div id="mc_embed_signup">
-        <form action="https://facebook.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-      	   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
-            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4e13673cf275ea95a06b67103_fc567fa48a" tabindex="-1" value=""></div>
-            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    <main>
+      <section class="container" id="listen">
+        <header>
+          <h2>Out Now</h2>
+        </header>
+        <div class="hero">
+          <img class="album__featured" src="img/ep3.jpg" alt="These Things Happen album cover">
+          <div class="album-description">
+            <h3>These Things Happen</h3>
+            <ul>
+              <li>Streaming Everywhere</li>
+              <li>Buy on <a href="https://frontroyalmd.bandcamp.com/">Bandcamp</a></li>
+            </ul>
+            <iframe class="player player__featured" src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media" title="These Things Happen Spotify player" loading="lazy"></iframe>
           </div>
-        </form>
-      </div>
-      <!--End Mailchimp Signup Form -->
-    </section>
+        </div>
+        <div class="sub-hero">
+          <div class="album">
+            <img class="album__secondary" src="img/more-music.jpg" alt="More Music">
+          </div>
+          <div class="album">
+            <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here"><img class="album__secondary" src="img/ep2.jpg" alt="All Down Hill From Here album cover"></a>
+            <h4>All Down Hill From Here</h4>
+          </div>
+          <div class="album">
+            <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town"><img class="album__secondary" src="img/ep1.jpg" alt="All Down Hill From Here album cover"></a>
+            <h4>The Band, Not The Town</h4>
+          </div>
+        </div>
+      </section>
+      <aside aria-hidden="true" class="arrow">
+        <img class="arrow-down" src="img/arrow-down.png" alt="">
+      </aside>
+      <section class="container" id="dates">
+        <h2>Dates</h2>
+        <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#fff" data-link-color="#fff" data-background-color="rgba(0,0,0,0)" data-display-limit="10" data-display-start-time="true" data-link-text-color="#000" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
+      </section>
+      <aside aria-hidden="true" class="arrow">
+        <img class="arrow-down" src="img/arrow-down-2.png" alt="">
+      </aside>
+      <section class="container" id="follow">
+        <h2>Follow Us</h2>
+        <div class="icons">
+          <a href="https://frontroyalmd.bandcamp.com/"><img src="img/bc.png" alt="Listen on Bandcamp"></a>
+          <a href="https://instagram.com/frontroyal_official/"><img src="img/insta.svg" alt="Follow us on Instagram"></a>
+          <a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg"><img src="img/spotify.svg" alt="Listen on Spotify"></a>
+          <a href="https://facebook.com/FrontRoyalMD/"><img src="img/fb.svg" alt="Like us on Facebook"></a>
+          <a href="https://twitter.com/frontroyalband"><img src="img/twit.svg" alt="Follow us on Twitter"></a>
+          <a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed"><img src="img/yt.svg" alt="Subscribe to our YouTube channel"></a>
+        </div>
+      </section>
+      <section class="container newsletter">
+        <h3>Sign Up For Our Newsletter</h3>
+        <p>Like emails? Well, we send them sometimes.</p>
+        <!-- Begin Mailchimp Signup Form -->
+        <div id="mc_embed_signup">
+          <form action="https://facebook.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+        	   <input aria-label="Email" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4e13673cf275ea95a06b67103_fc567fa48a" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+          </form>
+        </div>
+        <!--End Mailchimp Signup Form -->
+      </section>
+    </main>
     <footer>
       <img src="img/tth-bg.jpg" alt="">
     </footer>
