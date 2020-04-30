@@ -199,10 +199,6 @@ a:hover {
   margin: 2.5rem auto;
 }
 
-.bit-widget .bit-no-dates-container {
-  padding: 5rem 0 !important;
-}
-
 @media only screen and (min-width: 700px) {
   nav {
     margin-top: auto;
