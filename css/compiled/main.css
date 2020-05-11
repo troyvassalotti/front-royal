@@ -314,11 +314,11 @@ h4 {
 }
 
 .menu__closed {
-	background: center/cover no-repeat url("../img/main-banner.jpg");
+	background: center/cover no-repeat url("/img/main-banner.jpg");
 }
 
 .menu__open {
-	background: top/contain no-repeat url("../img/main-banner.jpg");
+	background: top/contain no-repeat url("/img/main-banner.jpg");
 	height: auto;
 }
 
