@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/mailchimp.css">
+    <link rel="stylesheet" href="/css/compressed/main.min.css">
     <meta name="description" content="Front Royal (the band, not the town) has an official website and this is that.">
     <meta name="og:locale" content="en_US">
     <meta name="og:type" content="website">
@@ -20,12 +19,14 @@
     <title>The Band, Not The Town | Front Royal</title>
 
     <style>
+      /* change some bandsintown styling */
       .bit-widget .bit-no-dates-container {
         padding: 5rem 0 !important;
       }
     </style>
-    
+
   </head>
+
   <body>
     <header class="main-banner menu__closed">
       <button id="open" aria-label="Open the navigation menu">
@@ -58,7 +59,8 @@
               <li>Streaming Everywhere</li>
               <li>Buy on <a href="https://frontroyalmd.bandcamp.com/">Bandcamp</a></li>
             </ul>
-            <iframe class="player player__featured" src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media" title="These Things Happen Spotify player"></iframe>
+            <iframe class="player player__featured" src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media"
+              title="These Things Happen Spotify player"></iframe>
           </div>
         </div>
         <div class="sub-hero">
@@ -80,7 +82,8 @@
       </aside>
       <section class="container" id="dates">
         <h2>Dates</h2>
-        <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#fff" data-link-color="#fff" data-background-color="rgba(0,0,0,0)" data-display-limit="10" data-display-start-time="true" data-link-text-color="#000" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
+        <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#fff" data-link-color="#fff" data-background-color="rgba(0,0,0,0)"
+          data-display-limit="10" data-display-start-time="true" data-link-text-color="#000" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
       </section>
       <aside aria-hidden="true" class="arrow">
         <img class="arrow-down" src="/img/arrow-down-2.png" alt="">
@@ -103,7 +106,7 @@
         <div id="mc_embed_signup">
           <form action="https://facebook.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
             <div id="mc_embed_signup_scroll">
-        	   <input aria-label="Email" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
+              <input aria-label="Email" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
               <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
               <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4e13673cf275ea95a06b67103_fc567fa48a" tabindex="-1" value=""></div>
               <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
@@ -120,32 +123,43 @@
     <!-- S C R I P T S -->
     <script src="https://widget.bandsintown.com/main.min.js" async></script>
     <script>
+      // define the navigation variables
       const open = document.getElementById("open");
       const menu = document.getElementById("menu");
       const nav = document.querySelector(".main-banner");
       const container = document.getElementById("nav-container");
       const links = document.querySelectorAll(".nav-link");
 
+      // define the html content of the svg buttons
       const x = '<path class="svg-top" d="M5,5 25,25"></path><path class="svg-bottom" d="M5,25 25,5"></path>';
       const bars = '<path class="svg-top" d="M0,5 30,5"></path><path class="svg-mid" d="M0,14 30,14"></path><path class="svg-bottom" d="M0,23 30,23"></path>';
 
+      // keep track of click count so that the menu is animated properly
       let clickCount = 0;
 
-      const isEven = (n) => {return n % 2 == 0;};
-      const isOdd = (n) => {return Math.abs(n % 2) == 1;};
+      // figure out if something is even or odd, for the purposes of menu animation
+      const isEven = (n) => {
+        return n % 2 == 0;
+      };
+      const isOdd = (n) => {
+        return Math.abs(n % 2) == 1;
+      };
 
+      // open the menu on mobile
       const openMenu = () => {
         container.classList.remove("mobile-hide");
         nav.classList.remove("menu__closed");
         nav.classList.toggle("menu__open");
       };
 
+      // close the menu on mobile
       const closeMenu = () => {
         container.classList.toggle("mobile-hide");
         nav.classList.remove("menu__open");
         nav.classList.toggle("menu__closed");
       };
 
+      // animate the menu open or closed depending on number of times the menu has been clicked
       const animateMenu = () => {
         if (isEven(clickCount)) {
           menu.innerHTML = x;
@@ -157,8 +171,10 @@
         clickCount++;
       };
 
+      // add that click listener
       open.addEventListener("click", animateMenu);
 
+      // if the window is less than 768px, keep track of times the links are clicked so that the menu properly animates on screen change
       if (window.innerWidth < 768) {
         for (let i = 0; i < links.length; i++) {
           links[i].addEventListener("click", function() {
@@ -170,4 +186,5 @@
       };
     </script>
   </body>
+
 </html>

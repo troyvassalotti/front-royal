@@ -1,13 +1,20 @@
+@import "_globals";
+@import "normalize";
+@import "mailchimp";
+
 html {
-  background-color: black;
+  background: $black;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  color: white;
-  font-family: Tahoma, sans-serif;
+  color: $white;
   line-height: 1.35;
+  scroll-behavior: smooth;
+  font: {
+    size: 10px;
+    family: Tahoma, sans-serif;
+  }
 }
 
 body {
@@ -15,10 +22,17 @@ body {
   max-width: 100%;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: "Days One", Verdana, sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
-  font-weight: 400;
+  font: {
+    family: $headings;
+    weight: 400;
+  }
 }
 
 h2 {
@@ -53,17 +67,17 @@ nav {
 }
 
 .main-navigation {
-	list-style: none;
-	padding: 1rem;
-	margin: 0;
-  background-color: white;
-  font-family: "Days One";
+  list-style: none;
+  padding: 1rem;
+  margin: 0;
+  background: $white;
+  font-family: $headings;
 }
 
 #open {
-  background-color: transparent;
+  background: transparent;
   border: none;
-  stroke: white;
+  stroke: $white;
   stroke-width: 4;
   margin: 1.5rem 0 0 .5rem;
 }
@@ -74,37 +88,41 @@ img {
   margin: auto;
 }
 
-p, ol, ul {
+ol,
+p,
+ul {
   font-size: 1.6rem;
 }
 
 a {
-  color: lightblue;
-}
+  color: $blue;
 
-a:hover {
-  color: goldenrod;
+  &:hover {
+    color: $yellow;
+  }
 }
 
 .nav-link {
-  color: black;
+  color: $black;
   text-decoration: none;
 }
 
 .button {
   padding: 1rem 2rem;
-  font-size: 2rem;
-  background-color: white;
-  color: black;
+  background: $white;
+  color: $black;
   border-radius: 6px;
   text-decoration: none;
-  font-family: "Days One";
-}
+  font: {
+    size: 2rem;
+    family: $headings;
+  }
 
-.button:hover {
-  background-color: lightblue;
-  color: black;
-  transition: .3s;
+  &:hover {
+    background: $blue;
+    color: $black;
+    transition: .3s;
+  }
 }
 
 .italic {
@@ -133,16 +151,16 @@ a:hover {
 .album-description {
   margin: 0;
   width: 225px;
-}
 
-.album-description ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 1rem;
-}
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+  }
 
-.album-description p {
-  margin: .5rem 0 2.5rem;
+  p {
+    margin: .5rem 0 2.5rem;
+  }
 }
 
 .player {
@@ -171,15 +189,17 @@ a:hover {
   width: 90%;
   max-width: 800px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   padding: 1rem 0;
-  grid-gap: 1.5rem;
-}
+  gap: 1.5rem;
+  grid: {
+    template-columns: repeat(3, 1fr);
+    template-rows: repeat(2, 1fr);
+  }
 
-.icons img {
-  max-width: 59px;
-  filter: invert(100%);
+  img {
+    max-width: 59px;
+    filter: invert(100%);
+  }
 }
 
 .newsletter p {
@@ -198,7 +218,6 @@ a:hover {
 .newsletter {
   margin: 2.5rem auto;
 }
-
 @media only screen and (min-width: 700px) {
   nav {
     margin-top: auto;
@@ -215,7 +234,7 @@ a:hover {
   }
 
   .main-navigation {
-    background-color: transparent;
+    background: transparent;
   }
 
   .mobile-hide {
@@ -228,10 +247,9 @@ a:hover {
   }
 
   .nav-link {
-    color: white;
+    color: $white;
   }
 }
-
 @media only screen and (min-width: 768px) {
   h2 {
     font-size: 5rem;
@@ -246,19 +264,21 @@ a:hover {
     font-size: 1.6rem;
   }
 
-  p, ol, ul {
+  ol,
+  p,
+  ul {
     font-size: 2rem;
   }
 
   .nav-link {
     font-size: 2rem;
     padding: 0 .5rem;
-  }
 
-  .nav-link:hover {
-    background-color: white;
-    color: black;
-    transition: .3s;
+    &:hover {
+      background: $white;
+      color: $black;
+      transition: .3s;
+    }
   }
 
   .hero {
@@ -296,7 +316,6 @@ a:hover {
     margin: 4rem auto;
   }
 }
-
 @media only screen and (min-width: 1000px) {
   .hero {
     max-width: 1400px;
