@@ -19,4 +19,4 @@
       X-Content-Type-Options = "nosniff"
       X-Frame-Options = "SAMEORIGIN"
       X-XSS-Protection = "1"
-      Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://open.spotify.com/embed/ https://widget.bandsintown.com 'unsafe-inline'"
+      Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://open.spotify.com *bandsintown.com data: 'unsafe-inline'"
