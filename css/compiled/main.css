@@ -1,3 +1,30 @@
+@font-face {
+	font-family: 'Days One';
+	src: url("/css/fonts/days-one-v9-latin-regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url("/css/fonts/open-sans-v17-latin-regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	src: url("/css/fonts/open-sans-v17-latin-italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
 	line-height: 1.15;
@@ -319,7 +346,7 @@ html {
 	line-height: 1.35;
 	scroll-behavior: smooth;
 	font-size: 10px;
-	font-family: Tahoma, sans-serif;
+	font-family: "Open Sans", Tahoma, sans-serif;
 }
 
 body {
@@ -389,6 +416,11 @@ img {
 	display: block;
 	max-width: 100%;
 	margin: auto;
+	height: auto;
+}
+
+img[height] {
+	height: auto;
 }
 
 ol,
