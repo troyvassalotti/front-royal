@@ -555,15 +555,6 @@ figcaption {
 	margin: 2.5rem auto;
 }
 
-.parallax {
-	background-image: url("/img/footer.jpg");
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 20vh;
-}
-
 @media only screen and (min-width: 700px) {
 	nav {
 		margin-top: auto;
