@@ -557,11 +557,11 @@ figcaption {
 
 .parallax {
 	background-image: url("/img/tth-bg.jpg");
-	height: 20vh;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	height: 20vh;
 }
 
 @media only screen and (min-width: 700px) {
