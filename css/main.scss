@@ -16,6 +16,7 @@ html {
   font: {
     size: 10px;
     family: $body;
+    weight: 400px;
   }
 }
 
@@ -38,15 +39,15 @@ h6 {
 }
 
 h2 {
-  font-size: 3.2rem;
+  font-size: 3.5rem;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 h4 {
-  margin-top: 1rem;
+  font-size: 1.4rem;
 }
 // Header & Banner
 
@@ -145,11 +146,7 @@ a {
 
 .album__featured {
   width: 100%;
-  max-width: 225px;
-}
-
-.arrow {
-  margin: 2.5rem auto;
+  max-width: 300px;
 }
 
 .container h2 {
@@ -158,7 +155,7 @@ a {
 
 .album-description {
   margin: 0;
-  width: 225px;
+  width: 100%;
 
   ul {
     list-style: none;
@@ -176,36 +173,46 @@ a {
   width: 100%;
 }
 
-.player__featured {
-  max-width: 300px;
+figcaption,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+figcaption {
+  font: {
+    family: $headings;
+    size: 1.4rem;
+    weight: 400;
+  }
 }
 
 .album__secondary {
-  max-width: 100px;
+  max-width: 10.5rem;
 }
 
 .sub-hero {
   width: 100%;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   text-align: center;
-  margin-top: 3rem;
   max-width: 400px;
 }
 
 .icons {
-  width: 90%;
+  width: 100%;
   max-width: 800px;
   display: grid;
   padding: 1rem 0;
   gap: 1.5rem;
+  place-items: center;
   grid: {
     template-columns: repeat(3, 1fr);
     template-rows: repeat(2, 1fr);
   }
 
   img {
-    max-width: 59px;
+    max-width: 48px;
     filter: invert(100%);
   }
 }
@@ -225,6 +232,15 @@ a {
 
 .newsletter {
   margin: 2.5rem auto;
+}
+
+.parallax {
+  background-image: url("/img/tth-bg.jpg");
+  height: 20vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media only screen and (min-width: 700px) {
   nav {
@@ -266,10 +282,6 @@ a {
 
   h3 {
     font-size: 3rem;
-  }
-
-  h4 {
-    font-size: 1.6rem;
   }
 
   ol,
