@@ -16,7 +16,7 @@ html {
   font: {
     size: 10px;
     family: $body;
-    weight: 400px;
+    weight: 400;
   }
 }
 
@@ -53,25 +53,9 @@ h3 {
 h4 {
   font-size: 1.4rem;
 }
-// Header & Banner
 
 .main-banner {
-  width: 100vw;
-  max-width: 100%;
-  height: calc((424*100vw)/1920);
-}
-
-.menu__closed {
-  background: center/cover no-repeat url("/img/main-banner.jpg");
-}
-
-.menu__open {
-  background: top/contain no-repeat url("/img/main-banner.jpg");
-  height: auto;
-}
-
-nav {
-  margin-top: 2rem;
+  width: 100%;
 }
 
 .main-navigation {
@@ -80,14 +64,6 @@ nav {
   margin: 0;
   background: $white;
   font-family: $headings;
-}
-
-#open {
-  background: transparent;
-  border: none;
-  stroke: $white;
-  stroke-width: 4;
-  margin: 1.5rem 0 0 .5rem;
 }
 
 img {
@@ -225,10 +201,6 @@ figcaption {
   margin-top: 1rem;
 }
 
-.mobile-hide {
-  display: none;
-}
-
 .arrow-down {
   width: 100%;
   max-width: 100px;
@@ -240,26 +212,10 @@ figcaption {
   bottom: 0;
 }
 @media only screen and (min-width: 700px) {
-  nav {
-    margin-top: auto;
-  }
-
-  #open {
-    display: none;
-  }
-
   .main-banner {
     max-height: 200px;
     display: flex;
     flex-direction: column;
-  }
-
-  .main-navigation {
-    background: transparent;
-  }
-
-  .mobile-hide {
-    display: block;
   }
 
   .logo {

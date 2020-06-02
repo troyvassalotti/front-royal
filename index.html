@@ -27,17 +27,9 @@
   </head>
 
   <body>
-    <header class="main-banner menu__closed">
-      <button id="open" aria-label="Open the navigation menu">
-        <svg id="menu" width="30" height="30">
-          <path class="svg-top" d="M0,5 30,5"></path>
-          <path class="svg-mid" d="M0,14 30,14"></path>
-          <path class="svg-bottom" d="M0,23 30,23"></path>
-        </svg>
-      </button>
-      <h1 style="display: none; position: absolute;">Front Royal</h1>
-      <img class="mobile-hide logo" src="/img/logo.png" alt="Front Royal logo">
-      <nav class="mobile-hide" id="nav-container">
+    <header class="main-banner">
+      <img class="logo" src="/img/logo.png" alt="Front Royal logo">
+      <nav id="nav-container">
         <ul class="main-navigation">
           <li><a href="#listen" class="nav-link">Listen</a></li>
           <li><a href="#dates" class="nav-link">Dates</a></li>
@@ -121,69 +113,6 @@
 
     <!-- S C R I P T S -->
     <script src="https://widget.bandsintown.com/main.min.js" async></script>
-    <script>
-      // define the navigation variables
-      const open = document.getElementById("open");
-      const menu = document.getElementById("menu");
-      const nav = document.querySelector(".main-banner");
-      const container = document.getElementById("nav-container");
-      const links = document.querySelectorAll(".nav-link");
-
-      // define the html content of the svg buttons
-      const x = '<path class="svg-top" d="M5,5 25,25"></path><path class="svg-bottom" d="M5,25 25,5"></path>';
-      const bars = '<path class="svg-top" d="M0,5 30,5"></path><path class="svg-mid" d="M0,14 30,14"></path><path class="svg-bottom" d="M0,23 30,23"></path>';
-
-      // keep track of click count so that the menu is animated properly
-      let clickCount = 0;
-
-      // figure out if something is even or odd, for the purposes of menu animation
-      const isEven = (n) => {
-        return n % 2 == 0;
-      };
-      const isOdd = (n) => {
-        return Math.abs(n % 2) == 1;
-      };
-
-      // open the menu on mobile
-      const openMenu = () => {
-        container.classList.remove("mobile-hide");
-        nav.classList.remove("menu__closed");
-        nav.classList.toggle("menu__open");
-      };
-
-      // close the menu on mobile
-      const closeMenu = () => {
-        container.classList.toggle("mobile-hide");
-        nav.classList.remove("menu__open");
-        nav.classList.toggle("menu__closed");
-      };
-
-      // animate the menu open or closed depending on number of times the menu has been clicked
-      const animateMenu = () => {
-        if (isEven(clickCount)) {
-          menu.innerHTML = x;
-          openMenu();
-        } else if (isOdd(clickCount)) {
-          menu.innerHTML = bars;
-          closeMenu();
-        }
-        clickCount++;
-      };
-
-      // add that click listener
-      open.addEventListener("click", animateMenu);
-
-      // if the window is less than 768px, keep track of times the links are clicked so that the menu properly animates on screen change
-      if (window.innerWidth < 768) {
-        for (let i = 0; i < links.length; i++) {
-          links[i].addEventListener("click", function() {
-            closeMenu();
-            menu.innerHTML = bars;
-            clickCount++;
-          });
-        }
-      };
-    </script>
   </body>
 
 </html>
