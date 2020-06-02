@@ -25,6 +25,10 @@ body {
   max-width: 100%;
 }
 
+main {
+  background: $black;
+}
+
 h1,
 h2,
 h3,
@@ -230,12 +234,10 @@ figcaption {
   max-width: 100px;
 }
 
-.newsletter {
-  margin: 2.5rem auto;
-}
-
 .slideout {
-  // make a slide-from-under footer
+  z-index: -1;
+  position: sticky;
+  bottom: 0;
 }
 @media only screen and (min-width: 700px) {
   nav {
@@ -300,7 +302,6 @@ figcaption {
     display: flex;
     width: 100%;
     max-width: 800px;
-    margin-bottom: 5rem;
   }
 
   .album__featured {
@@ -322,14 +323,6 @@ figcaption {
     justify-content: space-around;
     align-items: center;
   }
-
-  .arrow {
-    margin: 6rem auto;
-  }
-
-  .newsletter {
-    margin: 4rem auto;
-  }
 }
 @media only screen and (min-width: 1000px) {
   .hero {
@@ -348,9 +341,5 @@ figcaption {
 
   .nav-link {
     font-size: 3rem;
-  }
-
-  .newsletter {
-    margin-bottom: 6rem;
   }
 }
