@@ -63,19 +63,25 @@ h4 {
 
 .navigation {
   list-style: none;
-  padding: 1rem;
+  padding: 0;
   margin: 0;
+  overflow: hidden;
   font-family: $headings;
   max-height: 0;
   transition: max-height .2s ease-out;
 }
 
+.menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+/* menu icon */
 .menu-icon {
   cursor: pointer;
   display: inline-block;
   float: right;
   padding: 28px 20px;
-  position: relative;
   user-select: none;
 }
 
@@ -106,7 +112,7 @@ h4 {
 .menu-icon .navicon:after {
   top: -5px;
 }
-
+/* menu btn */
 .menu-btn {
   display: none;
 }
