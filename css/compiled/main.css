@@ -437,7 +437,7 @@ h4 {
 	top: 5px;
 }
 
-.menu-btn:checked ~ .menu {
+.menu-btn:checked ~ .navigation {
 	max-height: 240px;
 }
 
