@@ -57,8 +57,8 @@ h4 {
 
 .banner {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .navigation {
@@ -159,7 +159,7 @@ a {
 }
 
 .nav-link {
-  color: $black;
+  color: $white;
   text-decoration: none;
 }
 
