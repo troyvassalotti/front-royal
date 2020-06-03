@@ -53,18 +53,51 @@ h3 {
 h4 {
   font-size: 1.4rem;
 }
+// navigation
 
-.main-banner {
+.banner {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.main-navigation {
+.navigation {
   list-style: none;
   padding: 1rem;
   margin: 0;
-  background: $white;
   font-family: $headings;
+  max-height: 0;
+  transition: max-height .2s ease-out;
 }
+
+.menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.menu-icon .navicon:after,
+.menu-icon .navicon:before {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+// navigation
 
 img {
   display: block;
@@ -212,8 +245,7 @@ figcaption {
   bottom: 0;
 }
 @media only screen and (min-width: 700px) {
-  .main-banner {
-    max-height: 200px;
+  .banner {
     display: flex;
     flex-direction: column;
   }
