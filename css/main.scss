@@ -55,21 +55,52 @@ h4 {
 }
 // navigation
 
-.banner {
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
-.navigation {
-  list-style: none;
-  padding: 0;
+.header ul {
   margin: 0;
+  padding: 0;
+  list-style: none;
   overflow: hidden;
-  font-family: $headings;
-  max-height: 0;
-  transition: max-height .2s ease-out;
 }
+
+.header li a {
+  display: block;
+  padding: 20px;
+  border-right: 1px solid #f4f4f4;
+  text-decoration: none;
+}
+
+.header .menu-btn:hover,
+.header li a:hover {
+  background-color: #f4f4f4;
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+// .banner {
+//   width: 100%;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+// }
+// .navigation {
+//   list-style: none;
+//   padding: 0;
+//   margin: 0;
+//   overflow: hidden;
+//   font-family: $headings;
+//   max-height: 0;
+//   transition: max-height .2s ease-out;
+// }
 
 .menu {
   clear: both;
@@ -77,6 +108,7 @@ h4 {
   transition: max-height .2s ease-out;
 }
 /* menu icon */
+
 .menu-icon {
   cursor: pointer;
   display: inline-block;
@@ -113,6 +145,7 @@ h4 {
   top: -5px;
 }
 /* menu btn */
+
 .menu-btn {
   display: none;
 }

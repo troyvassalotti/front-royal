@@ -382,20 +382,37 @@ h4 {
 	font-size: 1.4rem;
 }
 
-.banner {
+.header {
+	background-color: #fff;
+	box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
 	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
 }
 
-.navigation {
-	list-style: none;
-	padding: 0;
+.header ul {
 	margin: 0;
+	padding: 0;
+	list-style: none;
 	overflow: hidden;
-	font-family: "Days One", Verdana, sans-serif;
-	max-height: 0;
-	transition: max-height .2s ease-out;
+}
+
+.header li a {
+	display: block;
+	padding: 20px;
+	border-right: 1px solid #f4f4f4;
+	text-decoration: none;
+}
+
+.header .menu-btn:hover,
+.header li a:hover {
+	background-color: #f4f4f4;
+}
+
+.header .logo {
+	display: block;
+	float: left;
+	font-size: 2em;
+	padding: 10px 20px;
+	text-decoration: none;
 }
 
 .menu {
