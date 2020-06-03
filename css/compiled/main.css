@@ -393,10 +393,17 @@ h4 {
 	padding: 0;
 	margin: 0;
 	font-family: "Days One", Verdana, sans-serif;
+	max-height: 0;
+	overflow: hidden;
 }
 
 .menu-btn {
 	display: none;
+}
+
+.menu-icon {
+	display: inline-block;
+	padding: 1rem;
 }
 
 .navicon {
