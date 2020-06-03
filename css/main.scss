@@ -53,12 +53,26 @@ h3 {
 h4 {
   font-size: 1.4rem;
 }
-// navigation
 
 .banner {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+
+.logo {
+  height: 96px;
+
+  img {
+    margin: 0;
+    max-width: 100px;
+  }
+}
+
+#navigation {
+  display: grid;
+  place-items: end;
+  padding-top: 1rem;
 }
 
 .navigation {
@@ -77,15 +91,16 @@ h4 {
 .menu-icon {
   display: inline-block;
   padding: 1rem;
+  margin-bottom: auto;
 }
 
 .navicon {
   background: $white;
   display: block;
-  height: 2px;
+  height: 3px;
   position: relative;
   transition: background .2s ease-out;
-  width: 18px;
+  width: 2rem;
 
   &::after {
     background: $white;
@@ -95,7 +110,7 @@ h4 {
     position: absolute;
     transition: all .2s ease-out;
     width: 100%;
-    top: -5px;
+    top: -6px;
   }
 
   &::before {
@@ -106,7 +121,7 @@ h4 {
     position: absolute;
     transition: all .2s ease-out;
     width: 100%;
-    top: 5px;
+    top: 6px;
   }
 }
 
@@ -130,7 +145,11 @@ h4 {
 .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before {
   top: 0;
 }
-// navigation
+
+.nav-link {
+  color: $white;
+  text-decoration: none;
+}
 
 img {
   display: block;
@@ -155,11 +174,6 @@ a {
   &:hover {
     color: $yellow;
   }
-}
-
-.nav-link {
-  color: $white;
-  text-decoration: none;
 }
 
 .button {

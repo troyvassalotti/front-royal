@@ -388,6 +388,21 @@ h4 {
 	grid-template-columns: 1fr 1fr;
 }
 
+.logo {
+	height: 96px;
+}
+
+.logo img {
+	margin: 0;
+	max-width: 100px;
+}
+
+#navigation {
+	display: grid;
+	place-items: end;
+	padding-top: 1rem;
+}
+
 .navigation {
 	list-style: none;
 	padding: 0;
@@ -404,15 +419,16 @@ h4 {
 .menu-icon {
 	display: inline-block;
 	padding: 1rem;
+	margin-bottom: auto;
 }
 
 .navicon {
 	background: white;
 	display: block;
-	height: 2px;
+	height: 3px;
 	position: relative;
 	transition: background .2s ease-out;
-	width: 18px;
+	width: 2rem;
 }
 
 .navicon::after {
@@ -423,7 +439,7 @@ h4 {
 	position: absolute;
 	transition: all .2s ease-out;
 	width: 100%;
-	top: -5px;
+	top: -6px;
 }
 
 .navicon::before {
@@ -434,7 +450,7 @@ h4 {
 	position: absolute;
 	transition: all .2s ease-out;
 	width: 100%;
-	top: 5px;
+	top: 6px;
 }
 
 .menu-btn:checked ~ .navigation {
@@ -456,6 +472,11 @@ h4 {
 .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after,
 .menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before {
 	top: 0;
+}
+
+.nav-link {
+	color: white;
+	text-decoration: none;
 }
 
 img {
@@ -481,11 +502,6 @@ a {
 
 a:hover {
 	color: goldenrod;
-}
-
-.nav-link {
-	color: white;
-	text-decoration: none;
 }
 
 .button {
