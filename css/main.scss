@@ -70,6 +70,15 @@ h4 {
   transition: max-height .2s ease-out;
 }
 
+.menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
 .menu-icon .navicon {
   background: #333;
   display: block;
