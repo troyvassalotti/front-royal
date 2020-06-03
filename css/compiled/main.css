@@ -408,7 +408,17 @@ h4 {
 	width: 18px;
 }
 
-.navicon::after,
+.navicon::after {
+	background: white;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all .2s ease-out;
+	width: 100%;
+	top: -5px;
+}
+
 .navicon::before {
 	background: white;
 	content: '';
@@ -417,6 +427,7 @@ h4 {
 	position: absolute;
 	transition: all .2s ease-out;
 	width: 100%;
+	top: 5px;
 }
 
 img {

@@ -79,17 +79,28 @@ h4 {
   position: relative;
   transition: background .2s ease-out;
   width: 18px;
-}
 
-.navicon::after,
-.navicon::before {
-  background: $white;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .2s ease-out;
-  width: 100%;
+  &::after {
+    background: $white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+    top: -5px;
+  }
+
+  &::before {
+    background: $white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+    top: 5px;
+  }
 }
 // navigation
 
