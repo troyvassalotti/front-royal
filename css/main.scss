@@ -102,6 +102,27 @@ h4 {
     top: 5px;
   }
 }
+
+.menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .navicon::before {
+  transform: rotate(-45deg);
+}
+
+.menu-btn:checked ~ .menu-icon .navicon::after {
+  transform: rotate(45deg);
+}
+
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after,
+.menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before {
+  top: 0;
+}
 // navigation
 
 img {
