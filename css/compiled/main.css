@@ -386,10 +386,7 @@ h4 {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-
-.logo {
-	height: 96px;
+	height: 100px;
 }
 
 .logo img {
@@ -405,11 +402,12 @@ h4 {
 
 .navigation {
 	list-style: none;
-	padding: 0;
+	padding: 0 1rem 0 0;
 	margin: 0;
 	font-family: "Days One", Verdana, sans-serif;
 	max-height: 0;
 	overflow: hidden;
+	text-align: right;
 }
 
 .menu-btn {
