@@ -23,13 +23,10 @@ html {
 body {
   width: 100%;
   max-width: 100%;
-  display: grid;
-  grid-template-rows: auto 5em 1fr auto;
 }
 
 main {
   background: $black;
-  grid-row: 2 / 4;
 }
 
 h1,
@@ -62,7 +59,6 @@ h4 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 100px;
-  grid-row: 1 / 2;
 }
 
 .logo {
