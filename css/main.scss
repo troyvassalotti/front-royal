@@ -42,6 +42,10 @@ h6 {
   }
 }
 
+h1 {
+  font-size: 4rem;
+}
+
 h2 {
   font-size: 3.5rem;
 }
@@ -53,6 +57,7 @@ h3 {
 h4 {
   font-size: 1.4rem;
 }
+/* the navigation */
 
 .header {
   width: 100%;
@@ -170,7 +175,7 @@ h4 {
   color: $white;
   text-decoration: none;
 }
-
+/* the navigation */
 img {
   display: block;
   max-width: 100%;
@@ -227,6 +232,7 @@ a {
 .album__featured {
   width: 100%;
   max-width: 300px;
+  box-shadow: 0 0 25px 2px $grey;
 }
 
 .container h2 {
