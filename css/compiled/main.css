@@ -357,6 +357,8 @@ body {
 
 main {
 	background: #000000;
+	display: grid;
+	gap: 3rem;
 }
 
 h1,
@@ -394,6 +396,7 @@ h4 {
 	justify-content: space-between;
 	text-align: center;
 	position: relative;
+	padding-bottom: 2rem;
 }
 
 .header::before {
@@ -577,6 +580,10 @@ a:hover {
 
 .album-description p {
 	margin: .5rem 0 2.5rem;
+}
+
+.album-description h2 {
+	font-size: 2rem;
 }
 
 .player {

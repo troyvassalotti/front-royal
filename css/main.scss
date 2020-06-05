@@ -27,6 +27,8 @@ body {
 
 main {
   background: $black;
+  display: grid;
+  gap: 3rem;
 }
 
 h1,
@@ -66,6 +68,7 @@ h4 {
   justify-content: space-between;
   text-align: center;
   position: relative;
+  padding-bottom: 2rem;
 
   &::before {
     content: "";
@@ -251,6 +254,10 @@ a {
 
   p {
     margin: .5rem 0 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
   }
 }
 
