@@ -65,7 +65,6 @@ h4 {
   font-size: 1.4rem;
 }
 /* the navigation */
-
 .header {
   width: 100%;
   display: flex;
@@ -184,6 +183,7 @@ h4 {
   text-decoration: none;
 }
 /* the navigation */
+
 img {
   display: block;
   max-width: 100%;
@@ -251,6 +251,7 @@ a {
 
 .container h2 {
   text-align: center;
+  margin-bottom: var(--smGap);
 }
 
 .hero {
@@ -275,7 +276,6 @@ a {
   width: 100%;
 }
 
-figcaption,
 figure {
   margin: 0;
   padding: 0;
@@ -286,28 +286,27 @@ figcaption {
     family: $headings;
     size: 1.4rem;
     weight: 400;
+    padding: 1rem 0;
   }
 }
 
-.album__secondary {
-  max-width: 10.5rem;
-}
-
 .sub-hero {
-  width: 90vw;
-  max-width: 400px;
+  width: 90%;
+  max-width: 800px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
   text-align: center;
+  gap: var(--smGap);
 }
 
 .icons {
   width: 100%;
   max-width: 800px;
   display: grid;
-  padding: 1rem 0;
-  gap: var(--smGap);
+  padding: 0;
+  gap: var(--mainGap);
   place-items: center;
+  margin-bottom: var(--mainGap);
   grid: {
     template-columns: repeat(3, 1fr);
     template-rows: repeat(2, 1fr);
@@ -322,6 +321,7 @@ figcaption {
 
 .newsletter p {
   margin-top: 1rem;
+  padding: var(--smGap) 0;
 }
 
 .arrow-down {
@@ -335,22 +335,11 @@ figcaption {
   position: sticky;
   bottom: 0;
 }
-@media only screen and (min-width: 700px) {
-  .banner {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .logo {
-    max-width: 120px;
-    margin: 0;
-  }
-
-  .nav-link {
-    color: $white;
-  }
-}
 @media only screen and (min-width: 768px) {
+  .header::before {
+    background: center/cover no-repeat url("/img/banner.jpg");
+  }
+
   h2 {
     font-size: 5rem;
     margin-bottom: 1.5rem;
@@ -385,11 +374,6 @@ figcaption {
 
   .album__featured {
     max-width: 400px;
-  }
-
-  .sub-hero {
-    max-width: 800px;
-    justify-content: space-evenly;
   }
 
   .album__secondary {
