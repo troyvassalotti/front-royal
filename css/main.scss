@@ -65,6 +65,7 @@ h4 {
   font-size: 1.4rem;
 }
 /* the navigation */
+
 .header {
   width: 100%;
   display: flex;
@@ -183,7 +184,6 @@ h4 {
   text-decoration: none;
 }
 /* the navigation */
-
 img {
   display: block;
   max-width: 100%;
@@ -327,6 +327,25 @@ figcaption {
   }
 }
 
+.arrow {
+  position: relative;
+  width: 100%;
+  height: 175px;
+
+  img {
+    position: absolute;
+    max-height: 175px;
+
+    #one {
+      right: 55vw;
+    }
+
+    #two {
+      left: 55vw;
+    }
+  }
+}
+
 .arrow-down {
   width: 100%;
   max-width: 100px;
@@ -364,9 +383,9 @@ figcaption {
     max-height: inherit;
   }
 
+  h1,
   h2 {
     font-size: 5rem;
-    margin-bottom: 1.5rem;
   }
 
   h3 {
@@ -409,10 +428,10 @@ figcaption {
   }
 
   .icons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 0;
+    grid: {
+      template-rows: 1fr;
+      template-columns: repeat(6, 1fr);
+    }
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -421,22 +440,22 @@ figcaption {
     --mainGap: 5rem;
   }
 
+  .header {
+    margin-bottom: 2rem;
+  }
+
   .hero {
     max-width: 1400px;
     justify-content: space-evenly;
   }
 
   .logo img {
-    max-width: 170px;
+    max-width: 150px;
   }
 
   .album__featured {
     max-width: 450px;
     margin: auto;
-  }
-
-  .album-description {
-    margin: 0;
   }
 
   .nav-link {
