@@ -175,8 +175,8 @@ h4 {
   transform: rotate(45deg);
 }
 
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon::after,
-.menu-btn:checked ~ .menu-icon:not(.steps) .navicon::before {
+.menu-btn:checked ~ .menu-icon:not(.x) .navicon::after,
+.menu-btn:checked ~ .menu-icon:not(.x) .navicon::before {
   top: 0;
 }
 
@@ -300,6 +300,20 @@ figcaption {
   gap: var(--smGap);
 }
 
+#dates {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: -10px;
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-top: 4px solid $white;
+    transform: skewy(3deg);
+  }
+}
+
 .icons {
   width: 100%;
   max-width: 800px;
@@ -350,7 +364,7 @@ figcaption {
 }
 
 .slideout {
-  z-index: -1;
+  z-index: -2;
   position: -webkit-sticky;
   position: sticky;
   bottom: 0;
@@ -438,13 +452,9 @@ figcaption {
     --mainGap: 5rem;
   }
 
-  .header {
-    margin-bottom: 2rem;
-  }
-
   .hero {
     max-width: 1400px;
-    justify-content: space-evenly;
+    padding-top: 2rem;
   }
 
   .logo img {
@@ -460,7 +470,7 @@ figcaption {
     font-size: 3rem;
   }
 }
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 1700px) {
   .header::before {
     background-position: top -90px left 0;
   }
