@@ -659,11 +659,11 @@ figcaption {
 	max-height: 175px;
 }
 
-.arrow img #one {
+.arrow img .one {
 	right: 55vw;
 }
 
-.arrow img #two {
+.arrow img .two {
 	left: 55vw;
 }
 
