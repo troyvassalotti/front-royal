@@ -29,12 +29,16 @@ html {
 body {
   width: 100%;
   max-width: 100%;
+  display: grid;
+  place-items: center;
 }
 
 main {
   background: $black;
   display: grid;
   gap: var(--mainGap);
+  width: 100%;
+  place-items: center;
 }
 
 h1,
@@ -66,7 +70,6 @@ h4 {
   font-size: 1.4rem;
 }
 /* the navigation */
-
 .header {
   width: 100%;
   display: flex;
@@ -185,6 +188,7 @@ h4 {
   text-decoration: none;
 }
 /* the navigation */
+
 img {
   display: block;
   max-width: 100%;
@@ -236,12 +240,14 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .container__grid {
   display: grid;
   place-items: center;
   gap: var(--mainGap);
+  width: 100%;
 }
 
 .album__featured {
@@ -302,7 +308,6 @@ figcaption {
 
 #dates {
   position: relative;
-  color: $black;
 
   &::before {
     position: absolute;
@@ -314,6 +319,13 @@ figcaption {
     background: $white;
     transform: skewy(-3deg);
     box-shadow: 0 0 50px 10px $white;
+  }
+
+  .content {
+    position: relative;
+    color: $black;
+    background: $white;
+    width: 100%;
   }
 }
 

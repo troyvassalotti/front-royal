@@ -359,12 +359,16 @@ html {
 body {
 	width: 100%;
 	max-width: 100%;
+	display: grid;
+	place-items: center;
 }
 
 main {
 	background: #0A0A0A;
 	display: grid;
 	gap: var(--mainGap);
+	width: 100%;
+	place-items: center;
 }
 
 h1,
@@ -561,12 +565,14 @@ a:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
 }
 
 .container__grid {
 	display: grid;
 	place-items: center;
 	gap: var(--mainGap);
+	width: 100%;
 }
 
 .album__featured {
@@ -625,7 +631,6 @@ figcaption {
 
 #dates {
 	position: relative;
-	color: #0A0A0A;
 }
 
 #dates::before {
@@ -638,6 +643,13 @@ figcaption {
 	background: #F5F5F5;
 	transform: skewy(-3deg);
 	box-shadow: 0 0 50px 10px #F5F5F5;
+}
+
+#dates .content {
+	position: relative;
+	color: #0A0A0A;
+	background: #F5F5F5;
+	width: 100%;
 }
 
 .icons {
