@@ -339,6 +339,7 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 :root {
 	--mainGap: 3rem;
 	--smGap: 1.5rem;
+	--banner: url("/img/banner-sm.jpg");
 }
 
 html {
@@ -411,7 +412,7 @@ h4 {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: center/cover no-repeat url("/img/banner-sm.jpg");
+	background: center/cover no-repeat var(--banner);
 	z-index: -1;
 }
 
@@ -678,7 +679,7 @@ figcaption {
 
 @media only screen and (min-width: 768px) {
 	.header::before {
-		background: center/cover no-repeat url("/img/banner.jpg");
+		--banner: url("/img/banner.jpg");
 	}
 	.banner {
 		display: flex;
@@ -759,5 +760,11 @@ figcaption {
 	}
 	.nav-link {
 		font-size: 3rem;
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	.header::before {
+		background-position: top -90px left 0;
 	}
 }
