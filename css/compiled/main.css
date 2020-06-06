@@ -661,10 +661,12 @@ figcaption {
 
 .arrow #one {
 	right: 55vw;
+	transform: rotate(-30deg);
 }
 
 .arrow #two {
 	left: 55vw;
+	transform: rotate(25deg);
 }
 
 .slideout {

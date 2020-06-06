@@ -65,6 +65,7 @@ h4 {
   font-size: 1.4rem;
 }
 /* the navigation */
+
 .header {
   width: 100%;
   display: flex;
@@ -183,7 +184,6 @@ h4 {
   text-decoration: none;
 }
 /* the navigation */
-
 img {
   display: block;
   max-width: 100%;
@@ -339,10 +339,12 @@ figcaption {
 
   #one {
     right: 55vw;
+    transform: rotate(-30deg);
   }
 
   #two {
     left: 55vw;
+    transform: rotate(25deg);
   }
 }
 
