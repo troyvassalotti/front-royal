@@ -65,7 +65,6 @@ h4 {
   font-size: 1.4rem;
 }
 /* the navigation */
-
 .header {
   width: 100%;
   display: flex;
@@ -184,6 +183,7 @@ h4 {
   text-decoration: none;
 }
 /* the navigation */
+
 img {
   display: block;
   max-width: 100%;
@@ -391,13 +391,17 @@ figcaption {
   }
 
   .hero {
-    display: flex;
     width: 95%;
     max-width: 800px;
+    grid-template-columns: 1.25fr 1fr;
   }
 
   .album__featured {
     max-width: 400px;
+  }
+
+  .player {
+    max-width: 350px;
   }
 
   figcaption {
@@ -412,14 +416,23 @@ figcaption {
   }
 }
 @media only screen and (min-width: 1000px) {
+  :root {
+    --smGap: 3rem;
+    --mainGap: 5rem;
+  }
+
   .hero {
     max-width: 1400px;
     justify-content: space-evenly;
   }
 
+  .logo img {
+    max-width: 170px;
+  }
+
   .album__featured {
-    max-width: 500px;
-    margin: 0;
+    max-width: 450px;
+    margin: auto;
   }
 
   .album-description {
