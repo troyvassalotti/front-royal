@@ -659,17 +659,12 @@ figcaption {
 	max-height: 175px;
 }
 
-.arrow img .one {
+.arrow #one {
 	right: 55vw;
 }
 
-.arrow img .two {
+.arrow #two {
 	left: 55vw;
-}
-
-.arrow-down {
-	width: 100%;
-	max-width: 100px;
 }
 
 .slideout {

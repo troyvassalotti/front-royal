@@ -335,20 +335,15 @@ figcaption {
   img {
     position: absolute;
     max-height: 175px;
-
-    .one {
-      right: 55vw;
-    }
-
-    .two {
-      left: 55vw;
-    }
   }
-}
 
-.arrow-down {
-  width: 100%;
-  max-width: 100px;
+  #one {
+    right: 55vw;
+  }
+
+  #two {
+    left: 55vw;
+  }
 }
 
 .slideout {
