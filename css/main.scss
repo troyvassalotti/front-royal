@@ -65,6 +65,7 @@ h4 {
   font-size: 1.4rem;
 }
 /* the navigation */
+
 .header {
   width: 100%;
   display: flex;
@@ -183,7 +184,6 @@ h4 {
   text-decoration: none;
 }
 /* the navigation */
-
 img {
   display: block;
   max-width: 100%;
@@ -286,8 +286,8 @@ figcaption {
     family: $headings;
     size: 1.4rem;
     weight: 400;
-    padding: 1rem 0;
   }
+  padding: 1rem 0;
 }
 
 .sub-hero {
@@ -319,9 +319,12 @@ figcaption {
   }
 }
 
-.newsletter p {
-  margin-top: 1rem;
+.newsletter {
   padding: var(--smGap) 0;
+
+  p {
+    margin-top: 1rem;
+  }
 }
 
 .arrow-down {
@@ -338,6 +341,27 @@ figcaption {
 @media only screen and (min-width: 768px) {
   .header::before {
     background: center/cover no-repeat url("/img/banner.jpg");
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  #navigation {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation {
+    padding-left: .5rem;
+    text-align: left;
+    max-height: inherit;
   }
 
   h2 {
@@ -368,7 +392,7 @@ figcaption {
 
   .hero {
     display: flex;
-    width: 100%;
+    width: 95%;
     max-width: 800px;
   }
 
@@ -376,9 +400,8 @@ figcaption {
     max-width: 400px;
   }
 
-  .album__secondary {
-    width: 100%;
-    max-width: 200px;
+  figcaption {
+    font-size: 1.6rem;
   }
 
   .icons {
