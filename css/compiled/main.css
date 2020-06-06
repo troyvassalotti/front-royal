@@ -631,25 +631,24 @@ figcaption {
 
 #dates {
 	position: relative;
+	padding: var(--smGap);
 }
 
 #dates::before {
 	position: absolute;
 	top: -10px;
 	content: "";
-	width: 90%;
+	width: 100%;
 	height: 100%;
-	border-radius: 20px;
 	background: #F5F5F5;
 	transform: skewy(-3deg);
-	box-shadow: 0 0 50px 10px #F5F5F5;
 }
 
 #dates .content {
 	position: relative;
 	color: #0A0A0A;
 	background: #F5F5F5;
-	width: 100%;
+	margin: 1rem auto;
 }
 
 .icons {
