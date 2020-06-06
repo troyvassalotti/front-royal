@@ -4,6 +4,11 @@
 @import "normalize";
 @import "mailchimp";
 
+:root {
+  --mainGap: 3rem;
+  --smGap: 1.5rem;
+}
+
 html {
   background: $black;
   display: flex;
@@ -28,7 +33,7 @@ body {
 main {
   background: $black;
   display: grid;
-  gap: 3rem;
+  gap: var(--mainGap);
 }
 
 h1,
@@ -60,6 +65,7 @@ h4 {
   font-size: 1.4rem;
 }
 /* the navigation */
+
 .header {
   width: 100%;
   display: flex;
@@ -178,7 +184,6 @@ h4 {
   text-decoration: none;
 }
 /* the navigation */
-
 img {
   display: block;
   max-width: 100%;
@@ -235,6 +240,7 @@ a {
 .container__grid {
   display: grid;
   place-items: center;
+  gap: var(--mainGap);
 }
 
 .album__featured {
@@ -249,13 +255,9 @@ a {
 
 .hero {
   display: grid;
-  gap: 1.5rem;
+  gap: var(--smGap);
   width: 90vw;
   max-width: 450px;
-}
-
-.album-description {
-  width: 100%;
 
   ul {
     list-style: none;
@@ -304,7 +306,7 @@ figcaption {
   max-width: 800px;
   display: grid;
   padding: 1rem 0;
-  gap: 1.5rem;
+  gap: var(--smGap);
   place-items: center;
   grid: {
     template-columns: repeat(3, 1fr);
@@ -399,6 +401,7 @@ figcaption {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    gap: 0;
   }
 }
 @media only screen and (min-width: 1000px) {

@@ -336,6 +336,11 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 	}
 }
 
+:root {
+	--mainGap: 3rem;
+	--smGap: 1.5rem;
+}
+
 html {
 	background: #000000;
 	display: flex;
@@ -358,7 +363,7 @@ body {
 main {
 	background: #000000;
 	display: grid;
-	gap: 3rem;
+	gap: var(--mainGap);
 }
 
 h1,
@@ -560,6 +565,7 @@ a:hover {
 .container__grid {
 	display: grid;
 	place-items: center;
+	gap: var(--mainGap);
 }
 
 .album__featured {
@@ -574,22 +580,18 @@ a:hover {
 
 .hero {
 	display: grid;
-	gap: 1.5rem;
+	gap: var(--smGap);
 	width: 90vw;
 	max-width: 450px;
 }
 
-.album-description {
-	width: 100%;
-}
-
-.album-description ul {
+.hero ul {
 	list-style: none;
 	padding: 0;
 	margin-top: 1rem;
 }
 
-.album-description h2 {
+.hero h2 {
 	font-size: 2rem;
 }
 
@@ -627,7 +629,7 @@ figcaption {
 	max-width: 800px;
 	display: grid;
 	padding: 1rem 0;
-	gap: 1.5rem;
+	gap: var(--smGap);
 	place-items: center;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: repeat(2, 1fr);
@@ -711,6 +713,7 @@ figcaption {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+		gap: 0;
 	}
 }
 
