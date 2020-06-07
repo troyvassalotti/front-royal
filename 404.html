@@ -19,7 +19,11 @@
       }
 
       article {
-        width: max(90%, 450px);
+        width: min(90%, 450px);
+      }
+
+      footer {
+        margin-top: auto;
       }
 
       .logo {
@@ -33,13 +37,13 @@
       <a href="/"><img class="logo" src="/img/logo.png" alt="Front Royal logo"></a>
     </header>
     <main>
-      <article>
+      <article class="container">
         <h1>Oops, a 404</h1>
         <p>Well, it looks like the page you were trying to get to doesn't exist. That isn't surprising since our site is just a homepage.</p>
         <p>You can click the button below to go back home, or you can click the link our logo above.</p>
         <a href="/" class="button">Go Home</a>
       </article>
-      <article id="follow">
+      <article class="container" id="follow">
         <h2>Maybe You Want One Of These Instead?</h2>
         <section class="icons">
           <a href="https://frontroyalmd.bandcamp.com/"><img src="/img/bc.png" alt="Listen on Bandcamp"></a>
@@ -51,7 +55,7 @@
         </section>
       </article>
     </main>
-    <footer class="slideout">
+    <footer>
       <img src="/img/footer.jpg" alt="">
     </footer>
   </body>
