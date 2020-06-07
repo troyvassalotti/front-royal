@@ -352,6 +352,7 @@ html {
 	color: #F5F5F5;
 	line-height: 1.35;
 	scroll-behavior: smooth;
+	min-height: 100vh;
 	font-size: 10px;
 	font-family: "Open Sans", Tahoma, sans-serif;
 	font-weight: 400;
@@ -362,6 +363,7 @@ body {
 	max-width: 100%;
 	display: grid;
 	place-items: center;
+	height: 100%;
 }
 
 main {
