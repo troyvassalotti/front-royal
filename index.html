@@ -4,7 +4,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/compressed/main.min.css">
     <meta name="description" content="Front Royal (the band, not the town) has an official website and this is that.">
     <meta name="og:locale" content="en_US">
@@ -28,163 +27,99 @@
   </head>
 
   <body>
-    <header class="main-banner menu__closed">
-      <button id="open" aria-label="Open the navigation menu">
-        <svg id="menu" width="30" height="30">
-          <path class="svg-top" d="M0,5 30,5"></path>
-          <path class="svg-mid" d="M0,14 30,14"></path>
-          <path class="svg-bottom" d="M0,23 30,23"></path>
-        </svg>
-      </button>
-      <h1 style="display: none; position: absolute;">Front Royal</h1>
-      <img class="mobile-hide logo" src="/img/logo.png" alt="Front Royal logo">
-      <nav class="mobile-hide" id="nav-container">
-        <ul class="main-navigation">
-          <li><a href="#listen" class="nav-link">Listen</a></li>
-          <li><a href="#dates" class="nav-link">Dates</a></li>
-          <li><a href="#follow" class="nav-link">Follow Us</a></li>
-        </ul>
-      </nav>
+    <header class="header">
+      <section class="banner">
+        <div class="logo">
+          <img class="logo" src="/img/logo.png" alt="Front Royal logo">
+        </div>
+        <nav id="navigation">
+          <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Toggle the site navigation." />
+          <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+          <ul class="navigation">
+            <li><a href="#listen" class="nav-link">Listen</a></li>
+            <li><a href="#dates" class="nav-link">Dates</a></li>
+            <li><a href="#follow" class="nav-link">Follow Us</a></li>
+          </ul>
+        </nav>
+      </section>
+      <h1>Out Now</h1>
     </header>
     <main>
-      <section class="container" id="listen">
-        <header>
-          <h2>Out Now</h2>
-        </header>
-        <div class="hero">
+      <article class="container__grid" id="listen">
+        <section class="hero">
           <img class="album__featured" src="/img/ep3.jpg" alt="These Things Happen album cover">
           <div class="album-description">
-            <h3>These Things Happen</h3>
+            <h2>These Things Happen</h2>
             <ul>
               <li>Streaming Everywhere</li>
               <li>Buy on <a href="https://frontroyalmd.bandcamp.com/">Bandcamp</a></li>
             </ul>
-            <iframe class="player player__featured" src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="300" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media"
+            <iframe class="player player__featured" src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="320" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media"
               title="These Things Happen Spotify player"></iframe>
           </div>
-        </div>
-        <div class="sub-hero">
-          <div class="album">
-            <img class="album__secondary" src="/img/more-music.jpg" alt="More Music">
-          </div>
-          <div class="album">
-            <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here"><img class="album__secondary" src="img/ep2.jpg" alt="All Down Hill From Here album cover"></a>
-            <h4>All Down Hill From Here</h4>
-          </div>
-          <div class="album">
-            <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town"><img class="album__secondary" src="img/ep1.jpg" alt="All Down Hill From Here album cover"></a>
-            <h4>The Band, Not The Town</h4>
-          </div>
-        </div>
-      </section>
+        </section>
+        <section class="sub-hero">
+          <figure class="album">
+            <img src="/img/more-music.jpg" alt="More Music">
+          </figure>
+          <figure class="album">
+            <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here"><img src="/img/ep2.jpg" alt="All Down Hill From Here album cover"></a>
+            <figcaption>All Down Hill From Here</figcaption>
+          </figure>
+          <figure class="album">
+            <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town"><img src="/img/ep1.jpg" alt="The Band, Not The Town album cover"></a>
+            <figcaption>The Band, Not The Town</figcaption>
+          </figure>
+        </section>
+      </article>
       <aside aria-hidden="true" class="arrow">
-        <img class="arrow-down" src="/img/arrow-down.png" alt="">
+        <img id="two" src="/img/arrow-down-2.png" alt="">
       </aside>
-      <section class="container" id="dates">
-        <h2>Dates</h2>
-        <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="false" data-auto-style="false" data-text-color="#fff" data-link-color="#fff" data-background-color="rgba(0,0,0,0)"
-          data-display-limit="10" data-display-start-time="true" data-link-text-color="#000" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)"></a>
-      </section>
+      <article class="container" id="dates">
+        <section class="content">
+          <h2>Tour Dates</h2>
+          <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#0a0a0a"
+            data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-link-text-color="#f5f5f5" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
+            data-font="Open Sans" data-display-logo="false"></a>
+        </section>
+      </article>
       <aside aria-hidden="true" class="arrow">
-        <img class="arrow-down" src="/img/arrow-down-2.png" alt="">
+        <img id="one" src="/img/arrow-down-2.png" alt="">
       </aside>
-      <section class="container" id="follow">
+      <article class="container" id="follow">
         <h2>Follow Us</h2>
-        <div class="icons">
-          <a href="https://frontroyalmd.bandcamp.com/"><img src="img/bc.png" alt="Listen on Bandcamp"></a>
-          <a href="https://instagram.com/frontroyal_official/"><img src="img/insta.svg" alt="Follow us on Instagram"></a>
-          <a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg"><img src="img/spotify.svg" alt="Listen on Spotify"></a>
-          <a href="https://facebook.com/FrontRoyalMD/"><img src="img/fb.svg" alt="Like us on Facebook"></a>
-          <a href="https://twitter.com/frontroyalband"><img src="img/twit.svg" alt="Follow us on Twitter"></a>
-          <a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed"><img src="img/yt.svg" alt="Subscribe to our YouTube channel"></a>
-        </div>
-      </section>
-      <section class="container newsletter">
-        <h3>Sign Up For Our Newsletter</h3>
-        <p>Like emails? Well, we send them sometimes.</p>
-        <!-- Begin Mailchimp Signup Form -->
-        <div id="mc_embed_signup">
-          <form action="https://facebook.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-            <div id="mc_embed_signup_scroll">
-              <input aria-label="Email" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4e13673cf275ea95a06b67103_fc567fa48a" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-            </div>
-          </form>
-        </div>
-        <!--End Mailchimp Signup Form -->
-      </section>
+        <section class="icons">
+          <a href="https://frontroyalmd.bandcamp.com/"><img src="/img/bc.png" alt="Listen on Bandcamp"></a>
+          <a href="https://instagram.com/frontroyal_official/"><img src="/img/insta.png" alt="Follow us on Instagram"></a>
+          <a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg"><img src="img/spotify.png" alt="Listen on Spotify"></a>
+          <a href="https://facebook.com/FrontRoyalMD/"><img src="/img/fb.png" alt="Like us on Facebook"></a>
+          <a href="https://twitter.com/frontroyalband"><img src="/img/twit.png" alt="Follow us on Twitter"></a>
+          <a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed"><img src="/img/yt.png" alt="Subscribe to our YouTube channel"></a>
+        </section>
+        <section class="container newsletter">
+          <h3>Sign Up For Our Newsletter</h3>
+          <p>Like emails? Well, we send them sometimes.</p>
+          <!-- Begin Mailchimp Signup Form -->
+          <div id="mc_embed_signup">
+            <form action="https://facebook.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <input aria-label="Email" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter Your Email" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4e13673cf275ea95a06b67103_fc567fa48a" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+              </div>
+            </form>
+          </div>
+          <!--End Mailchimp Signup Form -->
+        </section>
+      </article>
     </main>
-    <footer>
-      <img src="/img/tth-bg.jpg" alt="">
+    <footer class="slideout">
+      <img src="/img/footer.jpg" alt="">
     </footer>
 
     <!-- S C R I P T S -->
     <script src="https://widget.bandsintown.com/main.min.js" async></script>
-    <script>
-      // define the navigation variables
-      const open = document.getElementById("open");
-      const menu = document.getElementById("menu");
-      const nav = document.querySelector(".main-banner");
-      const container = document.getElementById("nav-container");
-      const links = document.querySelectorAll(".nav-link");
-
-      // define the html content of the svg buttons
-      const x = '<path class="svg-top" d="M5,5 25,25"></path><path class="svg-bottom" d="M5,25 25,5"></path>';
-      const bars = '<path class="svg-top" d="M0,5 30,5"></path><path class="svg-mid" d="M0,14 30,14"></path><path class="svg-bottom" d="M0,23 30,23"></path>';
-
-      // keep track of click count so that the menu is animated properly
-      let clickCount = 0;
-
-      // figure out if something is even or odd, for the purposes of menu animation
-      const isEven = (n) => {
-        return n % 2 == 0;
-      };
-      const isOdd = (n) => {
-        return Math.abs(n % 2) == 1;
-      };
-
-      // open the menu on mobile
-      const openMenu = () => {
-        container.classList.remove("mobile-hide");
-        nav.classList.remove("menu__closed");
-        nav.classList.toggle("menu__open");
-      };
-
-      // close the menu on mobile
-      const closeMenu = () => {
-        container.classList.toggle("mobile-hide");
-        nav.classList.remove("menu__open");
-        nav.classList.toggle("menu__closed");
-      };
-
-      // animate the menu open or closed depending on number of times the menu has been clicked
-      const animateMenu = () => {
-        if (isEven(clickCount)) {
-          menu.innerHTML = x;
-          openMenu();
-        } else if (isOdd(clickCount)) {
-          menu.innerHTML = bars;
-          closeMenu();
-        }
-        clickCount++;
-      };
-
-      // add that click listener
-      open.addEventListener("click", animateMenu);
-
-      // if the window is less than 768px, keep track of times the links are clicked so that the menu properly animates on screen change
-      if (window.innerWidth < 768) {
-        for (let i = 0; i < links.length; i++) {
-          links[i].addEventListener("click", function() {
-            closeMenu();
-            menu.innerHTML = bars;
-            clickCount++;
-          });
-        }
-      };
-    </script>
   </body>
 
 </html>
