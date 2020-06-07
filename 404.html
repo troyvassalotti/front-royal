@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
-    <link href="https://fonts.googleapis.com/css2?family=Days+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/css/compressed/main.min.css">
     <meta name="description" content="This page does not exist...yikes!">
-    <title>Oops, 404 | Front Royal</title>
+    <title>Oops, a 404</title>
     <style>
-      h2, h3 {text-align: center;}
+      h1,
+      h2 {
+        text-align: center;
+      }
+
       .container {
         max-width: 450px;
         margin: 5rem auto;
       }
+
       .logo {
         width: 50%;
         max-width: 150px;
       }
     </style>
   </head>
+
   <body>
     <header>
-      <h1 style="visibility: hidden; position: absolute;">Front Royal</h1>
-      <a href="/"><img class="logo" src="img/logo.png" alt="Front Royal logo"></a>
+      <a href="/"><img class="logo" src="/img/logo.png" alt="Front Royal logo"></a>
     </header>
     <main>
-      <section class="container">
-        <h2>Oops, a 404</h2>
+      <article class="container">
+        <h1>Oops, a 404</h1>
         <p>Well, it looks like the page you were trying to get to doesn't exist. That isn't surprising since our site is just a homepage.</p>
         <p>You can click the button below to go back home, or you can click the link our logo above.</p>
         <a href="/" class="button">Go Home</a>
-      </section>
-      <section class="container" id="follow">
-        <h3>Maybe You Want One Of These Instead?</h3>
-        <div class="icons">
-          <a href="https://frontroyalmd.bandcamp.com/"><img src="img/bc.png" alt="Listen on Bandcamp"></a>
-          <a href="https://instagram.com/frontroyal_official/"><img src="img/insta.svg" alt="Follow us on Instagram"></a>
-          <a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg"><img src="img/spotify.svg" alt="Listen on Spotify"></a>
-          <a href="https://facebook.com/FrontRoyalMD/"><img src="img/fb.svg" alt="Like us on Facebook"></a>
-          <a href="https://twitter.com/frontroyalband"><img src="img/twit.svg" alt="Follow us on Twitter"></a>
-          <a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed"><img src="img/yt.svg" alt="Subscribe to our YouTube channel"></a>
-        </div>
-      </section>
+      </article>
+      <article class="container" id="follow">
+        <h2>Maybe You Want One Of These Instead?</h2>
+        <section class="icons">
+          <a href="https://frontroyalmd.bandcamp.com/"><img src="/img/bc.png" alt="Listen on Bandcamp"></a>
+          <a href="https://instagram.com/frontroyal_official/"><img src="/img/insta.png" alt="Follow us on Instagram"></a>
+          <a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg"><img src="img/spotify.png" alt="Listen on Spotify"></a>
+          <a href="https://facebook.com/FrontRoyalMD/"><img src="/img/fb.png" alt="Like us on Facebook"></a>
+          <a href="https://twitter.com/frontroyalband"><img src="/img/twit.png" alt="Follow us on Twitter"></a>
+          <a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed"><img src="/img/yt.png" alt="Subscribe to our YouTube channel"></a>
+        </section>
+      </article>
     </main>
-    <footer>
-      <img src="img/tth-bg.jpg" alt="">
+    <footer class="slideout">
+      <img src="/img/footer.jpg" alt="">
     </footer>
   </body>
+
 </html>
