@@ -701,6 +701,10 @@ figcaption {
 	transform: rotate(25deg);
 }
 
+.discord {
+	max-width: 400px;
+}
+
 .slideout {
 	z-index: -2;
 	position: -webkit-sticky;
