@@ -15,7 +15,7 @@
 # Redirect from the default Netlify site to my custom domain
 [[redirects]]
   from = "https://frontroyalband.netlify.app/*"
-  to = "https://frontroyalband.com/:splat"
+  to = "https://www.frontroyalband.com/:splat"
   status = 301
   force = true
 
