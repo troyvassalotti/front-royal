@@ -15,13 +15,14 @@
     <title>Front Royal | {{ title }}</title>
     <meta name="description" content="{{description}}">
     <meta name="og:locale" content="en_US">
-    <meta name="og:type" content="article">
+    <meta name="og:type" content="website">
     <meta name="og:title" content="{{title}}">
     <meta name="og:description" content="{{description}}">
     <meta name="og:site_name" content="www.frontroyalband.com">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{title}}">
     <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:creator" content="@frontroyalband">
 
     {%- if inline -%}
       <style>
@@ -31,11 +32,8 @@
 
   </head>
   <body class="{{pageName}}">
-    {% mainNav %}
-
     {{ content | safe }}
 
     {% footer %}
-    {% scripts %}
   </body>
 </html>
