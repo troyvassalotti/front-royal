@@ -1,8 +1,8 @@
 @import "_fontmixins";
 @import "_localfonts";
 @import "_globals";
-@import "normalize";
-@import "mailchimp";
+@import "_normalize";
+@import "_mailchimp";
 
 :root {
   --mainGap: 3rem;
@@ -72,7 +72,6 @@ h4 {
   font-size: 1.4rem;
 }
 /* the navigation */
-
 .header {
   width: 100%;
   display: flex;
