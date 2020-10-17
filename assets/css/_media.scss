@@ -1,0 +1,78 @@
+@media only screen and (min-width: 768px) {
+  .header::before {
+    --banner: url("/assets/img/banner.jpg");
+  }
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  #navigation {
+    display: flex;
+    padding: 0;
+  }
+
+  .navigation {
+    padding-left: .5rem;
+    text-align: left;
+    max-height: inherit;
+  }
+
+  h1,
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  ol,
+  p,
+  ul {
+    font-size: 2rem;
+  }
+
+  .nav-link {
+    font-size: 2rem;
+    padding: 0 .5rem;
+
+    &:hover {
+      background: $white;
+      color: $black;
+      transition: .3s;
+    }
+  }
+
+  .icons {
+    grid: {
+      template-rows: 1fr;
+      template-columns: repeat(6, 1fr);
+    }
+  }
+}
+@media only screen and (min-width: 1000px) {
+  :root {
+    --smGap: 3rem;
+    --mainGap: 5rem;
+  }
+
+  .logo img {
+    max-width: 150px;
+  }
+
+  .nav-link {
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 1700px) {
+  .header::before {
+    background-position: top -90px left 0;
+  }
+}

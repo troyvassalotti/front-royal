@@ -10,30 +10,39 @@ inline: >
     padding: 5rem 0 !important;
   }
 ---
-<header class="header">
-  {% navigation %}
+<header class="header flex col full center">
+  <section class="banner full">
+    <div class="logo">
+      <a href="/" aria-label="Jump to the homepage"><img src="/assets/img/logo.png" alt="Front Royal logo"></a>
+    </div>
+    <nav id="navigation">
+      <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Toggle the site navigation." />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <ul class="navigation">
+        <li><a href="#listen" class="nav-link" aria-label="Jump to the Listen section">Listen</a></li>
+        <li><a href="#dates" class="nav-link" aria-label="Jump to the Dates section">Dates</a></li>
+        <li><a href="#follow" class="nav-link" aria-label="Jump to the Follow Us section">Follow Us</a></li>
+      </ul>
+    </nav>
+  </section>
   <h1>{{ headline }}</h1>
 </header>
 <main>
-
   <article class="container__grid" id="listen">
-
     <section class="hero">
-      <img class="album__featured" src="/img/ep3.jpg" alt="These Things Happen album cover">
+      <img class="album__featured" src="/assets/img/ep3.jpg" alt="These Things Happen album cover">
       <div class="album-description">
         <h2>These Things Happen</h2>
         <ul>
           <li>Streaming Everywhere</li>
           <li>Buy on <a href="https://frontroyalmd.bandcamp.com/">Bandcamp</a></li>
         </ul>
-        <iframe class="player player__featured" src="https://open.spotify.com/embed/album/17q2Qwv2jqrhVaX8iWX5wm" width="320" height="320" frameborder="0" allowtransparency="true" allow="encrypted-media"
-          title="These Things Happen Spotify player"></iframe>
+        <iframe style="border: 0; width: 100%; height: 340px;" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/" seamless loading="lazy" title="Bandcamp album streamer"><a href="https://frontroyalmd.bandcamp.com/album/these-things-happen">These Things Happen by Front Royal</a></iframe>
       </div>
     </section>
-
     <section class="sub-hero">
       <figure class="album">
-        <img src="/img/more-music.jpg" alt="More Music">
+        <img src="/assets/img/more-music.jpg" alt="More Music">
       </figure>
       <figure class="album">
         <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here"><img src="/img/ep2.jpg" alt="All Down Hill From Here album cover"></a>
@@ -47,7 +56,7 @@ inline: >
   </article>
 
   <aside aria-hidden="true" class="arrow">
-    <img id="two" src="/img/arrow-down-2.png" alt="">
+    <img id="two" src="/assets/img/arrow-down-2.png" alt="">
   </aside>
 
   <article class="container" id="dates">
@@ -67,14 +76,12 @@ inline: >
 
   <article class="container" id="follow">
     <h2>Follow Us</h2>
-
-    <section class="icons">
-      <a href="https://frontroyalmd.bandcamp.com/"><img src="/img/bc.png" alt="Listen on Bandcamp"></a>
-      <a href="https://instagram.com/frontroyal_official/"><img src="/img/insta.png" alt="Follow us on Instagram"></a>
-      <a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg"><img src="img/spotify.png" alt="Listen on Spotify"></a>
-      <a href="https://facebook.com/FrontRoyalMD/"><img src="/img/fb.png" alt="Like us on Facebook"></a>
-      <a href="https://twitter.com/frontroyalband"><img src="/img/twit.png" alt="Follow us on Twitter"></a>
-      <a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed"><img src="/img/yt.png" alt="Subscribe to our YouTube channel"></a>
+    <section class="icons full grid place-center">
+      {% for social in social.socialmedia %}
+      <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+        <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
+      </a>
+      {% endfor %}
     </section>
 
     <section class="container">
@@ -89,6 +96,7 @@ inline: >
       <!-- Begin Mailchimp Signup Form -->
       {% mailchimp %}
       <!--End Mailchimp Signup Form -->
+      <p>*We don't do anything with your email address other than send you our newsletter.</p>
     </section>
 
   </article>
