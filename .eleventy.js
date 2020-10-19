@@ -1,10 +1,14 @@
-const pluginSass = require("eleventy-plugin-sass");
 module.exports = function (eleventyConfig) {
-  // Plugins
-  eleventyConfig.addPlugin(pluginSass);
-
   // Passthroughs
-  eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy({
+    "src/fonts": "assets/fonts"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/img": "assets/img"
+  });
+  eleventyConfig.addPassthroughCopy({
+    "src/css": "assets/css"
+  });
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
   // Shortcodes
@@ -12,7 +16,7 @@ module.exports = function (eleventyConfig) {
     return `<footer class="slideout">
       <img src="/assets/img/footer.jpg" alt="">
     </footer>`
-  })
+  });
 
   eleventyConfig.addShortcode("mailchimp", function () {
     return `<div id="mc_embed_signup">
