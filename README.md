@@ -10,3 +10,4 @@ This will be the homebase for the band that basically takes in every other servi
 ## TODO
 1. The Tour Dates section is too big once the padding is factored in. It works now because of the align-items property, but this might not be the same result after refactoring containers later.
 2. Configure the SCSS
+3. Remember to change the link to the css back to normal in the layout before publishing
