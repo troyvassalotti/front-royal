@@ -204,27 +204,27 @@ h4 {
   display: block;
   height: 3px;
   position: relative;
-  transition: background .2s ease-out;
+  transition: background 0.2s ease-out;
   width: 2rem;
 
   &::after {
     background: $white;
-    content: '';
+    content: "";
     display: block;
     height: 100%;
     position: absolute;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
     width: 100%;
     top: -6px;
   }
 
   &::before {
     background: $white;
-    content: '';
+    content: "";
     display: block;
     height: 100%;
     position: absolute;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
     width: 100%;
     top: 6px;
   }
@@ -285,7 +285,7 @@ a {
   &:hover {
     background: $blue;
     color: $black;
-    transition: .3s;
+    transition: 0.3s;
   }
 }
 
