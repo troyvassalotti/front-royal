@@ -13,7 +13,7 @@ inline: >
 <header class="header flex col full center">
   <section class="banner full">
     <div class="logo">
-      <a href="/" aria-label="Jump to the homepage"><img src="/assets/img/logo.png" alt="Front Royal logo"></a>
+      <img src="/assets/img/logo.png" alt="Front Royal logo">
     </div>
     <nav id="navigation">
       <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Toggle the site navigation." />
@@ -25,80 +25,72 @@ inline: >
       </ul>
     </nav>
   </section>
-  <h1>{{ headline }}</h1>
 </header>
 <main>
-  <article class="container__grid" id="listen">
-    <section class="hero">
-      <img class="album__featured" src="/assets/img/ep3.jpg" alt="These Things Happen album cover">
-      <div class="album-description">
-        <h2>These Things Happen</h2>
-        <ul>
-          <li>Streaming Everywhere</li>
-          <li>Buy on <a href="https://frontroyalmd.bandcamp.com/">Bandcamp</a></li>
-        </ul>
-        <iframe style="border: 0; width: 100%; height: 340px;" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/" seamless loading="lazy" title="Bandcamp album streamer"><a href="https://frontroyalmd.bandcamp.com/album/these-things-happen">These Things Happen by Front Royal</a></iframe>
-      </div>
-    </section>
-    <section class="sub-hero">
-      <figure class="album">
-        <img src="/assets/img/more-music.jpg" alt="More Music">
-      </figure>
-      <figure class="album">
-        <a href="https://frontroyalmd.bandcamp.com/album/all-down-hill-from-here"><img src="/assets/img/ep2.jpg" alt="All Down Hill From Here album cover"></a>
-        <figcaption>All Down Hill From Here</figcaption>
-      </figure>
-      <figure class="album">
-        <a href="https://frontroyalmd.bandcamp.com/album/the-band-not-the-town"><img src="/assets/img/ep1.jpg" alt="The Band, Not The Town album cover"></a>
-        <figcaption>The Band, Not The Town</figcaption>
-      </figure>
-    </section>
-  </article>
-
-  <aside aria-hidden="true" class="arrow">
-    <img id="two" src="/assets/img/arrow-down-2.png" alt="">
-  </aside>
-
-  <article class="container" id="dates">
-
-    <section class="content">
-      <h2>Tour Dates</h2>
-      <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#0a0a0a"
-        data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-link-text-color="#f5f5f5" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
-        data-font="Open Sans" data-display-logo="false"></a>
-    </section>
-
-  </article>
+  <div class="full backdrop">
+    <div class="overlay">
+      <article class="full" id="listen">
+        <section class="wrapper center" data-constrain="more">
+          <h1>{{ headline }}</h1>
+          <div class="hero">
+            <picture>
+              <source srcset="/assets/img/tttc.avif" type="image/avif">
+              <img src="/assets/img/tttc.jpg" alt="The Thought That Counts album cover">
+            </picture>
+            <div>
+              <iframe style="border: 0; width: 100%; height: 340px;" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/" seamless loading="lazy" title="Bandcamp album streamer"><a href="https://frontroyalmd.bandcamp.com/album/these-things-happen">These Things Happen by Front Royal</a></iframe>
+            </div>
+          </div>
+        </section>
+        <aside aria-hidden="true" class="arrow">
+          <img id="two" src="/assets/img/arrow-down-2.png" alt="">
+        </aside>
+      </article>
+      <article class="full" id="dates">
+        <div class="wrapper">
+          <section class="content center">
+            <h2>Dates</h2>
+            <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#0a0a0a"
+              data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-link-text-color="#f5f5f5" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
+              data-font="Open Sans" data-display-logo="false"></a>
+          </section>
+        </div>
+      </article>
+    </div>
+  </div>
 
   <aside aria-hidden="true" class="arrow">
     <img id="one" src="/assets/img/arrow-down-2.png" alt="">
   </aside>
 
-  <article class="container" id="follow">
-    <h2>Follow Us</h2>
-    <section class="icons full grid place-center">
-      {% for social in social.socialmedia %}
-      <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
-        <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
-      </a>
-      {% endfor %}
+  <article class="full center" id="follow">
+    <div class="wrapper" data-constrain="more">
+      <h2>Follow Us</h2>
+      <section class="icons full grid place-center">
+        {% for social in social.socialmedia %}
+        <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+          <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
+        </a>
+        {% endfor %}
+    </div>
     </section>
-
-    <section class="container">
-      <img class="discord" src="/img/Discord-Logo+Wordmark-White.svg" alt="Discord Logo">
-      <h3>Join Our Discord Server!</h3>
-      <p>Come <a href="https://discord.gg/pmc4HgH" target="_blank" rel="noopener">join the party</a> and talk with us and all (y)our friends; it's a fun time.</p>
-    </section>
-
-    <section class="container newsletter">
-      <h3>Sign Up For Our Newsletter</h3>
-      <p>Like emails? Well, we send them sometimes.</p>
-      <!-- Begin Mailchimp Signup Form -->
-      {% mailchimp %}
-      <!--End Mailchimp Signup Form -->
-      <p>*We don't do anything with your email address other than send you our newsletter.</p>
-    </section>
-
+    <div class="wrapper" data-constrain="most">
+      <section class="flex-center col">
+        <img class="discord" src="/assets/img/Discord-Logo+Wordmark-White.svg" alt="Discord Logo">
+        <h3>Join Our Discord Server!</h3>
+        <p>Come <a href="https://discord.gg/pmc4HgH" target="_blank" rel="noopener">join the party</a> and talk with us and all (y)our friends; it's a fun time.</p>
+      </section>
+    </div>
+    <div class="wrapper" data-constrain="more">
+      <section class="flex-center col">
+        <h3>Sign Up For Our Newsletter</h3>
+        <p>Like emails? Well, we send them sometimes.</p>
+        <!-- Begin Mailchimp Signup Form -->
+        {% mailchimp %}
+        <!--End Mailchimp Signup Form -->
+        <p>*We don't do anything with your email address other than send you our newsletter.</p>
+      </section>
+    </div>
   </article>
 </main>
 

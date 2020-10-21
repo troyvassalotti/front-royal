@@ -14,7 +14,10 @@ module.exports = function (eleventyConfig) {
   // Shortcodes
   eleventyConfig.addShortcode("footer", function () {
     return `<footer class="slideout">
-      <img src="/assets/img/footer.jpg" alt="">
+      <picture>
+        <source srcset="/assets/img/footer.avif" type="image/avif">
+        <img src="/assets/img/footer.jpg" alt="" loading="lazy">
+      </picture>
     </footer>`
   });
 

@@ -4,7 +4,6 @@
   }
 
   .banner {
-    display: flex;
     flex-direction: column;
     height: auto;
   }
@@ -19,7 +18,7 @@
   }
 
   .navigation {
-    padding-left: .5rem;
+    padding-left: 0.5rem;
     text-align: left;
     max-height: inherit;
   }
@@ -41,13 +40,19 @@
 
   .nav-link {
     font-size: 2rem;
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
 
     &:hover {
       background: $white;
       color: $black;
-      transition: .3s;
+      transition: 0.3s;
     }
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--mainGap);
   }
 
   .icons {

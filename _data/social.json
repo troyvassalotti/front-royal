@@ -7,27 +7,27 @@
     {
       "href": "https://instagram.com/frontroyal_official/",
       "label": "Follow us on Instagram",
-      "img": "insta.png"
+      "img": "insta.svg"
     },
     {
       "href": "https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg",
       "label": "Listen on Spotify",
-      "img": "spotify.png"
+      "img": "spotify.svg"
     },
     {
       "href": "https://facebook.com/FrontRoyalMD/",
       "label": "Like us on Facebook",
-      "img": "fb.png"
+      "img": "fb.svg"
     },
     {
       "href": "https://twitter.com/frontroyalband",
       "label": "Follow us on Twitter",
-      "img": "twit.png"
+      "img": "twit.svg"
     },
     {
       "href": "https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed",
       "label": "Subscribe to our YouTube channel",
-      "img": "yt.png"
+      "img": "yt.svg"
     }
   ]
 }
