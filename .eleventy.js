@@ -45,7 +45,7 @@ module.exports = function (eleventyConfig) {
     	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
     <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
         <div class="content__gdpr">
-            <label>GDPR Permissions</label>
+            <label>GDPR Stuff</label>
             <p class="disclaimer">We will only use your email address to provide you with news and updates from the band. If you agree that you'd like emails, please check this box so we can stay GDPR compliant:</p>
             <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
     		<label class="checkbox subfield" for="gdpr_4549"><input type="checkbox" id="gdpr_4549" name="gdpr[4549]" value="Y" class="av-checkbox "><span>Email</span> </label>
