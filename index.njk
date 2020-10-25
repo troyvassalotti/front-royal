@@ -13,7 +13,7 @@ inline: >
 <header class="header flex col full center">
   <section class="banner full">
     <div class="logo">
-      <img src="/assets/img/logo.png" alt="Front Royal logo">
+      <a href="/">{% logo %}</a>
     </div>
     <nav id="navigation">
       <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Toggle the site navigation." />
@@ -41,11 +41,15 @@ inline: >
               <iframe style="border: 0; width: 100%; height: 340px;" src="https://bandcamp.com/EmbeddedPlayer/album=3745012043/size=large/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/" seamless loading="lazy" title="Bandcamp album streamer"><a href="https://frontroyalmd.bandcamp.com/album/these-things-happen">These Things Happen by Front Royal</a></iframe>
             </div>
           </div>
+          <aside id="cta">
+            <p>Stream it wherever music is streamed.</p>
+            <a class="button" href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">Buy Now</a>
+          </aside>
         </section>
-        <aside aria-hidden="true" class="arrow">
-          <img id="two" src="/assets/img/arrow-down-2.png" alt="">
-        </aside>
       </article>
+      <aside aria-hidden="true" class="arrow">
+        <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
+      </aside>
       <article class="full" id="dates">
         <div class="wrapper">
           <section class="content center">
@@ -58,39 +62,35 @@ inline: >
       </article>
     </div>
   </div>
-
   <aside aria-hidden="true" class="arrow">
-    <img id="one" src="/assets/img/arrow-down-2.png" alt="">
+    <img class="ccw" src="/assets/img/arrow-down-2.png" alt="">
   </aside>
-
-  <article class="full center" id="follow">
-    <div class="wrapper" data-constrain="more">
+  <article class="full" id="follow">
+    <div class="wrapper center" data-constrain="more">
       <h2>Follow Us</h2>
+      <p>We've got social, we've got media, and we've even got a Discord server.</p>
       <section class="icons full grid place-center">
         {% for social in social.socialmedia %}
         <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
           <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
         </a>
         {% endfor %}
+      </section>
     </div>
+    <aside aria-hidden="true" class="arrow">
+      <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
+    </aside>
+    <section class="full" id="newsletter">
+      <div class="wrapper" data-constrain="more">
+        <section class="flex-center col center content">
+          <h3>Sign Up For Our Newsletter</h3>
+          <p>Like emails? Well, we send them sometimes.</p>
+          <!-- Begin Mailchimp Signup Form -->
+          {% mailchimp %}
+          <!--End Mailchimp Signup Form -->
+        </section>
+      </div>
     </section>
-    <div class="wrapper" data-constrain="most">
-      <section class="flex-center col">
-        <img class="discord" src="/assets/img/Discord-Logo+Wordmark-White.svg" alt="Discord Logo">
-        <h3>Join Our Discord Server!</h3>
-        <p>Come <a href="https://discord.gg/pmc4HgH" target="_blank" rel="noopener">join the party</a> and talk with us and all (y)our friends; it's a fun time.</p>
-      </section>
-    </div>
-    <div class="wrapper" data-constrain="more">
-      <section class="flex-center col">
-        <h3>Sign Up For Our Newsletter</h3>
-        <p>Like emails? Well, we send them sometimes.</p>
-        <!-- Begin Mailchimp Signup Form -->
-        {% mailchimp %}
-        <!--End Mailchimp Signup Form -->
-        <p>*We don't do anything with your email address other than send you our newsletter.</p>
-      </section>
-    </div>
   </article>
 </main>
 

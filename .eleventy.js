@@ -21,6 +21,10 @@ module.exports = function (eleventyConfig) {
     </footer>`
   });
 
+  eleventyConfig.addShortcode("logo", function () {
+    return `<img src="/assets/img/logo.png" alt="Front Royal logo">`
+  });
+
   eleventyConfig.addShortcode("mailchimp", function () {
     return `<div id="mc_embed_signup">
       <form action="https://facebook.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -31,6 +35,7 @@ module.exports = function (eleventyConfig) {
           <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
         </div>
       </form>
-    </div>`
+    </div>
+    <p class="disclaimer">*We don't do anything with your email address other than send you our newsletter.</p>`
   });
 };

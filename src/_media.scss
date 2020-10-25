@@ -1,4 +1,13 @@
 @media only screen and (min-width: 768px) {
+  h1,
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
   .header::before {
     --banner: url("/assets/img/banner.jpg");
   }
@@ -6,6 +15,7 @@
   .banner {
     flex-direction: column;
     height: auto;
+    align-items: flex-start;
   }
 
   .menu-icon {
@@ -23,21 +33,6 @@
     max-height: inherit;
   }
 
-  h1,
-  h2 {
-    font-size: 5rem;
-  }
-
-  h3 {
-    font-size: 3rem;
-  }
-
-  ol,
-  p,
-  ul {
-    font-size: 2rem;
-  }
-
   .nav-link {
     font-size: 2rem;
     padding: 0 0.5rem;
@@ -52,14 +47,13 @@
   .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--mainGap);
+    align-items: center;
   }
 
-  .icons {
-    grid: {
-      template-rows: 1fr;
-      template-columns: repeat(6, 1fr);
-    }
+  ol,
+  p,
+  ul {
+    font-size: 2rem;
   }
 }
 @media only screen and (min-width: 1000px) {

@@ -1,35 +1,38 @@
 ---
 title: Oops, a 404
-description: This page does not exist...yikes!
+description: This page does not exist... yikes!
 layout: main
 pageName: error
 noindex: true
 permalink: /404.html
 inline: >
-  h1, h2 {text-align: center;}
-  h2 {font-size: 2.25rem;}
-  article.container {width: min(90%, 650px);}
-  footer {margin-top: auto;}
-  .logo {max-width: 150px;}
+  .error {gap: var(--mainGap);}
+  h2 {font-size: 2.5rem;}
+  main {gap: var(--mainGap);}
 ---
-<header>
-  <a href="/"><img class="logo" src="/assets/img/logo.png" alt="Front Royal logo"></a>
+<header class="flex-center">
+  <div class="logo">
+    <a href="/">{% logo %}</a>
+  </div>
 </header>
 <main>
-  <article class="container">
+  <article id="oops" class="center">
     <h1>{{ title }}</h1>
-    <p>Well, it looks like the page you were trying to get to doesn't exist. That isn't surprising since our site is just a homepage right now.</p>
-    <p>You can click the button below to go back home, or you can click the link our logo above.</p>
-    <a href="/" class="btn">Go Home</a>
+    <p>Well, it looks like the page you were trying to get to doesn't exist.</p>
+    <p>You can click the button below to go back home if you'd like.</p>
+    <a href="/" class="button">This Button Here</a>
   </article>
-  <article class="container" id="follow">
-    <h2>Maybe You Want One Of These Instead?</h2>
-    <section class="icons full grid place-center">
-      {% for social in social.socialmedia %}
-      <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
-        <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
-      </a>
-      {% endfor %}
-    </section>
+  <article class="full">
+    <div class="wrapper center" data-constrain="more">
+      <h2>Maybe You Want One Of These Instead?</h2>
+      <p>It's all our social, our media, and even that Discord I mentioned earlier.</p>
+      <section class="icons full grid place-center">
+        {% for social in social.socialmedia %}
+        <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+          <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
+        </a>
+        {% endfor %}
+      </section>
+    </div>
   </article>
 </main>
