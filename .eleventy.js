@@ -51,7 +51,7 @@ module.exports = function (eleventyConfig) {
         <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
         <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
             <div class="content__gdpr">
-                <p class="disclaimer">*We only use your email address to send you our newsletter. If you hate our emails, you can unsubscribe at any time. Questions about your data and privacy? Hit us up at <a id="mailto" href="mailto:newsletter@frontroyalband.com">newsletter@frontroyalband.com</a></p>
+                <p class="disclaimer">*We only use your email address to send you our newsletter. If you hate our emails, you can unsubscribe at any time. Questions? Send <a id="mailto" href="mailto:newsletter@frontroyalband.com">us an email</a> instead.</p>
             </div>
         </div>
         </div>
