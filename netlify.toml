@@ -25,10 +25,10 @@
   force = true
 
 # Custom headers
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "SAMEORIGIN"
-    X-XSS-Protection = "1"
-    Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://bandcamp.com https://rest.bandsintown.com https://widget.bandsintown.com data: 'unsafe-inline'"
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     X-Content-Type-Options = "nosniff"
+#     X-Frame-Options = "SAMEORIGIN"
+#     X-XSS-Protection = "1"
+#     Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://bandcamp.com https://rest.bandsintown.com https://widget.bandsintown.com data: 'unsafe-inline'"
