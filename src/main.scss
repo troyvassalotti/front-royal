@@ -147,27 +147,11 @@ img {
   font-weight: 700;
 }
 /* the navigation */
-// .header {
-//   justify-content: space-between;
-//   position: relative;
-//
-//   &::before {
-//     content: "";
-//     width: 100%;
-//     height: 100%;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     background: center/cover no-repeat
-//       url("https://www.frontroyalband.com/img/banner-sm.jpg") $black;
-//     z-index: -1;
-//   }
-// }
-
 .header {
   justify-content: space-between;
-  background: center/cover no-repeat
-    url("https://www.frontroyalband.com/img/banner-sm.jpg") $black;
+  // background: center/cover no-repeat
+  //   url("https://www.frontroyalband.com/img/banner-sm.jpg") $black;
+  background: center/cover no-repeat url("/assets/img/banner-sm.jpg") $black;
 }
 
 .banner {
@@ -283,8 +267,7 @@ img {
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: var(--mainGap);
 
   img {
