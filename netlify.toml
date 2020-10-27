@@ -24,6 +24,9 @@
   status = 301
   force = true
 
+# [[plugins]]
+#   package = "netlify-plugin-image-optim"
+
 # Custom headers
 # [[headers]]
 #   for = "/*"

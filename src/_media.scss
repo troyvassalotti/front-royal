@@ -36,11 +36,11 @@
   .nav-link {
     font-size: 2rem;
     padding: 0 0.5rem;
+    transition: 0.3s ease-out;
 
     &:hover {
       background: $white;
       color: $black;
-      transition: 0.3s;
     }
   }
 

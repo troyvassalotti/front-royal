@@ -150,7 +150,6 @@ img {
 .header {
   justify-content: space-between;
   position: relative;
-  padding-bottom: 2rem;
 
   &::before {
     content: "";
@@ -168,7 +167,8 @@ img {
 .banner {
   display: flex;
   justify-content: space-between;
-  height: 100px;
+  height: 120px;
+  padding-bottom: 2rem;
 }
 
 .logo img {
