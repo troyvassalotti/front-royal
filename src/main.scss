@@ -7,7 +7,6 @@
 :root {
   --mainGap: 3rem;
   --smGap: 1.5rem;
-  --banner: url("/assets/img/banner-sm.jpg");
 }
 
 html {
@@ -160,7 +159,8 @@ img {
     position: absolute;
     top: 0;
     left: 0;
-    background: center/cover no-repeat var(--banner);
+    background: center/cover no-repeat
+      url("https://www.frontroyalband.com/img/banner-sm.jpg") $black;
     z-index: -1;
   }
 }
@@ -264,6 +264,7 @@ img {
   background-color: #7fcacd;
   background-position: center;
   background-size: cover;
+  background-attachment: local; // for iOS only
   background-attachment: fixed;
 }
 
