@@ -31,7 +31,7 @@
   package = "@netlify/plugin-lighthouse"
 
 [[plugins]]
-    package = "netlify-plugin-minify-html"
+  package = "netlify-plugin-minify-html"
 
     [plugins.inputs]
       contexts = [
@@ -40,7 +40,7 @@
         'deploy-preview'
       ]
 
-Custom headers
+# Custom headers
 [[headers]]
   for = "/*"
   [headers.values]
