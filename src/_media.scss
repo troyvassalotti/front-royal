@@ -9,7 +9,6 @@
   }
 
   .header {
-    // background-image: url("https://www.frontroyalband.com/img/banner.jpg");
     background-image: url("/assets/img/banner.jpg");
   }
 
@@ -46,7 +45,6 @@
   }
 
   .hero {
-    display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
@@ -59,8 +57,8 @@
 }
 @media only screen and (min-width: 1000px) {
   :root {
-    --smGap: 3rem;
-    --mainGap: 5rem;
+    --smGap: 3em;
+    --mainGap: 5em;
   }
 
   .logo img {
