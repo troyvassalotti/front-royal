@@ -1,0 +1,92 @@
+---
+title: The Band, Not The Town
+description: Front Royal has an official website and you're looking at it right now.
+layout: main
+pageName: home
+headline: The Thought That Counts
+---
+<header class="header flex col full center">
+  <section class="banner full">
+    <div class="logo">
+      <a href="/">{% logo %}</a>
+    </div>
+    <nav id="navigation">
+      <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Toggle the site navigation." />
+      <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+      <ul class="navigation">
+        <li><a href="#listen" class="nav-link" aria-label="Jump to the Listen section">Listen</a></li>
+        <li><a href="#dates" class="nav-link" aria-label="Jump to the Dates section">Dates</a></li>
+        <li><a href="#follow" class="nav-link" aria-label="Jump to the Follow Us section">Follow Us</a></li>
+      </ul>
+    </nav>
+  </section>
+</header>
+<main>
+  <div class="full backdrop">
+    <div class="overlay">
+      <article class="full" id="listen">
+        <section class="wrapper center" data-constrain="more">
+          <h1>{{ headline }}</h1>
+          <div class="hero full">
+            <div>
+              <picture>
+                <source srcset="/assets/img/tttc.avif" type="image/avif">
+                <img src="/assets/img/tttc.jpg" alt="The Thought That Counts album cover">
+              </picture>
+            </div>
+            <div>
+              <iframe style="border: 0; width: 100%; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=40123073/size=large/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/" seamless loading="lazy" title="The Thought That Counts album embed from Bandcamp"><a href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts">The Thought That Counts by Front Royal</a></iframe>
+            </div>
+          </div>
+          <aside id="cta">
+            <p>Stream it wherever music is streamed.</p>
+            <a class="button" href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts" target="_blank" rel="noopener">Buy Now</a>
+          </aside>
+        </section>
+      </article>
+      <aside aria-hidden="true" class="arrow">
+        <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
+      </aside>
+      <article class="full" id="dates">
+        <div class="wrapper">
+          <section class="content center">
+            <h2>Dates</h2>
+            {% dates %}
+          </section>
+        </div>
+      </article>
+    </div>
+  </div>
+  <aside aria-hidden="true" class="arrow">
+    <img class="ccw" src="/assets/img/arrow-down-2.png" alt="">
+  </aside>
+  <article class="full" id="follow">
+    <div class="wrapper center" data-constrain="more">
+      <h2>Follow Us</h2>
+      <p>We've got social, we've got media, and we've even got a Discord server.</p>
+      <section class="icons full grid place-center">
+        {% for social in social.socialmedia %}
+        <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+          <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
+        </a>
+        {% endfor %}
+      </section>
+    </div>
+    <aside aria-hidden="true" class="arrow">
+      <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
+    </aside>
+    <section class="full" id="newsletter">
+      <div class="wrapper" data-constrain="most">
+        <section class="flex-center col center content">
+          <h3>Sign Up For Our Newsletter</h3>
+          <!-- Begin Mailchimp Signup Form -->
+          {% mailchimpGDPR %}
+          <!--End Mailchimp Signup Form -->
+        </section>
+      </div>
+    </section>
+  </article>
+</main>
+
+<!-- S C R I P T S -->
+<script src="https://widget.bandsintown.com/main.min.js" async></script>

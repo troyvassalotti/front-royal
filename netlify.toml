@@ -1,9 +1,14 @@
+# Build the site
+[build]
+  command = "npx @11ty/eleventy"
+  publish = "_site"
+
 # Assign all the post-processing
 [build.processing]
   skip_processing = false
 [build.processing.css]
   bundle = true
-  minify = false
+  minify = true
 [build.processing.js]
   bundle = true
   minify = true
@@ -19,6 +24,22 @@
   status = 301
   force = true
 
+[[plugins]]
+  package = "netlify-plugin-image-optim"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+[[plugins]]
+  package = "netlify-plugin-minify-html"
+
+    [plugins.inputs]
+      contexts = [
+        'production',
+        'branch-deploy',
+        'deploy-preview'
+      ]
+
 # Custom headers
 [[headers]]
   for = "/*"
@@ -26,4 +47,4 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1"
-    Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://open.spotify.com https://rest.bandsintown.com https://widget.bandsintown.com data: 'unsafe-inline'"
+    Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://bandcamp.com https://rest.bandsintown.com https://widget.bandsintown.com data: 'unsafe-inline'"

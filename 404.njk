@@ -1,0 +1,37 @@
+---
+title: Oops, a 404
+description: This page does not exist... yikes!
+layout: main
+pageName: error
+noindex: true
+permalink: /404.html
+inline: >
+  .error, main {gap: var(--mainGap);}
+  h2 {font-size: 2.5rem;}
+---
+<header class="flex-center">
+  <div class="logo">
+    <a href="/">{% logo %}</a>
+  </div>
+</header>
+<main>
+  <article id="oops" class="center">
+    <h1>{{ title }}</h1>
+    <p>Well, it looks like the page you were trying to get to doesn't exist.</p>
+    <p>You can click the button below to go back home if you'd like.</p>
+    <a href="/" class="button">This Button Here</a>
+  </article>
+  <article class="full">
+    <div class="wrapper center" data-constrain="more">
+      <h2>Maybe You Want One Of These Instead?</h2>
+      <p>It's all our social, our media, and even that Discord I mentioned earlier.</p>
+      <section class="icons full grid place-center">
+        {% for social in social.socialmedia %}
+        <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+          <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
+        </a>
+        {% endfor %}
+      </section>
+    </div>
+  </article>
+</main>

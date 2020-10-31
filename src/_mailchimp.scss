@@ -1,0 +1,120 @@
+/* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
+Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
+
+#mc_embed_signup {
+  input.email {
+    font-size: 1.5rem;
+    border: 1px solid $grey;
+    border-radius: 3px;
+    color: $grey;
+    background-color: $white;
+    padding: 0.5em;
+    display: inline-block;
+    margin: 0 0 1rem 0;
+    font-family: "Days One";
+  }
+
+  label {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+
+    &.error {
+      display: block;
+      float: none;
+      width: auto;
+      margin-left: 1.05em;
+      text-align: left;
+      padding: 0.5em 0;
+    }
+  }
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+
+    label {
+      font-weight: normal;
+    }
+  }
+
+  .button {
+    border: none;
+    margin: 0;
+    transition: all 0.23s ease-in-out 0s;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  div#mce-responses {
+    float: left;
+    top: -1.4em;
+    padding: 0 0.5em;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 5%;
+    clear: both;
+  }
+
+  div.response {
+    margin: 1em 0;
+    padding: 1em 0.5em 0.5em 0;
+    font-weight: bold;
+    float: left;
+    top: -1.5em;
+    z-index: 1;
+    width: 80%;
+  }
+
+  #mce-error-response {
+    display: none;
+  }
+
+  #mce-success-response {
+    color: #529214;
+    display: none;
+  }
+}
+
+.mc-field-group {
+  display: block;
+  width: 100%;
+}
+
+#mc-embedded-subscribe-form {
+  .mc_fieldset {
+    border: none;
+    min-height: 0px;
+    padding-bottom: 0px;
+  }
+
+  input[type="checkbox"] {
+    display: inline;
+    width: auto;
+    margin-right: 1rem;
+  }
+}
+
+.mc_a11y_label {
+  font-size: 1.6rem;
+  width: 100%;
+  padding: 3px 0;
+  margin-bottom: 0.5em;
+  font-family: "Days One";
+}
+
+.mc_a11y_fix {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .mc_a11y_fix {
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+}
