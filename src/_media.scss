@@ -47,6 +47,11 @@
   .hero {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    max-width: none;
+
+    img {
+      max-width: none;
+    }
   }
 
   ol,
