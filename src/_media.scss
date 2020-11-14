@@ -8,42 +8,6 @@
     font-size: 3rem;
   }
 
-  .header {
-    background-image: url("/assets/img/banner.jpg");
-  }
-
-  .banner {
-    flex-direction: column;
-    height: auto;
-    align-items: flex-start;
-  }
-
-  .menu-icon {
-    display: none;
-  }
-
-  #navigation {
-    display: flex;
-    padding: 0;
-  }
-
-  .navigation {
-    padding-left: 0.5rem;
-    text-align: left;
-    max-height: inherit;
-  }
-
-  .nav-link {
-    font-size: 2rem;
-    padding: 0 0.5rem;
-    transition: 0.2s ease-out;
-
-    &:hover {
-      background: $white;
-      color: $black;
-    }
-  }
-
   .hero {
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -64,18 +28,5 @@
   :root {
     --smGap: 3em;
     --mainGap: 5em;
-  }
-
-  .logo img {
-    max-width: 150px;
-  }
-
-  .nav-link {
-    font-size: 3rem;
-  }
-}
-@media only screen and (min-width: 1700px) {
-  .header {
-    background-position: top -90px left 0;
   }
 }
