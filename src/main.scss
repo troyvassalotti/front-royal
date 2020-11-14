@@ -44,7 +44,7 @@ h1,
 h2,
 h3,
 h4 {
-  margin: 0 0 0.67em 0;
+  margin-top: 0;
   font: {
     family: $headings;
     weight: 400;
@@ -266,6 +266,32 @@ img {
 
 #listen {
   padding-top: clamp(1rem, 2vw, 3rem);
+
+  .video-embed {
+    max-width: 900px;
+  }
+}
+
+.video-embed {
+  display: block;
+  margin-bottom: clamp(1rem, 5vw, 6rem);
+  contain: content;
+  position: relative;
+  width: 100%;
+
+  &::after {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (16 / 9));
+  }
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 .hero {
