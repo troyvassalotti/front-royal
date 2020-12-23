@@ -20,7 +20,7 @@
     "url": "https://github.com/troyvassalotti/front-royal/issues"
   },
   "homepage": "https://github.com/troyvassalotti/front-royal#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^0.11.0"
+  "dependencies": {
+    "@11ty/eleventy": "^0.11.1"
   }
 }
