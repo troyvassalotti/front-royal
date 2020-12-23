@@ -29,14 +29,13 @@
  * 6. Breaks words to prevent overflow in all browsers (opinionated).
  */
 html {
-  // cursor: default;
   /* 1 */
   line-height: 1.5;
   /* 2 */
   -moz-tab-size: 4;
   /* 3 */
   -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
   /* 4 */
   /* 3 */
   -webkit-tap-highlight-color: transparent;
@@ -132,7 +131,7 @@ a {
 abbr[title] {
   text-decoration: underline;
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
