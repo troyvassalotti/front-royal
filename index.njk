@@ -5,10 +5,10 @@ layout: main
 pageName: home
 headline: The Thought That Counts
 ---
-<main>
+<div class="slideout-top">
   <div class="full backdrop">
     <div class="overlay">
-      <article class="full" id="listen">
+      <main class="full" id="listen">
         <section class="wrapper center" data-constrain="more">
           <header class="flex-center col">
             <div class="logo">
@@ -35,7 +35,7 @@ headline: The Thought That Counts
             <a class="button" href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts" target="_blank" rel="noopener">Buy Now</a>
           </section>
         </section>
-      </article>
+      </main>
       <div aria-hidden="true" class="arrow">
         <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
       </div>
@@ -78,7 +78,13 @@ headline: The Thought That Counts
       </div>
     </div>
   </article>
-</main>
+</div>
+<aside class="slideout">
+  <picture>
+    <source srcset="/assets/img/footer.avif" type="image/avif">
+    <img src="/assets/img/footer.jpg" alt="" loading="lazy">
+  </picture>
+</aside>
 
 <!-- S C R I P T S -->
 <script src="https://widget.bandsintown.com/main.min.js" async></script>

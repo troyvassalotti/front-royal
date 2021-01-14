@@ -51,12 +51,18 @@
 
   </head>
   <body class="{{pageName}}">
+
     {{ content | safe }}
-    <div class="slideout">
-      <picture>
-        <source srcset="/assets/img/footer.avif" type="image/avif">
-        <img src="/assets/img/footer.jpg" alt="" loading="lazy">
-      </picture>
-    </div>
+    <footer class="footer-main">
+      <nav class="footer-nav wrapper" data-constrain="most">
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="https://newsletter.frontroyalband.com">Newsletter</a></li>
+        </ul>
+      </nav>
+      <img src="/assets/img/site-icons/apple-touch-icon-57x57.png" alt="">
+      <p class="copyright">&copy; Front Royal, always.</p>
+    </footer>
   </body>
 </html>
