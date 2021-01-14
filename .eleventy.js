@@ -12,15 +12,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
   // Shortcodes
-  eleventyConfig.addShortcode("footer", function () {
-    return `<footer class="slideout">
-      <picture>
-        <source srcset="/assets/img/footer.avif" type="image/avif">
-        <img src="/assets/img/footer.jpg" alt="" loading="lazy">
-      </picture>
-    </footer>`
-  });
-
   eleventyConfig.addShortcode("logo", function () {
     return `<img src="/assets/img/logo.png" alt="Front Royal logo">`
   });

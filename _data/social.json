@@ -15,6 +15,11 @@
       "img": "spotify.svg"
     },
     {
+      "href": "https://music.apple.com/us/artist/front-royal/1081565948",
+      "label": "Listen on Apple Music",
+      "img": "applemusic.svg"
+    },
+    {
       "href": "https://facebook.com/FrontRoyalMD/",
       "label": "Like us on Facebook",
       "img": "fb.svg"

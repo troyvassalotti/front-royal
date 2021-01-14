@@ -3,13 +3,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if noindex -%}
-    <meta name="robots" content="noindex">
-    {%- endif %}
-
+    {% if noindex -%}<meta name="robots" content="noindex">{%- endif %}
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="canonical" href="https://www.frontroyalband.com{{page.url}}">
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="/assets/img/site-icons/favicon-16x16.png" type="image/x-icon" sizes="16x16" />
+    <link rel="shortcut icon" href="/assets/img/site-icons/favicon-32x32.png" type="image/x-icon" sizes="32x32" />
+
+    <!-- iOS 7 or prior (legacy) -->
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/site-icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/site-icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/site-icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/site-icons/apple-touch-icon-57x57.png">
+
+    <!-- iOS 8 and later -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/site-icons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/site-icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/site-icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/site-icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/site-icons/apple-touch-icon-60x60.png">
+
+    <!-- launcher (Android/Chrome) -->
+    <link rel="manifest" href="/manifest.json">
+
     <link rel="stylesheet" href="/assets/css/sanitize.css">
     <link rel="stylesheet" href="/assets/css/main.css">
 
@@ -34,6 +52,11 @@
   </head>
   <body class="{{pageName}}">
     {{ content | safe }}
-    {% footer %}
+    <div class="slideout">
+      <picture>
+        <source srcset="/assets/img/footer.avif" type="image/avif">
+        <img src="/assets/img/footer.jpg" alt="" loading="lazy">
+      </picture>
+    </div>
   </body>
 </html>
