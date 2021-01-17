@@ -1,5 +1,5 @@
 # Front Royal Band Site
-Front Royal (the band, not the town) now has a website.
+Front Royal (the band, not the town) now has a website. Cool!
 
 [Facebook](https://facebook.com/frontroyalmd)
 [Bandcamp](https://frontroyalmd.bandcamp.com/)
