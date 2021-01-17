@@ -17,8 +17,8 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addShortcode("dates", function () {
-    return `<a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#0a0a0a"
-      data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-link-text-color="#f5f5f5" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
+    return `<a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#f5f5f5" data-link-color="#f5f5f5"
+      data-background-color="#0a0a0a" data-display-limit="15" data-link-text-color="#0a0a0a" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
       data-font="Open Sans" data-display-logo="false"></a>`
   });
 

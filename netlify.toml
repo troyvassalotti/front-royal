@@ -27,19 +27,6 @@
 [[plugins]]
   package = "netlify-plugin-image-optim"
 
-[[plugins]]
-  package = "netlify-plugin-minify-html"
-
-    [plugins.inputs]
-      contexts = [
-        'production',
-        'branch-deploy',
-        'deploy-preview'
-      ]
-
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
 # Custom headers
 [[headers]]
   for = "/*"

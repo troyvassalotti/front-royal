@@ -79,7 +79,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-size: var(--step-0);
+  font-size: var(--step--1);
 }
 
 .slideout-top {
@@ -103,19 +103,19 @@ h4 {
 }
 
 h1 {
-  font-size: var(--step-4);
-}
-
-h2 {
   font-size: var(--step-3);
 }
 
-h3 {
+h2 {
   font-size: var(--step-2);
 }
 
-h4 {
+h3 {
   font-size: var(--step-1);
+}
+
+h4 {
+  font-size: var(--step-0);
 }
 
 img {
@@ -133,6 +133,10 @@ img[height] {
   width: 95%;
   max-width: 1600px;
   margin: auto;
+}
+
+.wrapper[data-constrain="some"] {
+  max-width: 1300px !important;
 }
 
 .wrapper[data-constrain="more"] {
@@ -265,46 +269,35 @@ img[height] {
   padding: 2em 0;
 }
 
-#dates {
+.skewed-background {
   position: relative;
-  padding: 3ch 0 4ch;
+  padding: var(--skew-padding);
 }
 
-#dates::before {
+.skewed-background::before {
   position: absolute;
   top: -10px;
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--white);
+  background: var(--skew-color);
   transform: skewy(-3deg);
 }
 
-#dates .content {
+.skewed-background .content {
   position: relative;
-  color: var(--black);
-  background: var(--white);
+  color: var(--skew-text);
+  background: var(--skew-color);
+}
+
+#follow {
+  --skew-padding: 3ch 0 4ch;
+  --skew-color: var(--white);
+  --skew-text: var(--black);
 }
 
 #newsletter {
-  position: relative;
-  padding: 2ch 0 3ch;
-}
-
-#newsletter::before {
-  position: absolute;
-  top: -10px;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: var(--white);
-  transform: skewy(2deg);
-}
-
-#newsletter .content {
-  position: relative;
-  color: var(--black);
-  background: var(--white);
+  margin-top: 5ch;
 }
 
 .icons {
@@ -319,8 +312,6 @@ img[height] {
 
 .icons img {
   max-width: 48px;
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
 }
 
 .arrow {
@@ -393,6 +384,10 @@ a:hover {
   color: var(--black);
 }
 
+.footer-main {
+  font-size: var(--step--1);
+}
+
 .footer-main .disclaimer {
   text-align: center;
 }
@@ -409,13 +404,47 @@ a:hover {
   font-family: var(--headings);
 }
 
+.footer-links a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+a.animated-link {
+  position: relative;
+  text-decoration: none;
+}
+
+a.animated-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: .06em;
+  width: 100%;
+  background-color: currentColor;
+  transition: transform 400ms ease-out;
+}
+
+a.animated-link:hover::before {
+  transform: scaleX(0);
+  transform-origin: right;
+}
+
+a.animated-link::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
 .about h1 {
-  font-size: var(--step-3);
   margin-bottom: 0;
 }
 
 .about .header {
   margin-bottom: 5ch;
+}
+
+.about .icons img {
+  filter: invert(100%);
 }
 
 .statistics {
@@ -509,24 +538,10 @@ a:hover {
 }
 
 #contact {
-  position: relative;
-  padding: 2ch 0 5ch;
+  --skew-padding: 2ch 0 5ch;
+  --skew-color: var(--blue);
+  --skew-text: var(--black);
   margin-block: 5em;
-}
-
-#contact::before {
-  position: absolute;
-  top: -10px;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: var(--blue);
-  transform: skewy(-3deg);
-}
-
-#contact .content {
-  position: relative;
-  color: var(--black);
 }
 /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
 Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
@@ -647,11 +662,7 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 @media only screen and (min-width: 768px) {
   .hero {
     grid-template-columns: 1fr 1fr;
-    align-items: center;
-    max-width: none;
-  }
-
-  .hero img {
+    align-items: end;
     max-width: none;
   }
 
