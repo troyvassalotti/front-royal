@@ -4,3 +4,123 @@ description: Learn everything you need to know about the band Front Royal, not t
 layout: main
 pageName: about
 ---
+<header class="flex-center col header">
+  <div class="logo">
+    <a href="/">{% logo %}</a>
+  </div>
+  <h1 class="center">The Band, Not The Town</h1>
+  <figure class="featured-image">
+    <img src="/assets/img/tw-vid-1.jpg" alt="From left, Coleman, Justin, and Troy, together recording a music video">
+    <figcaption>Photo Credit: Michael Winters, <a href="https://bookextraordinary.com/" target="_blank" rel="noopener">Extraordinary Entertainment</a></figcaption>
+  </figure>
+  <section class="full">
+    <div class="wrapper statistics center" data-constrain="more">
+      <div class="stat-box">
+        <p class="metric"><span id="listeners">22</span>k+</p>
+        <p>Listeners on Spotify</p>
+      </div>
+      <div class="stat-box">
+        <p class="metric"><span id="streams">63</span>k+</p>
+        <p>Streams on Spotify and Apple Music</p>
+      </div>
+      <div class="stat-box">
+        <p class="metric"><span id="plays">8</span>k+</p>
+        <p>Plays on Bandcamp</p>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="icons full flex-center wrap">
+        {% for social in epk.socialmedia %}
+        <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+          <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</header>
+<main class="biography">
+  <div class="wrapper" data-constrain="more">
+    <h2>Who Is Front Royal?</h2>
+    <article class="biography__long">
+      <p>Front Royal got their start in 2014 with Justin Greger and Troy Vassalotti eager to get back into their co-writing routines. It wasn’t long until the old studio was reborn and <i>The Band, Not The Town</i> - an EP rooted in the guys’ pop punk origins - was released to the world.</p>
+      <p>Justin scoured the local college for new members to finalize the lineup almost immediately, scoring David Wilson and Steve Pignanelli on drums and guitar. But when staying local wasn’t enough to satisfy the four-piece, they bought a 1994 Ford Econoline off Craigslist, painted it black, and booked a tour for the summer of 2015 with the friendly help of Ohio-based booking agent Andy Smith.</p>
+      <p>The <i>All Down Hill From Here Tour</i> spanned New York to Indiana, and the eponymous EP was released that October, solidifying their sound with more aggression, hooks, and a matured lyricism.</p>
+      <p>If there’s anything to take away from Front Royal, it’s their persistent DIY attitude. Whether it’s beefing up their own tour van or screen printing merch in the comfort of Justin’s basement-turned-studio/practice space/house show venue, the band isn’t afraid of a challenge. To prove it, they’ve extensively catalogued the band life on their band vlog.</p>
+      <p>In the year that passed, the band saw a lineup change as Steve departed and Sam Grysavage joined in on bass, but the band never slowed down. A new single, <i>On Impulse</i>, was recorded and scheduling for the follow-up <i>On Impulse Tour</i> began. With the help of friends old and new, the guys expanded their reach through the Midwest and Southern US.</p>
+      <p>David and Sam both departed upon returning home, and with a handful of songs left in limbo, Justin and Troy released their third EP, <i>These Things Happen</i>, to make room for a shift.</p>
+      <p>The next four years were a time of change. Coleman Gilleland and Gil Kline were brought in on drums and bass, and writing for their first LP officially began. In the meantime, the shows never stopped as the guys landed opening spots for bands like The Pink Spiders and Carousel Kings and headlined shows at Baltimore’s own The Ottobar and The Sidebar.</p>
+      <p>With their album finalized, the band hit the studio with the help of Mike Winters to record their debut LP, <i>The Thought That Counts</i>, mixed by Randall Karriker at Descendant Recording Co., mastered by Carl Bahner, and released in October 2020.</p>
+      <p class="bold">Front Royal is Justin Greger, Troy Vassalotti, and Coleman Gilleland.</p>
+    </article>
+    <details class="biography__short">
+      <summary>Did you skip all that? Click me for the tl;dr.</summary>
+      <p>Front Royal formed in 2014 with Justin Greger and Troy Vassalotti eager to get the band back together. It wasn’t long until the old studio was reborn, they were churning out songs, and buying a 1994 Ford Econoline for summer tours.</p>
+      <p>If there’s one thing to take away from Front Royal, it’s their persistent DIY attitude. Whether it’s beefing up their own tour van or screen printing merch in the comfort of Justin’s basement-turned-studio/practice space/house show venue, the band isn’t afraid of a challenge. To prove it, they’ve extensively catalogued the band life on their band vlog.</p>
+      <p>With two tours, 11 states, three EPs, and a 13-track LP under their belts, Front Royal knows no bounds and sees no end in sight. Their dedication has seen them share the stage with such bands as The Pink Spiders and Carousel Kings, while also headlining shows at Baltimore favorites The Ottobar and The Sidebar.</p>
+      <p class="bold">Front Royal is Justin Greger, Troy Vassalotti, and Coleman Gilleland.</p>
+    </details>
+  </div>
+</main>
+<article id="contact">
+  <div class="wrapper" data-constrain="more">
+    <section class="full content">
+      <h2 class="center">Use This Form To Talk To Us</h2>
+      <form class="contact-form" name="contact" netlify netlify-honeypot="bot-field">
+        <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
+        <label for="name">Who are you?<input name="name" type="text" id="name" required></label>
+        <label for="email">What's your email?<input name="email" type="email" id="email" required></label>
+        <label for="message">What say you?<textarea name="message" id="message" required placeholder="Put your message here!"></textarea></label>
+        <input type="submit" value="Submit" class="button" id="submit">
+      </form>
+    </section>
+  </div>
+</article>
+
+<script>
+  function animateValue(obj, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    obj.innerHTML = Math.floor(progress * (end - start) + start);
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+  }
+
+  const listeners = document.getElementById("listeners");
+  const streams = document.getElementById("streams");
+  const plays = document.getElementById("plays");
+  const metrics = [listeners, streams, plays];
+  metrics.forEach(metric => metric.innerHTML = "0");
+
+  function handleIntersection(entries) {
+    entries.map((entry) => {
+      if (entry.target === listeners && entry.isIntersecting) {
+        console.log("COUNT THOSE LISTENERS")
+        animateValue(entry.target, 0, 22, 1500);
+        observer.unobserve(entry.target);
+      } else if (entry.target === streams && entry.isIntersecting) {
+        console.log("COUNT THOSE STREAMS");
+        animateValue(entry.target, 0, 63, 2500);
+        observer.unobserve(entry.target);
+      } else if (entry.target === plays && entry.isIntersecting) {
+        console.log("COUNT THOSE PLAYS");
+        animateValue(entry.target, 0, 8, 500);
+        observer.unobserve(entry.target);
+      }
+    });
+  }
+
+  let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 1.0
+  }
+
+  let observer = new IntersectionObserver(handleIntersection, options);
+  metrics.forEach(metric => observer.observe(metric));
+</script>

@@ -14,10 +14,10 @@ headline: The Thought That Counts
             <div class="logo">
               <a href="/">{% logo %}</a>
             </div>
+            <h1>{{ headline }}</h1>
             <div class="video-embed">
               <iframe width="1060" height="596" src="https://www.youtube-nocookie.com/embed/meqc5CPdTfo" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube-nocookie.com/embed/meqc5CPdTfo?autoplay=1><img src=https://img.youtube.com/vi/meqc5CPdTfo/hqdefault.jpg alt='Teamwork - Official Music Video by Front Royal'><span>&#x25BA;</span></a>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Teamwork - Official Music Video by Front Royal"></iframe>
             </div>
-            <h1>{{ headline }}</h1>
           </header>
           <div class="hero full">
             <div>
@@ -27,6 +27,10 @@ headline: The Thought That Counts
               </picture>
             </div>
             <div>
+              <noscript>
+                <p>You don't have JavaScript enabled, but this is where an embedded player from Bandcamp would have showed up. You can click the button below instead to go directly to our Bandcamp page, but I can't gurantee that'll work without JavaScript either.</p>
+                <a class="button" href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">Visit Bandcamp</a>
+              </noscript>
               <iframe style="border: 0; width: 100%; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=40123073/size=large/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/" seamless loading="lazy" title="The Thought That Counts album embed from Bandcamp"><a href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts">The Thought That Counts by Front Royal</a></iframe>
             </div>
           </div>
@@ -44,6 +48,9 @@ headline: The Thought That Counts
           <section class="content center">
             <h2>Dates</h2>
             {% dates %}
+            <noscript>
+              <p>You don't have JavaScript enabled, but this is where a widget from Bandsintown would have appeared. It shows current or upcoming tour dates, as well as previous tour dates. Sorry you can't see that right now.</p>
+            </noscript>
           </section>
         </div>
       </article>
@@ -56,7 +63,7 @@ headline: The Thought That Counts
     <section class="wrapper center" data-constrain="more">
       <h2>Follow Us</h2>
       <p>We've got social, we've got media, and we've even got a Discord server.</p>
-      <div class="icons full grid place-center">
+      <div class="icons full flex-center wrap">
         {% for social in social.socialmedia %}
         <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
           <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
