@@ -2,16 +2,11 @@ module.exports = function (eleventyConfig) {
   // Passthroughs
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("manifest.json");
 
   // Shortcodes
   eleventyConfig.addShortcode("logo", function () {
     return `<img src="/assets/img/logo.png" alt="Front Royal logo">`
-  });
-
-  eleventyConfig.addShortcode("dates", function () {
-    return `<a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#f5f5f5" data-link-color="#f5f5f5"
-      data-background-color="#0a0a0a" data-display-limit="15" data-link-text-color="#0a0a0a" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
-      data-font="Open Sans" data-display-logo="false"></a>`
   });
 
   eleventyConfig.addShortcode("mailchimpGDPR", function () {
