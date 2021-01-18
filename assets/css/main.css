@@ -291,7 +291,7 @@ img[height] {
 }
 
 #follow {
-  --skew-padding: 3ch 0 4ch;
+  --skew-padding: 3ch 0 7ch;
   --skew-color: var(--white);
   --skew-text: var(--black);
 }
@@ -312,6 +312,11 @@ img[height] {
 
 .icons img {
   max-width: 48px;
+  transition: .2s ease;
+}
+
+.icons img:hover {
+  filter: contrast(10%);
 }
 
 .arrow {
@@ -334,6 +339,35 @@ img[height] {
 .arrow .cw {
   left: 55vw;
   transform: rotate(25deg);
+}
+/* for animating */
+.js .animated-content {
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.js .animated-content.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.js .spinner {
+  animation-name: spinner;
+  animation-duration: 900ms;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg) scale(300%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(720deg) scale(100%);
+    opacity: 1;
+  }
 }
 
 .slideout {
@@ -447,6 +481,10 @@ a.animated-link::before {
   filter: invert(100%);
 }
 
+.about .icons img:hover {
+  filter: invert(100%) contrast(2%);
+}
+
 .statistics {
   display: flex;
   justify-content: space-between;
@@ -475,10 +513,6 @@ a.animated-link::before {
 
 .biography {
   font-size: var(--step--1);
-}
-
-.biography__short {
-  padding: 1ex;
 }
 
 .biography__short summary {
@@ -538,7 +572,7 @@ a.animated-link::before {
 }
 
 #contact {
-  --skew-padding: 2ch 0 5ch;
+  --skew-padding: 3ch 0 6ch;
   --skew-color: var(--blue);
   --skew-text: var(--black);
   margin-block: 5em;

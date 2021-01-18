@@ -1,14 +1,6 @@
 module.exports = function (eleventyConfig) {
   // Passthroughs
-  eleventyConfig.addPassthroughCopy({
-    "src/fonts": "assets/fonts"
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/img": "assets/img"
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/css": "assets/css"
-  });
+  eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
   // Shortcodes
