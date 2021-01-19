@@ -2,7 +2,6 @@ module.exports = function (eleventyConfig) {
   // Passthroughs
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("favicon.ico");
-  eleventyConfig.addPassthroughCopy("manifest.json");
 
   // Shortcodes
   eleventyConfig.addShortcode("logo", function () {

@@ -15,7 +15,6 @@ const listeners = document.getElementById("listeners");
 const streams = document.getElementById("streams");
 const plays = document.getElementById("plays");
 const metrics = [listeners, streams, plays];
-metrics.forEach(metric => metric.innerHTML = "0");
 
 function handleAnimatedStats(entries) {
   entries.map((entry) => {
@@ -42,7 +41,10 @@ const statsOptions = {
 }
 
 const statsObserver = new IntersectionObserver(handleAnimatedStats, statsOptions);
-metrics.forEach(metric => statsObserver.observe(metric));
+if (!prefersReducedMotion.matches) {
+  metrics.forEach(metric => metric.innerHTML = "0");
+  metrics.forEach(metric => statsObserver.observe(metric));
+}
 
 class Accordion {
   // The accordian constructor
@@ -151,6 +153,8 @@ class Accordion {
   }
 }
 
-document.querySelectorAll("details").forEach((el) => {
-  new Accordion(el);
-});
+if (!prefersReducedMotion.matches) {
+  document.querySelectorAll("details").forEach((el) => {
+    new Accordion(el);
+  });
+}

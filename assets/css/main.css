@@ -225,8 +225,17 @@ img[height] {
   background: var(--overlay);
 }
 
+#listen h1 {
+  font-variant: small-caps;
+  line-height: 1.5ch;
+}
+
 #listen .video-embed {
   max-width: 900px;
+}
+
+#listen span.smaller {
+  font-size: var(--step--1);
 }
 
 .video-embed {
@@ -235,6 +244,7 @@ img[height] {
   contain: content;
   position: relative;
   width: 100%;
+  margin-inline: auto;
 }
 
 .video-embed::after {
@@ -349,7 +359,7 @@ img[height] {
 
 .js .animated-content.visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
 }
 
 .js .spinner {
@@ -416,6 +426,20 @@ a:hover {
 
 #mailto {
   color: var(--black);
+}
+
+#merch .store-banner {
+  max-width: 1020px;
+}
+
+#merch .button {
+  background: var(--blue);
+  color: var(--black);
+  margin-block-start: 2ch;
+}
+
+#merch .button:hover {
+  background: var(--yellow);
 }
 
 .footer-main {
@@ -702,5 +726,23 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 
   .statistics {
     flex-direction: row;
+  }
+}
+@media (prefers-reduced-motion) {
+  * {
+    animation: none !important;
+  }
+
+  .js .animated-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  a.animated-link {
+    text-decoration: underline;
+  }
+
+  a.animated-link::before {
+    width: 0;
   }
 }
