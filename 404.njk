@@ -6,7 +6,8 @@ pageName: error
 noindex: true
 permalink: /404.html
 inline: >
-  .error, main {gap: var(--mainGap);}
+  .error {gap: 0;}
+  main {gap: var(--mainGap);}
   h2 {font-size: 2.5rem;}
 ---
 <header class="flex-center">
@@ -14,8 +15,8 @@ inline: >
     <a href="/">{% logo %}</a>
   </div>
 </header>
-<main>
-  <section id="oops" class="center">
+<main class="flex col full">
+  <section id="oops" class="center full">
     <h1>{{ title }}</h1>
     <p>Well, it looks like the page you were trying to get to doesn't exist.</p>
     <p>You can click the button below to go back home if you'd like.</p>
@@ -24,10 +25,9 @@ inline: >
   <div class="full">
     <section class="wrapper center" data-constrain="more">
       <h2>Maybe You Want One Of These Instead?</h2>
-      <p>It's all our social, our media, and even that Discord I mentioned earlier.</p>
-      <div class="icons full grid place-center">
+      <div class="icons full flex-center wrap">
         {% for social in social.socialmedia %}
-        <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
+        <a href="{{ social.href }}" target="_blank" rel="noopener">
           <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
         </a>
         {% endfor %}

@@ -1,34 +1,11 @@
 module.exports = function (eleventyConfig) {
   // Passthroughs
-  eleventyConfig.addPassthroughCopy({
-    "src/fonts": "assets/fonts"
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/img": "assets/img"
-  });
-  eleventyConfig.addPassthroughCopy({
-    "src/css": "assets/css"
-  });
+  eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("favicon.ico");
 
   // Shortcodes
-  eleventyConfig.addShortcode("footer", function () {
-    return `<footer class="slideout">
-      <picture>
-        <source srcset="/assets/img/footer.avif" type="image/avif">
-        <img src="/assets/img/footer.jpg" alt="" loading="lazy">
-      </picture>
-    </footer>`
-  });
-
   eleventyConfig.addShortcode("logo", function () {
     return `<img src="/assets/img/logo.png" alt="Front Royal logo">`
-  });
-
-  eleventyConfig.addShortcode("dates", function () {
-    return `<a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#000000" data-link-color="#0a0a0a"
-      data-background-color="rgba(0,0,0,0)" data-display-limit="15" data-link-text-color="#f5f5f5" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
-      data-font="Open Sans" data-display-logo="false"></a>`
   });
 
   eleventyConfig.addShortcode("mailchimpGDPR", function () {

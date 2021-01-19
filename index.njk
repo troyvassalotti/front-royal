@@ -5,19 +5,26 @@ layout: main
 pageName: home
 headline: The Thought That Counts
 ---
-<main>
+<div class="slideout-top">
   <div class="full backdrop">
     <div class="overlay">
-      <article class="full" id="listen">
-        <section class="wrapper center" data-constrain="more">
+      <main class="full" id="listen">
+        <section class="wrapper center" data-constrain="some">
           <header class="flex-center col">
             <div class="logo">
               <a href="/">{% logo %}</a>
             </div>
-            <div class="video-embed">
-              <iframe width="1060" height="596" src="https://www.youtube-nocookie.com/embed/meqc5CPdTfo" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube-nocookie.com/embed/meqc5CPdTfo?autoplay=1><img src=https://img.youtube.com/vi/meqc5CPdTfo/hqdefault.jpg alt='Teamwork - Official Music Video by Front Royal'><span>&#x25BA;</span></a>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Teamwork - Official Music Video by Front Royal"></iframe>
+            <div class="welcome full">
+              <div class="welcome-text">
+                <h1>The Thought That Counts<br><span class="smaller italic">Available Everywhere</span></h1>
+              </div>
+              <div class="welcome-content">
+                <p>Check out the <span class="italic">Teamwork</span> music video below.</p>
+                <div class="video-embed">
+                  <iframe width="1060" height="596" src="https://www.youtube-nocookie.com/embed/meqc5CPdTfo" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black}</style><a href=https://www.youtube-nocookie.com/embed/meqc5CPdTfo?autoplay=1><img src=https://img.youtube.com/vi/meqc5CPdTfo/hqdefault.jpg alt='Teamwork - Official Music Video by Front Royal'><span>&#x25BA;</span></a>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Teamwork - Official Music Video by Front Royal"></iframe>
+                </div>
+              </div>
             </div>
-            <h1>{{ headline }}</h1>
           </header>
           <div class="hero full">
             <div>
@@ -27,58 +34,77 @@ headline: The Thought That Counts
               </picture>
             </div>
             <div>
-              <iframe style="border: 0; width: 100%; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=40123073/size=large/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/" seamless loading="lazy" title="The Thought That Counts album embed from Bandcamp"><a href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts">The Thought That Counts by Front Royal</a></iframe>
+              <p>Listen to <span class="italic">The Thought That Counts</span> right here, right now.</p>
+              <noscript>
+                <p>You don't have JavaScript enabled, but this is where an embedded player from Bandcamp would have showed up. You can click the button below instead to go directly to our Bandcamp page, but I can't gurantee that'll work without JavaScript either.</p>
+                <a class="button" href="https://frontroyalmd.bandcamp.com/" target="_blank" rel="noopener">Visit Bandcamp</a>
+              </noscript>
+              <iframe style="border: 0; width: 100%; height: 472px; max-width: 500px;" src="https://bandcamp.com/EmbeddedPlayer/album=40123073/size=large/bgcol=333333/linkcol=4ec5ec/artwork=none/transparent=true/" seamless loading="lazy" title="The Thought That Counts album embed from Bandcamp"><a href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts">The Thought That Counts by Front Royal</a></iframe>
             </div>
           </div>
-          <aside id="cta">
-            <p>Stream it wherever music is streamed.</p>
-            <a class="button" href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts" target="_blank" rel="noopener">Buy Now</a>
-          </aside>
+          <section id="cta">
+            <a class="button" href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts" target="_blank" rel="noopener">Buy The Album Now</a>
+          </section>
         </section>
-      </article>
-      <aside aria-hidden="true" class="arrow">
+      </main>
+      <div aria-hidden="true" class="arrow animated-content">
         <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
-      </aside>
-      <article class="full" id="dates">
+      </div>
+      <article class="full skewed-background" id="follow">
         <div class="wrapper">
           <section class="content center">
-            <h2>Dates</h2>
-            {% dates %}
+              <h2>Follow Us</h2>
+              <div class="icons full flex-center wrap">
+                {% for social in social.socialmedia %}
+                <a href="{{ social.href }}" target="_blank" rel="noopener">
+                  <img class="spin-me" src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
+                </a>
+                {% endfor %}
+              </div>
+            <div class="wrapper" id="newsletter" data-constrain="most">
+              <section class="flex-center col center content">
+                <h3>Sign Up For Our Newsletter</h3>
+                <!-- Begin Mailchimp Signup Form -->
+                {% mailchimpGDPR %}
+                <!--End Mailchimp Signup Form -->
+              </section>
+            </div>
           </section>
         </div>
       </article>
     </div>
   </div>
-  <aside aria-hidden="true" class="arrow">
+  <div aria-hidden="true" class="arrow animated-content">
     <img class="ccw" src="/assets/img/arrow-down-2.png" alt="">
-  </aside>
-  <article class="full" id="follow">
-    <section class="wrapper center" data-constrain="more">
-      <h2>Follow Us</h2>
-      <p>We've got social, we've got media, and we've even got a Discord server.</p>
-      <div class="icons full grid place-center">
-        {% for social in social.socialmedia %}
-        <a href="{{ social.href }}" target="_blank" rel="noopener" aria-label="{{ social.label }}">
-          <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
-        </a>
-        {% endfor %}
-      </div>
-    </section>
-    <aside aria-hidden="true" class="arrow">
-      <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
-    </aside>
-    <div class="full" id="newsletter">
-      <div class="wrapper" data-constrain="most">
-        <section class="flex-center col center content">
-          <h3>Sign Up For Our Newsletter</h3>
-          <!-- Begin Mailchimp Signup Form -->
-          {% mailchimpGDPR %}
-          <!--End Mailchimp Signup Form -->
-        </section>
-      </div>
+  </div>
+  <article class="full" id="merch">
+    <div class="wrapper center" data-constrain="more">
+      <h2>We've Got Merch</h2>
+      <a href="https://teespring.com/stores/front-royal"><img class="store-banner" src="/assets/img/store-banner.jpeg" alt="Front Royal Official Band Store">
+      <img class="store-preview" src="/assets/img/store-preview.jpg" alt="A selection of items from our merch store, including sweatshirts, t-shirts, and more."></a>
+      <a class="button" href="https://teespring.com/stores/front-royal">Shop Merch</a>
     </div>
   </article>
-</main>
+  <div aria-hidden="true" class="arrow animated-content">
+    <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
+  </div>
+  <article class="full" id="dates">
+    <section class="wrapper center">
+      <h2>Dates</h2>
+      <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false" data-display-past-dates="true" data-auto-style="false" data-text-color="#f5f5f5" data-link-color="#f5f5f5" data-background-color="#0a0a0a" data-display-limit="15" data-link-text-color="#0a0a0a" data-display-lineup="false" data-display-play-my-city="false" data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true" data-font="var(--body)" data-display-logo="false"></a>
+      <noscript>
+        <p>You don't have JavaScript enabled, but this is where a widget from Bandsintown would have appeared. It shows current or upcoming tour dates, as well as previous tour dates. Sorry you can't see that right now.</p>
+      </noscript>
+    </section>
+  </article>
+</div>
+<aside class="slideout">
+  <picture>
+    <source srcset="/assets/img/footer.avif" type="image/avif">
+    <img src="/assets/img/footer.jpg" alt="" loading="lazy">
+  </picture>
+</aside>
 
 <!-- S C R I P T S -->
 <script src="https://widget.bandsintown.com/main.min.js" async></script>
+<script src="/assets/js/index.js" async></script>

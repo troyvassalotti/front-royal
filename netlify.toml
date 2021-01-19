@@ -27,19 +27,6 @@
 [[plugins]]
   package = "netlify-plugin-image-optim"
 
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-[[plugins]]
-  package = "netlify-plugin-minify-html"
-
-    [plugins.inputs]
-      contexts = [
-        'production',
-        'branch-deploy',
-        'deploy-preview'
-      ]
-
 # Custom headers
 [[headers]]
   for = "/*"
@@ -47,4 +34,4 @@
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
     X-XSS-Protection = "1"
-    Content-Security-Policy = "default-src 'self' https://d33wubrfki0l68.cloudfront.net https://bandcamp.com https://rest.bandsintown.com https://widget.bandsintown.com https://img.youtube.com/ https://www.youtube-nocookie.com/ data: 'unsafe-inline'"
+    Content-Security-Policy = "default-src 'self' https://www.frontroyalband.com https://d33wubrfki0l68.cloudfront.net https://bandcamp.com https://rest.bandsintown.com https://widget.bandsintown.com https://img.youtube.com/ https://www.youtube-nocookie.com/ data: 'unsafe-inline'"
