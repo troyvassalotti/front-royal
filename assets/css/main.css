@@ -429,6 +429,7 @@ a:hover {
 }
 
 #merch .store-banner {
+  width: 100%;
   max-width: 1020px;
 }
 
@@ -436,6 +437,7 @@ a:hover {
   background: var(--blue);
   color: var(--black);
   margin-block-start: 2ch;
+  font-size: var(--step-0);
 }
 
 #merch .button:hover {
