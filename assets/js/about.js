@@ -1,3 +1,5 @@
+let prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
 function animateValue(obj, start, end, duration) {
   let startTimestamp = null;
   const step = (timestamp) => {
