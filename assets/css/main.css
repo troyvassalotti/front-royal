@@ -597,6 +597,24 @@ a.animated-link::before {
   --skew-text: var(--black);
   margin-block: 5em;
 }
+
+.merch-preview {
+  padding: 1ch;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+}
+
+.merch-preview figure {
+  margin: 0;
+}
+
+.merch-preview img {
+  transition: .3s ease;
+  width: 100%;
+}
+
+.merch-preview img:hover {
+  filter: opacity(.6);
+}
 /* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
 Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 #mc_embed_signup {
@@ -722,6 +740,10 @@ Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
 
   .statistics {
     flex-direction: row;
+  }
+
+  .merch-preview {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 @media (prefers-reduced-motion) {
