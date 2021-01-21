@@ -244,7 +244,8 @@ img[height] {
   contain: content;
   position: relative;
   width: 100%;
-  margin-inline: auto;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
 }
 
 .video-embed::after {
@@ -595,7 +596,8 @@ a.animated-link::before {
   --skew-padding: 3ch 0 6ch;
   --skew-color: var(--blue);
   --skew-text: var(--black);
-  margin-block: 5em;
+  margin-block-start: 5em;
+  margin-block-end: 5em;
 }
 
 .merch-preview {
