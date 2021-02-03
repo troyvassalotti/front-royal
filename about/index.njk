@@ -39,7 +39,7 @@ pageName: about
     </div>
   </section>
 </header>
-<main class="biography">
+<main>
   <div class="wrapper" data-constrain="more">
     <h2>Who Is Front Royal?</h2>
     <article class="biography__long">
@@ -63,18 +63,18 @@ pageName: about
       </div>
     </details>
   </div>
+  <section class="skewed-background" id="contact">
+    <div class="wrapper" data-constrain="more">
+      <section class="full content">
+        <h2 class="center">Use This Form To Talk To Us</h2>
+        <form class="contact-form" name="contact" netlify netlify-honeypot="bot-field">
+          <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
+          <label for="name">Who are you?<input name="name" type="text" id="name" required></label>
+          <label for="email">What's your email?<input name="email" type="email" id="email" required></label>
+          <label for="message">What say you?<textarea name="message" id="message" required placeholder="Put your message here!"></textarea></label>
+          <input type="submit" value="Submit" class="button" id="submit">
+        </form>
+      </section>
+    </div>
+  </section>
 </main>
-<article class="skewed-background" id="contact">
-  <div class="wrapper" data-constrain="more">
-    <section class="full content">
-      <h2 class="center">Use This Form To Talk To Us</h2>
-      <form class="contact-form" name="contact" netlify netlify-honeypot="bot-field">
-        <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
-        <label for="name">Who are you?<input name="name" type="text" id="name" required></label>
-        <label for="email">What's your email?<input name="email" type="email" id="email" required></label>
-        <label for="message">What say you?<textarea name="message" id="message" required placeholder="Put your message here!"></textarea></label>
-        <input type="submit" value="Submit" class="button" id="submit">
-      </form>
-    </section>
-  </div>
-</article>

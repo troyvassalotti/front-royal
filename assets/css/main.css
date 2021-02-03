@@ -578,10 +578,6 @@ a.animated-link::before {
   margin: 0;
 }
 
-.biography {
-  font-size: var(--step--1);
-}
-
 .biography__short summary {
   font-size: var(--step-1);
   font-family: var(--headings);
