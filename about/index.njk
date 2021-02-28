@@ -5,9 +5,7 @@ layout: main
 pageName: about
 ---
 <header class="flex-center col header">
-  <div class="logo">
-    <a href="/">{% logo %}</a>
-  </div>
+  {% logoHeader %}
   <h1 class="center">This Is Front Royal</h1>
   <figure class="featured-image">
     <img src="/assets/img/tw-vid-1.jpg" alt="From left, Coleman, Justin, and Troy, together recording a music video">
@@ -30,11 +28,11 @@ pageName: about
     </div>
     <div class="wrapper">
       <div class="icons full flex-center wrap">
-        {% for social in epk.socialmedia %}
+        {%- for social in epk.socialmedia -%}
         <a href="{{ social.href }}" target="_blank" rel="noopener">
           <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48" height="48">
         </a>
-        {% endfor %}
+        {%- endfor -%}
       </div>
     </div>
   </section>
