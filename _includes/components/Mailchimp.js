@@ -1,7 +1,7 @@
-const {html} = require('common-tags');
+// const {html} = require('common-tags');
 
 module.exports = function () {
-  return html `
+  return `
   <div id="mc_embed_signup">
     <form action="https://frontroyalband.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
