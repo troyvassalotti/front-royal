@@ -1,5 +1,6 @@
 {
-  "socialmedia": [{
+  "socialmedia": [
+    {
       "href": "https://frontroyalmd.bandcamp.com/",
       "label": "Listen on Bandcamp",
       "img": "bc.svg"
@@ -33,6 +34,11 @@
       "href": "https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed",
       "label": "Subscribe to our YouTube channel",
       "img": "yt.svg"
+    },
+    {
+      "href": "https://discord.gg/pmc4HgH",
+      "label": "Join our Discord server",
+      "img": "discord.svg"
     }
   ]
 }
