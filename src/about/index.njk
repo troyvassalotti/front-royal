@@ -5,7 +5,7 @@ layout: main
 pageName: about
 ---
 <header class="flex-center col header">
-    {% logoHeader %}
+    {% include 'partials/logo.njk' %}
     <h1 class="center">This Is Front Royal</h1>
     <figure class="featured-image">
         <img src="/assets/img/tw-vid-1.jpg"
@@ -13,27 +13,11 @@ pageName: about
         <figcaption>Photo Credit: Michael Winters</figcaption>
     </figure>
     <section class="full">
-        <div class="wrapper statistics center" data-constrain="more">
-            <div class="stat-box">
-                <p class="metric"><span id="listeners">22</span>k+</p>
-                <p>Listeners on Spotify</p>
-            </div>
-            <div class="stat-box">
-                <p class="metric"><span id="streams">63</span>k+</p>
-                <p>Streams on Spotify and Apple Music</p>
-            </div>
-            <div class="stat-box">
-                <p class="metric"><span id="plays">8</span>k+</p>
-                <p>Plays on Bandcamp</p>
-            </div>
-        </div>
+        {% include 'partials/statistics.njk' %}
         <div class="wrapper">
             <div class="icons full flex-center wrap">
                 {%- for social in social.socialmedia.slice(0, 7) -%}
-                    <a href="{{ social.href }}" target="_blank" rel="noopener">
-                        <img src="/assets/img/{{ social.img }}" alt="{{ social.label }}" loading="lazy" width="48"
-                             height="48">
-                    </a>
+                    {% include 'partials/social-icons.njk' %}
                 {%- endfor -%}
             </div>
         </div>
@@ -90,18 +74,6 @@ pageName: about
         </details>
     </div>
     <section class="skewed-background" id="contact">
-        <div class="wrapper" data-constrain="more">
-            <section class="full content">
-                <h2 class="center">Use This Form To Talk To Us</h2>
-                <form class="contact-form" name="contact" netlify netlify-honeypot="bot-field">
-                    <label style="display: none;">Don’t fill this out: <input name="bot-field"></label>
-                    <label for="name">Who are you?<input name="name" type="text" id="name" required></label>
-                    <label for="email">What's your email?<input name="email" type="email" id="email" required></label>
-                    <label for="message">What say you?<textarea name="message" id="message" required
-                                                                placeholder="Put your message here!"></textarea></label>
-                    <input type="submit" value="Submit" class="button" id="submit">
-                </form>
-            </section>
-        </div>
+        {% include 'partials/contact-form.njk' %}
     </section>
 </main>

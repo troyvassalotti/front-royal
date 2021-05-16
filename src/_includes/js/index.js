@@ -1,5 +1,3 @@
-let prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-
 function handleAnimatedContent(entries) {
     entries.map((entry) => {
         if (entry.isIntersecting) {

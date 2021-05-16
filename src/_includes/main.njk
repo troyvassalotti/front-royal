@@ -4,16 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% if noindex -%}
-        <meta name="robots" content="noindex">{%- endif %}
+        <meta name="robots" content="noindex">
+    {%- endif %}
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="canonical" href="https://www.frontroyalband.com{{ page.url }}">
     <link rel="stylesheet" href="/assets/css/main.css">
-    {%- if inline -%}
-        <style>
-            {{inline}}
-        </style>
-    {%- endif -%}
     <title>Front Royal | {{ title }}</title>
     <meta name="description" content="{{ description }}">
     <meta name="og:locale" content="en_US">
@@ -40,34 +36,17 @@
 </head>
 <body class="{{ pageName }}">
 {{ content | safe }}
-<footer class="footer-main">
-    <nav class="footer-nav wrapper" data-constrain="most">
-        <ul class="footer-links">
-            <li><a class="animated-link" href="/">Home</a></li>
-            <li><a class="animated-link" href="/about">About</a></li>
-            <li><a class="animated-link" href="https://front-royal.creator-spring.com/">Merch</a></li>
-            <li><a class="animated-link" href="https://newsletter.frontroyalband.com">Newsletter</a></li>
-        </ul>
-    </nav>
-    <img src="/assets/img/site-icons/apple-touch-icon-57x57.png" alt="">
-    <p class="disclaimer">&copy; Front Royal, always.</p>
-</footer>
+{% include 'partials/footer.njk' %}
 
 <script>document.body.classList.add("js");</script>
 {%- if page.fileSlug === "" -%}
-    {%- set js -%}
-        {%- include "js/index.js" -%}
-    {%- endset -%}
     <script>
-        {{ js | safe }}
+        {%- include "js/index.js" -%}
     </script>
     <script src="https://widget.bandsintown.com/main.min.js" defer></script>
 {%- else -%}
-    {%- set js -%}
-        {%- include "js/" + page.fileSlug + ".js" -%}
-    {%- endset -%}
     <script>
-        {{ js | safe }}
+        {%- include "js/" + page.fileSlug + ".js" -%}
     </script>
 {%- endif -%}
 </body>
