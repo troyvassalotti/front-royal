@@ -7,7 +7,6 @@ pageName: home
 <main class="slideout-top">
     <div class="full backdrop">
         <div class="overlay">
-
             <div class="full" id="listen">
                 <section class="wrapper center" data-constrain="some">
                     <header class="flex-center col">
@@ -18,7 +17,6 @@ pageName: home
                                 </h1>
                             </div>
                             <div class="welcome-content">
-                                {# <p>Check out the <span class="italic">Teamwork</span> music video below.</p> #}
                                 <div class="video-embed">
                                     <iframe width="1060" height="596"
                                             src="https://www.youtube-nocookie.com/embed/meqc5CPdTfo"
@@ -60,11 +58,7 @@ pageName: home
                     </section>
                 </section>
             </div>
-
-            <div class="arrow animated-content">
-                <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
-            </div>
-
+            {% include 'partials/arrow-cw.njk' %}
             <article class="full skewed-background" id="follow">
                 <div class="wrapper">
                     <section class="content center">
@@ -74,7 +68,6 @@ pageName: home
                                 {% include 'partials/social-icons.njk' %}
                             {% endfor %}
                         </div>
-
                         <div class="wrapper" id="newsletter" data-constrain="most">
                             <section class="flex-center col center content">
                                 <h3>Sign Up For Our Newsletter</h3>
@@ -86,17 +79,25 @@ pageName: home
             </article>
         </div>
     </div>
-
-    <div class="arrow animated-content">
-        <img class="ccw" src="/assets/img/arrow-down-2.png" alt="">
-    </div>
-
+    {% include 'partials/arrow-ccw.njk' %}
     {% include 'partials/merch.njk' %}
-
-    <div class="arrow animated-content">
-        <img class="cw" src="/assets/img/arrow-down-2.png" alt="">
-    </div>
-
+    {% include 'partials/arrow-cw.njk' %}
+    <article class="full skewed-background" id="covers">
+        <div class="wrapper">
+            <section class="content center">
+                <h2 class="font-lg-3">Front Royal Goes Pop</h2>
+                <div class="grid two-col">
+                    <iframe title="Cardigan by Front Royal" loading="lazy"
+                            style="border: 0; width: 100%; height: 120px;"
+                            src="https://bandcamp.com/EmbeddedPlayer/track=1330083917/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+                            seamless><a href="https://frontroyalmd.bandcamp.com/track/cardigan">cardigan by Front
+                            Royal</a></iframe>
+                </div>
+                <a href="https://frontroyalmd.bandcamp.com/" class="button">Listen To More</a>
+            </section>
+        </div>
+    </article>
+    {% include 'partials/arrow-ccw.njk' %}
     <article class="full" id="dates">
         <section class="wrapper center">
             <h2>Dates</h2>
@@ -113,7 +114,5 @@ pageName: home
             </noscript>
         </section>
     </article>
-
 </main>
-
 {% include 'partials/slideout.njk' %}
