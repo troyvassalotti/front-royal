@@ -26,7 +26,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
-<body class="{{ pageName }}">
+<body {% if pageName %}class="{{ pageName }}"{% endif %}>
 {{ content | safe }}
 {% include 'partials/footer.njk' %}
 
