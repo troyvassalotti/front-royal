@@ -8,12 +8,29 @@ pageName: about
     {% include 'partials/logo.njk' %}
     <h1 class="center">This Is Front Royal</h1>
     <figure class="featured-image">
-        <img src="/assets/img/tw-vid-1.jpg"
-             alt="From left, Coleman, Justin, and Troy, together recording a music video">
+        <picture>
+            <source srcset="/assets/img/tw-vid-1.webp" type="image/webp">
+            <img src="/assets/img/tw-vid-1.jpg"
+                 width="1100" height="619" loading="eager" decoding="async"
+                 alt="From left, Coleman, Justin, and Troy, together recording a music video">
+        </picture>
         <figcaption>Photo Credit: Michael Winters</figcaption>
     </figure>
     <section class="full">
-        {% include 'partials/statistics.njk' %}
+        <div class="wrapper statistics center" data-constrain="more">
+            <div class="stat-box">
+                <p class="metric"><span id="listeners">22</span>k+</p>
+                <p>Listeners on Spotify</p>
+            </div>
+            <div class="stat-box">
+                <p class="metric"><span id="streams">63</span>k+</p>
+                <p>Streams on Spotify and Apple Music</p>
+            </div>
+            <div class="stat-box">
+                <p class="metric"><span id="plays">8</span>k+</p>
+                <p>Plays on Bandcamp</p>
+            </div>
+        </div>
         <div class="wrapper">
             <div class="icons full flex-center wrap">
                 {%- for social in social.socialmedia.slice(0, 7) -%}

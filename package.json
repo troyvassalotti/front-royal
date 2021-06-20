@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/troyvassalotti/front-royal#readme",
   "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
+    "@11ty/eleventy": "^0.12.1",
+    "clean-css": "^5.1.2",
+    "terser": "^5.7.0"
   }
 }

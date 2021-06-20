@@ -6,6 +6,8 @@
     {% if noindex -%}
         <meta name="robots" content="noindex">
     {%- endif %}
+    <link rel="preload" href="/assets/fonts/archivo-v7-latin-700.woff2" type="font/woff2" as="font">
+    <link rel="preload" href="/assets/fonts/bebas-kai.woff2" type="font/woff2" as="font">
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="canonical" href="https://www.frontroyalband.com{{ page.url }}">
@@ -30,16 +32,16 @@
 {{ content | safe }}
 {% include 'partials/footer.njk' %}
 
-<script>document.body.classList.add("js");</script>
-{%- if page.fileSlug === "" -%}
-    <script>
-        {%- include "js/index.js" -%}
-    </script>
-    <script src="https://widget.bandsintown.com/main.min.js" defer></script>
-{%- else -%}
-    <script>
-        {%- include "js/" + page.fileSlug + ".js" -%}
-    </script>
-{%- endif -%}
+<script>
+    document.body.classList.add("js");
+    {%- set js -%}
+        {%- if page.fileSlug === "" -%}
+            {%- include "js/index.js" -%}
+        {%- else -%}
+            {%- include "js/" + page.fileSlug + ".js" -%}
+        {% endif %}
+    {%- endset -%}
+    {{ js | jsmin | safe }}
+</script>
 </body>
 </html>
