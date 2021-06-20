@@ -136,7 +136,7 @@ img[height] {
     height: auto;
 }
 
-img[width] {
+.arrow img[width] {
     width: auto;
 }
 
