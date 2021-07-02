@@ -3,10 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if noindex -%}
-        <meta name="robots" content="noindex">
-    {%- endif %}
-{#    <link rel="preload" href="/assets/fonts/archivo-v7-latin-700.woff2" type="font/woff2" as="font" crossorigin>#}
+    {% if noindex -%}<meta name="robots" content="noindex">{%- endif %}
     <link rel="preload" href="/assets/fonts/bebas-kai.woff2" type="font/woff2" as="font" crossorigin>
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
@@ -29,8 +26,22 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 <body {% if pageName %}class="{{ pageName }}"{% endif %}>
+
 {{ content | safe }}
-{% include 'partials/footer.njk' %}
+
+<footer class="footer-main">
+    <nav class="footer-nav wrapper" data-constrain="most">
+        <ul class="footer-links">
+            <li><a class="animated-link" href="/">Home</a></li>
+            <li><a class="animated-link" href="/about/">About</a></li>
+            <li><a class="animated-link" href="https://front-royal.creator-spring.com/">Merch</a></li>
+            <li><a class="animated-link" href="https://photos.frontroyalband.com/">Photos</a></li>
+            <li><a class="animated-link" href="https://newsletter.frontroyalband.com">Newsletter</a></li>
+        </ul>
+    </nav>
+    <img src="/assets/img/icons/favicon-32x32.png" width="32" height="32" decoding="async" alt="A hand drawn red rose over a blue background.">
+    <p class="disclaimer">&copy; Front Royal, always.</p>
+</footer>
 
 <script>
     document.body.classList.add("js");
@@ -43,5 +54,6 @@
     {%- endset -%}
     {{ js | jsmin | safe }}
 </script>
+
 </body>
 </html>
