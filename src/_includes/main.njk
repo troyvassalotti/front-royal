@@ -39,20 +39,19 @@
             <li><a class="animated-link" href="https://newsletter.frontroyalband.com">Newsletter</a></li>
         </ul>
     </nav>
-    <img src="/assets/img/icons/favicon-32x32.png" width="32" height="32" decoding="async" alt="A hand drawn red rose over a blue background.">
+    <img src="/assets/img/icons/favicon-32x32.png" width="32" height="32" decoding="async"
+         alt="A hand drawn red rose over a blue background.">
     <p class="disclaimer">&copy; Front Royal, always.</p>
 </footer>
 
 <script>
     document.body.classList.add("js");
-    {%- set js -%}
-        {%- if page.fileSlug === "" -%}
-            {%- include "js/index.js" -%}
-        {%- else -%}
-            {%- include "js/" + page.fileSlug + ".js" -%}
-        {% endif %}
-    {%- endset -%}
-    {{ js | jsmin | safe }}
+    {%- if js -%}
+        {%- set scripts -%}
+        {%- include "js/" + js + ".js" -%}
+        {%- endset -%}
+        {{ scripts | jsmin | safe }}
+    {%- endif -%}
 </script>
 
 </body>
