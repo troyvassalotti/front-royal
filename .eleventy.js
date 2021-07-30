@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(`${inputDir}/assets`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/favicon.ico`);
     eleventyConfig.addPassthroughCopy(`${inputDir}/site.webmanifest`);
+    eleventyConfig.addPassthroughCopy(`${inputDir}/robots.txt`);
 
     // add javascript minifier
     eleventyConfig.addNunjucksAsyncFilter("jsmin", async function (code, callback) {

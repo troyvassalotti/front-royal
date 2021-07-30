@@ -3,12 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if noindex -%}<meta name="robots" content="noindex">{%- endif %}
+    <meta name="generator" content="Eleventy">
+
     <link rel="preload" href="/assets/fonts/bebas-kai.woff2" type="font/woff2" as="font" crossorigin>
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="canonical" href="https://www.frontroyalband.com{{ page.url }}">
     <link rel="stylesheet" href="/assets/css/main.css">
+
     <title>Front Royal | {{ title }}</title>
     <meta name="description" content="{{ description }}">
     <meta name="og:locale" content="en_US">
@@ -20,6 +22,7 @@
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ description }}">
     <meta name="twitter:creator" content="@frontroyalband">
+
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
@@ -27,7 +30,7 @@
 </head>
 <body {% if pageName %}class="{{ pageName }}"{% endif %}>
 
-{{ content | safe }}
+{% block content %}{% endblock %}
 
 <footer class="footer-main">
     <nav class="footer-nav wrapper" data-constrain="most">
@@ -39,20 +42,20 @@
             <li><a class="animated-link" href="https://newsletter.frontroyalband.com">Newsletter</a></li>
         </ul>
     </nav>
-    <img src="/assets/img/icons/favicon-32x32.png" width="32" height="32" decoding="async"
+    <img src="/assets/img/icons/favicon-32x32.png" width="32" height="32" decoding="async" loading="lazy"
          alt="A hand drawn red rose over a blue background.">
     <p class="disclaimer">&copy; Front Royal, always.</p>
 </footer>
 
-<script>
+<script type="module">
     document.body.classList.add("js");
-    {%- if js -%}
-        {%- set scripts -%}
-        {%- include "js/" + js + ".js" -%}
-        {%- endset -%}
-        {{ scripts | jsmin | safe }}
-    {%- endif -%}
 </script>
+
+{% block script %}
+    {%- if js -%}
+        <script type="module">{{ js | jsmin | safe }}</script>
+    {%- endif -%}
+{% endblock %}
 
 </body>
 </html>

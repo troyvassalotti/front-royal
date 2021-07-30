@@ -437,6 +437,10 @@ a:hover {
     --skew-direction: 3deg;
 }
 
+#contact {
+    --skew-direction: -3deg;
+}
+
 #covers::before {
     background-image: url("/assets/img/covers-red.jpg");
     background-position: top;

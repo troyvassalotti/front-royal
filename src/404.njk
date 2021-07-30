@@ -1,11 +1,12 @@
 ---
 title: Oops, a 404
 description: This page does not exist... yikes!
-layout: main
 pageName: error
-noindex: true
 permalink: /404.html
 ---
+{% extends 'main.njk' %}
+
+{% block content %}
 <header class="flex-center">
     {% include 'partials/logo.njk' %}
 </header>
@@ -16,3 +17,4 @@ permalink: /404.html
         <p>You can <a href="/">go back home</a> if you'd like though.</p>
     </section>
 </main>
+{% endblock %}
