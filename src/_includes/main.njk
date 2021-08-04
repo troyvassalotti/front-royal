@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Eleventy">
 
+    {%- set domain = 'frontroyalband.com' -%}
+
     <link rel="preload" href="/assets/fonts/bebas-kai.woff2" type="font/woff2" as="font" crossorigin>
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
-    <link rel="canonical" href="https://www.frontroyalband.com{{ page.url }}">
+    <link rel="canonical" href="https://www.{{ domain }}{{ page.url }}">
     <link rel="stylesheet" href="/assets/css/main.css">
 
     <title>Front Royal | {{ title }}</title>
@@ -17,7 +19,7 @@
     <meta name="og:type" content="website">
     <meta name="og:title" content="{{ title }}">
     <meta name="og:description" content="{{ description }}">
-    <meta name="og:site_name" content="www.frontroyalband.com">
+    <meta name="og:site_name" content="www.{{ domain }}{{ page.url }}">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ description }}">
@@ -37,9 +39,9 @@
         <ul class="footer-links">
             <li><a class="animated-link" href="/">Home</a></li>
             <li><a class="animated-link" href="/about/">About</a></li>
-            <li><a class="animated-link" href="https://front-royal.creator-spring.com/">Merch</a></li>
-            <li><a class="animated-link" href="https://photos.frontroyalband.com/">Photos</a></li>
-            <li><a class="animated-link" href="https://newsletter.frontroyalband.com">Newsletter</a></li>
+            <li><a class="animated-link" href="https://merch.{{ domain }}/">Merch</a></li>
+            <li><a class="animated-link" href="https://photos.{{ domain }}/">Photos</a></li>
+            <li><a class="animated-link" href="https://newsletter.{{ domain }}/">Newsletter</a></li>
         </ul>
     </nav>
     <img src="/assets/img/icons/favicon-32x32.png" width="32" height="32" decoding="async" loading="lazy"
