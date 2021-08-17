@@ -1,13 +1,42 @@
----
-title: Story Time
-description: Learn everything you need to know about the band Front Royal, not the town Front Royal.
-pageName: about
----
-{% extends 'main.njk' %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% block content %}
+    <link rel="preload" href="/assets/fonts/bebas-kai.woff2" type="font/woff2" as="font" crossorigin>
+    <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
+    <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
+    <link rel="canonical" href="https://www.frontroyalband.com/about/">
+    <link rel="stylesheet" href="/assets/css/sanitize.min.css">
+    <link rel="stylesheet" href="/assets/css/main.min.css">
+
+    <title>Front Royal | Story Time</title>
+    <meta name="description"
+          content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
+    <meta name="og:locale" content="en_US">
+    <meta name="og:type" content="website">
+    <meta name="og:title" content="Story Time">
+    <meta name="og:description"
+          content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
+    <meta name="og:site_name" content="www.frontroyalband.com/about/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Story Time">
+    <meta name="twitter:description"
+          content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
+    <meta name="twitter:creator" content="@frontroyalband">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body class="about">
 <header class="flex-center col header">
-    {% include 'partials/logo.njk' %}
+    <div class="logo">
+        <a href="/"><img src="/assets/img/logo.png" alt="Front Royal" decoding="async" width="400" height="240"
+                         loading="eager"></a>
+    </div>
     <h1 class="center">This Is Front Royal</h1>
     <figure class="featured-image">
         <picture>
@@ -34,11 +63,30 @@ pageName: about
             </div>
         </div>
         <div class="wrapper">
-            <div class="icons full flex-center wrap">
-                {%- for social in social.socialmedia.slice(0, 7) -%}
-                    {% include 'partials/social-icons.njk' %}
-                {%- endfor -%}
-            </div>
+            <div class="icons full flex-center wrap"><a href="https://frontroyalmd.bandcamp.com/">
+                <img src="/assets/img/bc.svg" alt="Listen on Bandcamp" loading="lazy" decoding="async" width="48"
+                     height="48">
+            </a><a href="https://music.apple.com/us/artist/front-royal/1081565948">
+                <img src="/assets/img/applemusic.svg" alt="Listen on Apple Music" loading="lazy" decoding="async"
+                     width="48"
+                     height="48">
+            </a><a href="https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg">
+                <img src="/assets/img/spotify.svg" alt="Listen on Spotify" loading="lazy" decoding="async" width="48"
+                     height="48">
+            </a><a href="https://instagram.com/frontroyal_official/">
+                <img src="/assets/img/insta.svg" alt="Follow us on Instagram" loading="lazy" decoding="async" width="48"
+                     height="48">
+            </a><a href="https://facebook.com/FrontRoyalMD/">
+                <img src="/assets/img/fb.svg" alt="Like us on Facebook" loading="lazy" decoding="async" width="48"
+                     height="48">
+            </a><a href="https://twitter.com/frontroyalband">
+                <img src="/assets/img/twit.svg" alt="Follow us on Twitter" loading="lazy" decoding="async" width="48"
+                     height="48">
+            </a><a href="https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed">
+                <img src="/assets/img/yt.svg" alt="Subscribe to our YouTube channel" loading="lazy" decoding="async"
+                     width="48"
+                     height="48">
+            </a></div>
         </div>
     </section>
 </header>
@@ -108,10 +156,22 @@ pageName: about
         </div>
     </section>
 </main>
-{% endblock %}
-
+<footer class="footer-main">
+    <nav class="footer-nav wrapper" data-constrain="most">
+        <ul class="footer-links">
+            <li><a class="animated-link" href="/">Home</a></li>
+            <li><a class="animated-link" href="/about.html">About</a></li>
+            <li><a class="animated-link" href="https://merch.frontroyalband.com/">Merch</a></li>
+            <li><a class="animated-link" href="https://photos.frontroyalband.com/">Photos</a></li>
+            <li><a class="animated-link" href="https://newsletter.frontroyalband.com/">Newsletter</a></li>
+        </ul>
+    </nav>
+    <img src="/assets/img/icons/favicon-32x32.png" width="32" height="32" decoding="async" loading="lazy"
+         alt="A hand drawn red rose over a blue background.">
+    <p class="disclaimer">&copy; Front Royal, always.</p>
+</footer>
 <script type="module">
-    {% set js %}
+    document.body.classList.add("js");
     let prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     function animateValue(obj, start, end, duration) {
@@ -274,5 +334,6 @@ pageName: about
             new Accordion(el);
         });
     }
-    {% endset %}
 </script>
+</body>
+</html>

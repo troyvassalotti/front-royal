@@ -1,9 +1,0 @@
----
-permalink: /assets/css/main.css
-eleventyExcludeFromCollections: true
----
-{%- set css -%}
-    {%- include 'css/sanitize.css' -%}
-    {%- include 'css/main.css' -%}
-{%- endset -%}
-{{ css | cssmin | safe }}
