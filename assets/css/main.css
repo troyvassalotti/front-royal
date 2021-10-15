@@ -20,25 +20,19 @@ html {
   --step-3: clamp(2.2681rem, 2.0098rem + 1.2915vw, 2.93rem);
   --step-4: clamp(2.7219rem, 2.355rem + 1.8341vw, 3.6619rem);
   --step-5: clamp(3.2656rem, 2.7537rem + 2.5598vw, 4.5775rem);
-  background: var(--black);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  line-height: 1.35;
   scroll-behavior: smooth;
-  min-height: 100vh;
-  font-family: var(--body);
-  font-weight: 400;
 }
 
 body {
+  background: var(--black);
+  color: var(--white);
   min-height: 100vh;
   width: 100%;
   display: flex;
+  line-height: 1.35;
   flex-direction: column;
   font-size: var(--step--1);
+  font-family: var(--body);
 }
 
 .slideout-top {
