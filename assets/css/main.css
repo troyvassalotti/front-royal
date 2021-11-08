@@ -35,13 +35,6 @@ body {
   font-family: var(--body);
 }
 
-.slideout-top {
-  background: var(--black);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
 /* if javascript is disabled, hide the bandcamp iframe */
 body:not(.js) noscript + iframe {
   display: none;
@@ -107,10 +100,6 @@ img[height] {
   height: auto;
 }
 
-.arrow img[width] {
-  width: auto;
-}
-
 .wrapper {
   width: 95%;
   max-width: 1600px;
@@ -135,10 +124,6 @@ img[height] {
 
 .col {
   flex-direction: column;
-}
-
-*[data-state="reversed"] {
-  flex-direction: column-reverse !important;
 }
 
 .full {
@@ -198,72 +183,8 @@ img[height] {
   width: clamp(100px, 50vw, 200px);
 }
 
-.backdrop {
-  background-image: url("/assets/img/tttc-wallpaper-blur.jpg");
-  background-color: var(--blue);
-  background-position: center;
-  background-size: cover;
-  background-attachment: local;
-  background-attachment: fixed;
-}
-
-.overlay {
-  background: var(--overlay);
-}
-
-#listen h1 {
-  font-family: var(--caps);
-  line-height: 1.75ch;
-}
-
-#listen .video-embed {
-  max-width: 1100px;
-}
-
 .smaller {
   font-size: var(--step--1);
-}
-
-.video-embed {
-  display: block;
-  margin-block-end: clamp(3ch, 5vw, 7ch);
-  contain: content;
-  position: relative;
-  width: 100%;
-  margin-inline-start: auto;
-  margin-inline-end: auto;
-}
-
-.video-embed::after {
-  content: "";
-  display: block;
-  padding-bottom: calc(100% / (16 / 9));
-}
-
-.video-embed iframe {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.hero {
-  display: grid;
-  gap: var(--mainGap);
-  grid-template-columns: 1fr;
-  max-width: 700px;
-  margin: auto;
-}
-
-.hero img {
-  box-shadow: 0 0 25px 2px var(--black);
-  width: 100%;
-  max-width: 500px;
-}
-
-#cta {
-  padding: 2em 0;
 }
 
 .skewed-background {
@@ -287,17 +208,6 @@ img[height] {
   background: var(--skew-color);
 }
 
-#follow {
-  --skew-direction: -3deg;
-  --skew-padding: 3ch 0 7ch;
-  --skew-color: var(--white);
-  --skew-text: var(--black);
-}
-
-#newsletter {
-  margin-top: 5ch;
-}
-
 .icons {
   max-width: 800px;
   margin-left: auto;
@@ -316,46 +226,6 @@ img[height] {
 
 .icons img:hover {
   filter: contrast(10%);
-}
-
-.arrow {
-  position: relative;
-  width: 100%;
-  height: 175px;
-  margin: clamp(3ch, 4vw, 3ch) 0;
-}
-
-.arrow img {
-  position: absolute;
-  max-height: 175px;
-}
-
-.arrow .ccw {
-  right: 55vw;
-  transform: rotate(-25deg) scaleX(-1);
-}
-
-.arrow .cw {
-  left: 55vw;
-  transform: rotate(25deg);
-}
-
-/* for animating */
-.js .animated-content {
-  opacity: 0;
-  transform: translateY(-100px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.js .animated-content.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.slideout {
-  z-index: -2;
-  position: sticky;
-  bottom: 0;
 }
 
 .disclaimer {
@@ -386,50 +256,6 @@ a:hover {
 .button:hover {
   background: var(--yellow);
   color: var(--black);
-}
-
-#mailto {
-  color: var(--black);
-}
-
-#merch .button {
-  background: var(--blue);
-  color: var(--black);
-  margin-block-start: 2ch;
-}
-
-#merch .button:hover {
-  background: var(--yellow);
-}
-
-#covers {
-  --skew-padding: 3ch 0 7ch;
-  --skew-text: var(--black);
-  --skew-direction: 3deg;
-}
-
-#contact {
-  --skew-direction: -3deg;
-}
-
-#covers::before {
-  background-image: url("/assets/img/covers-red.jpg");
-  background-position: top;
-  background-size: cover;
-  background-attachment: local;
-  background-attachment: fixed;
-  background-color: rebeccapurple;
-  background-blend-mode: luminosity;
-}
-
-#covers .content {
-  padding-block-start: 2rem;
-  padding-block-end: 2rem;
-}
-
-#covers .content .grid {
-  justify-items: center;
-  margin-block-end: 2rem;
 }
 
 .footer-main {
@@ -482,293 +308,6 @@ a.animated-link:hover::before {
 a.animated-link::before {
   transform: scaleX(1);
   transform-origin: left;
-}
-
-.about h1 {
-  margin-bottom: 0;
-}
-
-.about .header {
-  margin-bottom: 5ch;
-}
-
-.about .icons img {
-  filter: invert(100%);
-}
-
-.about .icons img:hover {
-  filter: invert(100%) contrast(2%);
-}
-
-.statistics {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.featured-image {
-  margin-inline: 0;
-  font-size: var(--step--2);
-}
-
-.featured-image img {
-  max-width: 100%;
-}
-
-.stat-box {
-  flex: 1;
-}
-
-.stat-box .metric {
-  font-size: var(--step-2);
-  font-family: var(--headings);
-  font-weight: 700;
-  margin: 0;
-}
-
-.biography__short summary {
-  font-size: var(--step-1);
-  font-family: var(--headings);
-  font-weight: 700;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-/* ======================
-  Contact Form Styles
-  ======================= */
-.contact-form {
-  border-radius: 2ex;
-  padding: 2ex;
-  margin: auto;
-  background: var(--black);
-  color: var(--white);
-  max-width: 800px;
-}
-
-.contact-form label {
-  display: flex;
-  flex-direction: column;
-  margin: 1ch 0;
-  font-size: var(--step--1);
-  font-family: var(--headings);
-  font-weight: 700;
-}
-
-#email,
-#message,
-#name {
-  padding: 1ch;
-  margin-top: 1ch;
-  border-radius: 1ex;
-  border-color: transparent;
-}
-
-#message {
-  height: 10ch;
-}
-
-#submit {
-  border-color: transparent;
-  cursor: pointer;
-  margin-left: auto;
-  margin-right: auto;
-  background: var(--white);
-  color: var(--black);
-  font-size: var(--step--1);
-}
-
-#submit:hover {
-  background: var(--yellow);
-}
-
-#contact {
-  --skew-padding: 3ch 0 6ch;
-  --skew-color: var(--blue);
-  --skew-text: var(--black);
-  margin-block-start: 5em;
-  margin-block-end: 5em;
-}
-
-.merch-preview {
-  padding: 1ch;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-  font-family: var(--caps);
-  font-size: var(--step-0);
-}
-
-.merch-preview figure {
-  margin: 0;
-}
-
-.merch-preview img {
-  transition: 0.3s ease;
-  width: 100%;
-  margin-block-end: 1.25ch;
-}
-
-.merch-preview img:hover {
-  filter: opacity(0.6);
-}
-
-.error main {
-  flex: 1;
-}
-
-#app {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-#app label {
-    display: flex;
-    flex-direction: column;
-    font-size: var(--step-2);
-    max-inline-size: max-content;
-}
-
-#app :is(label, input, button) {
-    font-family: var(--headings);
-}
-
-#app button {
-    font-size: var(--step-1);
-    max-inline-size: max-content;
-}
-
-/* MailChimp Form Embed Code - Horizontal Super Slim - 12/16/2015 v10.7
-Adapted from: http://blog.heyimcat.com/universal-signup-form/ */
-#mc_embed_signup {
-  font-size: var(--step--1);
-}
-
-#mc_embed_signup input.email {
-  border: 1px solid var(--grey);
-  border-radius: 3px;
-  color: var(--grey);
-  background-color: var(--white);
-  padding: 0.5em;
-  display: inline-block;
-  margin: 0 0 1ch;
-  font-family: var(--headings);
-}
-
-#mc_embed_signup label {
-  display: block;
-}
-
-#mc_embed_signup label.error {
-  display: block;
-  float: none;
-  width: auto;
-  margin-left: 1.05em;
-  text-align: left;
-  padding: 0.5em 0;
-}
-
-#mc_embed_signup fieldset {
-  padding: 0;
-  margin: 0;
-}
-
-#mc_embed_signup fieldset label {
-  font-weight: normal;
-}
-
-#mc_embed_signup .button {
-  border: none;
-  margin: 0;
-  transition: all 0.23s ease-in-out 0s;
-  font-size: var(--step--1);
-}
-
-#mc_embed_signup .button:hover {
-  cursor: pointer;
-}
-
-#mc_embed_signup div#mce-responses {
-  float: left;
-  top: -1.4em;
-  padding: 0 0.5em;
-  overflow: hidden;
-  width: 90%;
-  margin: 0 5%;
-  clear: both;
-}
-
-#mc_embed_signup div.response {
-  margin: 1em 0;
-  padding: 1em 0.5em 0.5em 0;
-  font-weight: bold;
-  float: left;
-  top: -1.5em;
-  z-index: 1;
-  width: 80%;
-}
-
-#mc_embed_signup #mce-error-response {
-  display: none;
-}
-
-#mc_embed_signup #mce-success-response {
-  color: #529214;
-  display: none;
-}
-
-.mc-field-group {
-  display: block;
-  width: 100%;
-}
-
-#mc-embedded-subscribe-form .mc_fieldset {
-  border: none;
-  min-height: 0;
-  padding-bottom: 0;
-}
-
-#mc-embedded-subscribe-form input[type="checkbox"] {
-  display: inline;
-  width: auto;
-  margin-right: 1ch;
-}
-
-.mc_a11y_label {
-  width: 100%;
-  padding: 3px 0;
-  margin-bottom: 0.5em;
-  font-family: var(--headings);
-  font-weight: 700;
-}
-
-.mc_a11y_fix {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
-  margin-bottom: 1em;
-}
-
-@media (max-width: 768px) {
-  .mc_a11y_fix {
-    grid-template-columns: 1fr;
-    gap: 1em;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr 1fr;
-    align-items: end;
-    max-width: none;
-  }
-
-  .statistics {
-    flex-direction: row;
-  }
-
-  .merch-preview {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
