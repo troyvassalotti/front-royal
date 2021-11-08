@@ -14,12 +14,21 @@
     <link rel="stylesheet" href="/assets/css/sanitize.min.css">
     <link rel="stylesheet" href="/assets/css/main.min.css">
     <style>
+        header {
+            margin-bottom: 5ch;
+        }
+
         h1 {
             margin-bottom: 0;
         }
 
-        .header {
-            margin-bottom: 5ch;
+        .featured-image {
+            font-size: var(--step--2);
+            margin-inline: 0;
+        }
+
+        .featured-image img {
+            max-inline-size: 100%;
         }
 
         .icons img {
@@ -32,66 +41,66 @@
 
         .statistics {
             display: flex;
-            justify-content: space-between;
             flex-direction: column;
-        }
-
-        .featured-image {
-            margin-inline: 0;
-            font-size: var(--step--2);
-        }
-
-        .featured-image img {
-            max-width: 100%;
+            justify-content: space-between;
         }
 
         .stat-box {
             flex: 1;
         }
 
-        .stat-box .metric {
-            font-size: var(--step-2);
+        .metric {
             font-family: var(--headings);
+            font-size: var(--step-2);
             font-weight: 700;
             margin: 0;
         }
 
         .biography__short summary {
-            font-size: var(--step-1);
-            font-family: var(--headings);
-            font-weight: 700;
             cursor: pointer;
+            font-family: var(--headings);
+            font-size: var(--step-1);
+            font-weight: 700;
+            list-style: none;
             text-decoration: underline;
         }
 
         /* ======================
         Contact Form Styles
         ======================= */
+        #contact {
+            --skew-color: var(--blue);
+            --skew-direction: -3deg;
+            --skew-padding: 3ch 0 6ch;
+            --skew-text: var(--black);
+            margin-block: 5em;
+        }
+
         .contact-form {
-            border-radius: 2ex;
-            padding: 2ex;
-            margin: auto;
             background: var(--black);
+            border-radius: 2ex;
             color: var(--white);
-            max-width: 800px;
+            margin: auto;
+            max-inline-size: 800px;
+            padding: 2ex;
         }
 
         .contact-form label {
             display: flex;
             flex-direction: column;
-            margin: 1ch 0;
-            font-size: var(--step--1);
             font-family: var(--headings);
+            font-size: var(--step--1);
             font-weight: 700;
+            margin: 1ch 0;
         }
 
         #email,
         #message,
         #name {
-            padding: 1ch;
-            margin-top: 1ch;
-            border-radius: 1ex;
             border-color: transparent;
+            border-radius: 1ex;
+            margin-top: 1ch;
+            padding: 1ch;
         }
 
         #message {
@@ -99,26 +108,16 @@
         }
 
         #submit {
-            border-color: transparent;
-            cursor: pointer;
-            margin-left: auto;
-            margin-right: auto;
             background: var(--white);
+            border-color: transparent;
             color: var(--black);
+            cursor: pointer;
             font-size: var(--step--1);
+            margin-inline: auto;
         }
 
         #submit:hover {
             background: var(--yellow);
-        }
-
-        #contact {
-            --skew-direction: -3deg;
-            --skew-padding: 3ch 0 6ch;
-            --skew-color: var(--blue);
-            --skew-text: var(--black);
-            margin-block-start: 5em;
-            margin-block-end: 5em;
         }
 
         @media only screen and (min-width: 768px) {
@@ -129,13 +128,15 @@
     </style>
 
     <!-- HTML Meta Tags -->
-    <meta name="description" content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
+    <meta name="description"
+          content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
 
     <!-- Facebook Meta Tags -->
     <meta property="og:url" content="https://www.frontroyalband.com/about/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Front Royal | Story Time">
-    <meta property="og:description" content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
+    <meta property="og:description"
+          content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
     <meta property="og:image" content="https://frontroyalband.com/assets/img/tw-vid-1.jpg">
 
     <!-- Twitter Meta Tags -->
@@ -143,7 +144,8 @@
     <meta property="twitter:domain" content="frontroyalband.com">
     <meta property="twitter:url" content="https://www.frontroyalband.com/about/">
     <meta name="twitter:title" content="Front Royal | Story Time">
-    <meta name="twitter:description" content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
+    <meta name="twitter:description"
+          content="Learn everything you need to know about the band Front Royal, not the town Front Royal.">
     <meta name="twitter:image" content="https://frontroyalband.com/assets/img/tw-vid-1.jpg">
 
     <link rel="canonical" href="https://www.frontroyalband.com/about">
@@ -152,8 +154,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 </head>
-<body class="about">
-<header class="flex-center col header">
+<body>
+<header class="flex-center col">
     <div class="logo">
         <a href="/"><img src="/assets/img/logo.png" alt="Front Royal" decoding="async" width="400" height="240"
                          loading="eager"></a>
