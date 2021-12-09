@@ -1,0 +1,33 @@
+{
+  "songs": {
+    "covers": [
+      {
+        "name": "cardigan",
+        "id": "1330083917"
+      },
+      {
+        "name": "Afterglow",
+        "id": "3121179248"
+      },
+      {
+        "name": "Always Do",
+        "id": "230480458"
+      },
+      {
+        "name": "Be Kind",
+        "id": "3376776889"
+      },
+      {
+        "name": "Hold On",
+        "id": "116106972"
+      }
+    ]
+  },
+  "albums": [
+    {
+      "name": "The Thought That Counts",
+      "id": "40123073",
+      "url": "https://frontroyalmd.bandcamp.com/album/the-thought-that-counts"
+    }
+  ]
+}

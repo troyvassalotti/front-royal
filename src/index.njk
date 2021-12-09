@@ -1,0 +1,400 @@
+{% extends "layouts/base.njk" %}
+
+<script>
+    {% set js %}
+    document.body.classList.add("js");
+
+    function handleAnimatedContent(entries) {
+        entries.map((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                animatedContentObserver.unobserve(entry.target);
+            }
+        });
+    }
+
+    const animatedContentObserver = new IntersectionObserver(handleAnimatedContent);
+    const contentToAnimate = document.querySelectorAll(".animated-content");
+    contentToAnimate.forEach(item => animatedContentObserver.observe(item));
+
+    function loadBandsintown(entries) {
+        entries.map((entry) => {
+            if (entry.isIntersecting) {
+                let bandsintown = document.createElement('script');
+                bandsintown.setAttribute('src', 'https://widget.bandsintown.com/main.min.js');
+                entry.target.append(bandsintown);
+            }
+        });
+    }
+
+    const bandsintownObserver = new IntersectionObserver(loadBandsintown);
+    const dates = document.getElementById('dates');
+    bandsintownObserver.observe(dates);
+    {% endset %}
+</script>
+
+{% block content %}
+    {% from "macros.njk" import youtube, bandcampeFrameSm, bandcampFrameLg, merch %}
+    <main class="slideout-top">
+        <div class="full backdrop">
+            <div class="overlay">
+                <div class="full" id="listen">
+                    <section class="wrapper center" data-constrain="some">
+                        <header class="flex-center col">
+                            {% include "partials/logo.njk" %}
+                            <div class="welcome full">
+                                <div class="welcome-text">
+                                    <h1>The Thought That Counts<br aria-hidden="true"><span class="smaller italic">Available Everywhere</span>
+                                    </h1>
+                                </div>
+                                <div class="welcome-content">
+                                    {{ youtube("https://www.youtube-nocookie.com/embed/meqc5CPdTfo", "Teamwork music video", "lazy") }}
+                                </div>
+                            </div>
+                        </header>
+                        <div class="hero full">
+                            <div>
+                                <picture>
+                                    <source srcset="/assets/img/tttc.webp" type="image/webp">
+                                    <img src="/assets/img/tttc.jpg" alt="The Thought That Counts album cover"
+                                         width="700"
+                                         height="700" decoding="async" loading="lazy">
+                                </picture>
+                            </div>
+                            <div>
+                                <noscript>
+                                    <p>You don't have JavaScript enabled, but this is where an embedded player from
+                                        Bandcamp
+                                        would have showed up. You can click the button below instead to go directly
+                                        to
+                                        our
+                                        Bandcamp page, but I can't guarantee that'll work without JavaScript
+                                        either.</p>
+                                    <a class="button" href="https://frontroyalmd.bandcamp.com/">Visit Bandcamp</a>
+                                </noscript>
+                                {{ bandcampFrameLg("40123073", "the-thought-that-counts", "The
+                                    Thought That Counts by Front Royal") }}
+                            </div>
+                        </div>
+                        <section id="cta">
+                            <a class="button"
+                               href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts">Buy
+                                The
+                                Album Now</a>
+                        </section>
+                    </section>
+                </div>
+
+                {% include "partials/arrow-cw.njk" %}
+
+                <article class="full skewed-background" id="follow">
+                    <div class="wrapper">
+                        <section class="content center">
+                            <h2>Follow Us</h2>
+                            <div class="icons full flex-center wrap">
+                                {% for social in socials %}
+                                    <a href="{{ social.url }}">
+                                        <img src="/assets/img/{{ social.img }}.svg" alt="{{ social.alt }}"
+                                             loading="lazy" decoding="async" width="48" height="48">
+                                    </a>
+                                {% endfor %}
+                            </div>
+                            <div class="wrapper" id="newsletter" data-constrain="most">
+                                <section class="flex-center col center content">
+                                    <h3>Sign Up For Our Newsletter</h3>
+                                    {% include "partials/mailchimp.njk" %}
+                                </section>
+                            </div>
+                        </section>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        {% include "partials/arrow-ccw.njk" %}
+
+        <article class="full" id="merch">
+            <div class="wrapper center" data-constrain="more">
+                <h2>We've Got Merch</h2>
+                <div class="grid merch-preview">
+                    {{ merch("Hoodies", "https://front-royal.creator-spring.com/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666", "merch-hoodie_1", "Hoodie with Front Royal logo") }}
+
+                    {{ merch("T-Shirts", "https://front-royal.creator-spring.com/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361", "merch-tshirt_1", "T-shirt with Front Royal logo") }}
+
+                    {{ merch("V-Necks", "https://front-royal.creator-spring.com/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854", "merch-tshirt_2", "T-shirt with a different Front Royal logo") }}
+
+                    {{ merch("Gaiters / Masks", "https://front-royal.creator-spring.com/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188", "merch-gaiter", "Face mask with Front Royal album artwork") }}
+
+                    {{ merch("Pull Overs", "https://front-royal.creator-spring.com/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083", "merch-hoodie_2", "Pull Over Sweatshirt with Front Royal logo") }}
+
+                    {{ merch("Tote Bags", "https://front-royal.creator-spring.com/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936", "merch-tote_bag", "Tote Bag with Front Royal album artwork") }}
+                </div>
+                <a class="button" href="{{ metadata.merch }}">Shop Merch</a>
+            </div>
+        </article>
+
+        {% include "partials/arrow-cw.njk" %}
+
+        <article class="full skewed-background" id="covers">
+            <div class="wrapper">
+                <section class="content center">
+                    <h2 class="font-lg-3">Front Royal Goes Pop</h2>
+                    <div class="grid fluid-col">
+                        {{ bandcampFrameSm("1330083917", "cardigan", "cardigan cover by Front Royal") }}
+
+                        {{ bandcampFrameSm("3121179248", "afterglow", "Afterglow cover by Front Royal") }}
+
+                        {{ bandcampFrameSm("230480458", "always-do", "Always Do cover by Front Royal") }}
+
+                        {{ bandcampFrameSm("3376776889", "be-kind", "Be Kind cover by Front Royal") }}
+
+                        {{ bandcampFrameSm("116106972", "hold-on", "Hold On cover by Front Royal") }}
+                    </div>
+                    <a href="{{ socials.bandcamp.url }}" class="button">Listen To More</a>
+                </section>
+            </div>
+        </article>
+
+        {% include "partials/arrow-ccw.njk" %}
+
+        <article class="full" id="dates">
+            <section class="wrapper center">
+                <h2>Dates</h2>
+                <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false"
+                   data-display-past-dates="false" data-auto-style="false" data-text-color="#f5f5f5"
+                   data-link-color="#f5f5f5" data-background-color="#0a0a0a" data-display-limit="15"
+                   data-link-text-color="#0a0a0a" data-display-lineup="false" data-display-play-my-city="false"
+                   data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
+                   data-font="var(--body)"
+                   data-display-logo="false"></a>
+                <noscript>
+                    <p>You don't have JavaScript enabled, but this is where a widget from Bandsintown would have
+                        appeared.
+                        It shows current or upcoming tour dates, as well as previous tour dates. Sorry you can't see
+                        that
+                        right now.</p>
+                </noscript>
+            </section>
+        </article>
+    </main>
+
+    <aside class="slideout">
+        <picture>
+            <source srcset="/assets/img/footer.avif" type="image/avif">
+            <img src="/assets/img/footer.jpg"
+                 alt="Troy, Coleman, and Justin pointing to the top right of the scene and pretending to yell."
+                 loading="lazy" decoding="async" width="1920" height="823">
+        </picture>
+    </aside>
+{% endblock %}
+
+<style>
+    {% set css %}
+    .slideout-top {
+        background: var(--black);
+        display: flex;
+        flex-direction: column;
+        inline-size: 100%;
+    }
+
+    .slideout {
+        bottom: 0;
+        position: sticky;
+        z-index: -2;
+    }
+
+    .backdrop {
+        background-attachment: local;
+        background-attachment: fixed;
+        background-color: var(--blue);
+        background-image: url("/assets/img/tttc-wallpaper-blur.jpg");
+        background-position: center;
+        background-size: cover;
+    }
+
+    .overlay {
+        background: var(--overlay);
+    }
+
+    #listen h1 {
+        font-family: var(--caps);
+        line-height: 1.75ch;
+    }
+
+    #listen .video-embed {
+        max-width: 1100px;
+    }
+
+    .video-embed {
+        margin-block-end: clamp(3ch, 5vw, 7ch);
+        margin-inline: auto;
+        position: relative;
+    }
+
+    .video-embed iframe {
+        block-size: 100%;
+        inline-size: 100%;
+    }
+
+    @supports (aspect-ratio: 16 / 9) {
+        .video-embed iframe {
+            aspect-ratio: 16 / 9;
+        }
+    }
+
+    @supports not (aspect-ratio: 16 / 9) {
+        .video-embed::after {
+            content: "";
+            display: block;
+            padding-bottom: calc(100% / (16 / 9));
+        }
+
+        .video-embed iframe {
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+
+    .hero {
+        display: grid;
+        gap: var(--mainGap);
+        margin: auto;
+        max-inline-size: 700px;
+    }
+
+    .hero img {
+        box-shadow: 0 0 25px 2px var(--black);
+        inline-size: 100%;
+        max-inline-size: 500px;
+    }
+
+    #cta {
+        padding: 2em 0;
+    }
+
+    #follow {
+        --skew-color: var(--white);
+        --skew-direction: -3deg;
+        --skew-padding: 3ch 0 7ch;
+        --skew-text: var(--black);
+    }
+
+    #newsletter {
+        margin-top: 5ch;
+    }
+
+    #mailto {
+        color: var(--black);
+    }
+
+    .arrow {
+        --position: 55vw;
+        --size: 175px;
+        block-size: var(--size);
+        inline-size: 100%;
+        margin: clamp(3ch, 4vw, 3ch) 0;
+        position: relative;
+    }
+
+    .arrow img {
+        max-block-size: var(--size);
+        position: absolute;
+    }
+
+    .arrow img[width] {
+        inline-size: auto;
+    }
+
+    .arrow .ccw {
+        right: var(--position);
+        transform: rotate(-25deg) scaleX(-1);
+    }
+
+    .arrow .cw {
+        left: var(--position);
+        transform: rotate(25deg);
+    }
+
+    /* for animating */
+    .js .animated-content {
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .js .animated-content.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    #merch .button {
+        background: var(--blue);
+        color: var(--black);
+        margin-block-start: 2ch;
+    }
+
+    #merch .button:hover {
+        background: var(--yellow);
+    }
+
+    .merch-preview {
+        font-family: var(--caps);
+        font-size: var(--step-0);
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+        padding: 1ch;
+    }
+
+    .merch-preview figure {
+        margin: 0;
+    }
+
+    .merch-preview img {
+        inline-size: 100%;
+        margin-block-end: 1.25ch;
+        transition: 0.3s ease;
+    }
+
+    .merch-preview img:hover {
+        filter: opacity(0.6);
+    }
+
+    #covers {
+        --skew-direction: 3deg;
+        --skew-padding: 3ch 0 7ch;
+        --skew-text: var(--black);
+    }
+
+    #covers::before {
+        background-attachment: local;
+        background-attachment: fixed;
+        background-color: rebeccapurple;
+        background-blend-mode: luminosity;
+        background-image: url("/assets/img/covers-red.jpg");
+        background-position: top;
+        background-size: cover;
+    }
+
+    #covers .content {
+        padding-block: 2rem;
+    }
+
+    #covers .content .grid {
+        justify-items: center;
+        margin-block-end: 2rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .hero {
+            align-items: end;
+            grid-template-columns: 1fr 1fr;
+            max-inline-size: none;
+        }
+
+        .merch-preview {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+    }
+
+    {% endset %}
+</style>
