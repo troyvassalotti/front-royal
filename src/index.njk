@@ -34,7 +34,7 @@
 </script>
 
 {% block content %}
-    {% from "macros.njk" import youtube, bandcampeFrameSm, bandcampFrameLg, merch %}
+    {% from "macros.njk" import youtube, bandcampFrameSm, bandcampFrameLg, merch %}
     <main class="slideout-top">
         <div class="full backdrop">
             <div class="overlay">
@@ -70,7 +70,7 @@
                                         our
                                         Bandcamp page, but I can't guarantee that'll work without JavaScript
                                         either.</p>
-                                    <a class="button" href="https://frontroyalmd.bandcamp.com/">Visit Bandcamp</a>
+                                    <a class="button" href="{{ bandcamp.url }}">Visit Bandcamp</a>
                                 </noscript>
                                 {{ bandcampFrameLg("40123073", "the-thought-that-counts", "The
                                     Thought That Counts by Front Royal") }}
@@ -78,7 +78,7 @@
                         </div>
                         <section id="cta">
                             <a class="button"
-                               href="https://frontroyalmd.bandcamp.com/album/the-thought-that-counts">Buy
+                               href="{{ bandcamp.url }}/album/the-thought-that-counts">Buy
                                 The
                                 Album Now</a>
                         </section>
@@ -150,7 +150,7 @@
 
                         {{ bandcampFrameSm("116106972", "hold-on", "Hold On cover by Front Royal") }}
                     </div>
-                    <a href="{{ socials.bandcamp.url }}" class="button">Listen To More</a>
+                    <a href="{{ bandcamp.url }}" class="button">Listen To More</a>
                 </section>
             </div>
         </article>

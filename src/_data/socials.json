@@ -1,42 +1,50 @@
-{
-  "bandcamp": {
+[
+  {
+    "name": "Bandcamp",
     "url": "https://frontroyalmd.bandcamp.com",
     "img": "bc",
     "alt": "Listen on Bandcamp"
   },
-  "apple": {
+  {
+    "name": "Apple Music",
     "url": "https://music.apple.com/us/artist/front-royal/1081565948",
     "img": "applemusic",
     "alt": "Listen on Apple Music"
   },
-  "spotify": {
+  {
+    "name": "Spotify",
     "url": "https://open.spotify.com/artist/1NfwIBuuWEk4d8c6LZftnD?si=7CjcwpNZTjipSVaXrLypLg",
     "img": "spotify",
     "alt": "Listen on Spotify"
   },
-  "instagram": {
+  {
+    "name": "Instagram",
     "url": "https://instagram.com/frontroyal_official/",
     "img": "insta",
     "alt": "Follow us on Instagram"
   },
-  "facebook": {
+  {
+    "name": "Facebook",
     "url": "https://facebook.com/FrontRoyalMD/",
     "img": "fb",
     "alt": "Like us on Facebook"
   },
-  "twitter": {
+  {
+    "name": "Twitter",
     "url": "https://twitter.com/frontroyalband",
     "img": "twit",
     "alt": "Follow us on Twitter"
   },
-  "youtube": {
+  {
+    "name": "YouTube",
     "url": "https://www.youtube.com/channel/UCm-KryhT3o9NZSbpG-M1qCQ/feed",
     "img": "yt",
     "alt": "Subscribe to our YouTube channel"
   },
-  "discord": {
+  {
+    "name": "Discord",
     "url": "https://discord.gg/pmc4HgH",
     "img": "discord",
     "alt": "Join our Discord server"
   }
-}
+]
