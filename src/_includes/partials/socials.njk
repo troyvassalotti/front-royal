@@ -1,0 +1,8 @@
+<div class="icons full flex-center wrap">
+    {% for social in socials %}
+        <a href="{{ social.url }}">
+            <img src="/assets/img/{{ social.img }}.svg" alt="{{ social.alt }}"
+                 loading="lazy" decoding="async" width="48" height="48">
+        </a>
+    {% endfor %}
+</div>

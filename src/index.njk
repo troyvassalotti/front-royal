@@ -91,14 +91,7 @@
                     <div class="wrapper">
                         <section class="content center">
                             <h2>Follow Us</h2>
-                            <div class="icons full flex-center wrap">
-                                {% for social in socials %}
-                                    <a href="{{ social.url }}">
-                                        <img src="/assets/img/{{ social.img }}.svg" alt="{{ social.alt }}"
-                                             loading="lazy" decoding="async" width="48" height="48">
-                                    </a>
-                                {% endfor %}
-                            </div>
+                            {% include "partials/socials.njk" %}
                             <div class="wrapper" id="newsletter" data-constrain="most">
                                 <section class="flex-center col center content">
                                     <h3>Sign Up For Our Newsletter</h3>
@@ -113,69 +106,15 @@
 
         {% include "partials/arrow-ccw.njk" %}
 
-        <article class="full" id="merch">
-            <div class="wrapper center" data-constrain="more">
-                <h2>We've Got Merch</h2>
-                <div class="grid merch-preview">
-                    {{ merch("Hoodies", "https://front-royal.creator-spring.com/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666", "merch-hoodie_1", "Hoodie with Front Royal logo") }}
-
-                    {{ merch("T-Shirts", "https://front-royal.creator-spring.com/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361", "merch-tshirt_1", "T-shirt with Front Royal logo") }}
-
-                    {{ merch("V-Necks", "https://front-royal.creator-spring.com/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854", "merch-tshirt_2", "T-shirt with a different Front Royal logo") }}
-
-                    {{ merch("Gaiters / Masks", "https://front-royal.creator-spring.com/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188", "merch-gaiter", "Face mask with Front Royal album artwork") }}
-
-                    {{ merch("Pull Overs", "https://front-royal.creator-spring.com/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083", "merch-hoodie_2", "Pull Over Sweatshirt with Front Royal logo") }}
-
-                    {{ merch("Tote Bags", "https://front-royal.creator-spring.com/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936", "merch-tote_bag", "Tote Bag with Front Royal album artwork") }}
-                </div>
-                <a class="button" href="{{ metadata.merch }}">Shop Merch</a>
-            </div>
-        </article>
+        {% include "partials/merch.njk" %}
 
         {% include "partials/arrow-cw.njk" %}
 
-        <article class="full skewed-background" id="covers">
-            <div class="wrapper">
-                <section class="content center">
-                    <h2 class="font-lg-3">Front Royal Goes Pop</h2>
-                    <div class="grid fluid-col">
-                        {{ bandcampFrameSm("1330083917", "cardigan", "cardigan cover by Front Royal") }}
-
-                        {{ bandcampFrameSm("3121179248", "afterglow", "Afterglow cover by Front Royal") }}
-
-                        {{ bandcampFrameSm("230480458", "always-do", "Always Do cover by Front Royal") }}
-
-                        {{ bandcampFrameSm("3376776889", "be-kind", "Be Kind cover by Front Royal") }}
-
-                        {{ bandcampFrameSm("116106972", "hold-on", "Hold On cover by Front Royal") }}
-                    </div>
-                    <a href="{{ bandcamp.url }}" class="button">Listen To More</a>
-                </section>
-            </div>
-        </article>
+        {% include "partials/covers.njk" %}
 
         {% include "partials/arrow-ccw.njk" %}
 
-        <article class="full" id="dates">
-            <section class="wrapper center">
-                <h2>Dates</h2>
-                <a class="bit-widget-initializer" data-artist-name="Front Royal" data-display-local-dates="false"
-                   data-display-past-dates="false" data-auto-style="false" data-text-color="#f5f5f5"
-                   data-link-color="#f5f5f5" data-background-color="#0a0a0a" data-display-limit="15"
-                   data-link-text-color="#0a0a0a" data-display-lineup="false" data-display-play-my-city="false"
-                   data-separator-color="rgba(255, 255, 255, 0.5)" data-display-start-time="true"
-                   data-font="var(--body)"
-                   data-display-logo="false"></a>
-                <noscript>
-                    <p>You don't have JavaScript enabled, but this is where a widget from Bandsintown would have
-                        appeared.
-                        It shows current or upcoming tour dates, as well as previous tour dates. Sorry you can't see
-                        that
-                        right now.</p>
-                </noscript>
-            </section>
-        </article>
+        {% include "partials/bandsintown.njk" %}
     </main>
 
     <aside class="slideout">
