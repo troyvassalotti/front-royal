@@ -1,0 +1,28 @@
+{
+  "name": "front-royal",
+  "version": "1.0.0",
+  "description": "Front Royal (the band, not the town) now has a website. Cool!",
+  "main": "index.js",
+  "scripts": {
+    "build": "ELEVENTY_ENV=production eleventy",
+    "watch": "eleventy --watch",
+    "serve": "ELEVENTY_ENV=production eleventy --serve",
+    "dev": "ELEVENTY_ENV=development eleventy --serve --quiet",
+    "debug": "DEBUG=* eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troyvassalotti/front-royal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/troyvassalotti/front-royal/issues"
+  },
+  "homepage": "https://github.com/troyvassalotti/front-royal#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^1.0.0-beta.8",
+    "html-minifier-terser": "^7.0.0-alpha.0"
+  }
+}

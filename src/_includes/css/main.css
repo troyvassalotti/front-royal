@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Bebas Neue";
+    src: url("/assets/fonts/Bebas-Neue.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
 html {
   --mainGap: 3ex;
   --smGap: 1.5ex;
@@ -46,7 +56,6 @@ h3,
 h4 {
   margin-top: 0;
   font-family: var(--headings);
-  font-weight: 700;
 }
 
 h1 {
@@ -250,7 +259,6 @@ a:hover {
   transition: 0.3s ease-out;
   font-size: var(--step-1);
   font-family: var(--caps);
-  font-weight: 700;
 }
 
 .button:hover {

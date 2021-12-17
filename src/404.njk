@@ -1,0 +1,14 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+    <header class="flex-center">
+        {% include "partials/logo.njk" %}
+    </header>
+    <main class="flex-center col full">
+        <section class="center">
+            <h1>{{ title }}</h1>
+            <p>Well, it looks like the page you were trying to get to doesn't exist.</p>
+            <p>You can <a href="/">go back home</a> if you'd like though.</p>
+        </section>
+    </main>
+{% endblock %}
