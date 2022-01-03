@@ -1,5 +1,4 @@
 const htmlmin = require("html-minifier-terser");
-const inputDir = "./src";
 
 module.exports = function (config) {
   // Transforms
@@ -20,10 +19,7 @@ module.exports = function (config) {
   }
 
   // Passthroughs
-  config.addPassthroughCopy(`${inputDir}/assets`);
-  config.addPassthroughCopy(`${inputDir}/robots.txt`);
-  config.addPassthroughCopy(`${inputDir}/favicon.ico`);
-  config.addPassthroughCopy(`${inputDir}/site.webmanifest`);
+  config.addPassthroughCopy({"./public": "/"});
 
   return {
     dir: {
