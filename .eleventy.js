@@ -1,30 +1,40 @@
 const htmlmin = require("html-minifier-terser");
+const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
+
+const jsDir = "/assets/js";
 
 module.exports = function (config) {
-  // Transforms
-  if (process.env.ELEVENTY_ENV === "production") {
-    config.addTransform("htmlmin", function (content, outputPath) {
-      if (this.outputPath && this.outputPath.endsWith(".html")) {
-        let minified = htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          minifyCSS: true,
-          minifyJS: true,
-        });
-        return minified;
-      }
-      return content;
+    config.addPlugin(addWebComponentDefinitions, {
+        path: (tag) => `${jsDir}/components/${tag}.js`,
     });
-  }
 
-  // Passthroughs
-  config.addPassthroughCopy({"./public": "/"});
+    // Transforms
+    if (process.env.ELEVENTY_ENV === "production") {
+        config.addTransform("htmlmin", function (content, outputPath) {
+            if (this.outputPath && this.outputPath.endsWith(".html")) {
+                return htmlmin.minify(content, {
+                    useShortDoctype: true,
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    minifyCSS: true,
+                    minifyJS: true,
+                });
+            }
+            return content;
+        });
+    }
 
-  return {
-    dir: {
-      input: "src",
-      layouts: "_includes/layouts",
-    },
-  };
+    // Passthroughs
+    config.addPassthroughCopy({"./public": "/"});
+    config.addPassthroughCopy({
+        "./node_modules/@zachleat/details-utils/details-utils.js": `${jsDir}/components/details-utils.js`,
+    });
+
+    return {
+        htmlTemplateEngine: "njk",
+        dir: {
+            input: "src",
+            layouts: "_includes/layouts",
+        },
+    };
 };

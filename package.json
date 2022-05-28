@@ -14,15 +14,15 @@
     "type": "git",
     "url": "git+https://github.com/troyvassalotti/front-royal.git"
   },
-  "keywords": [],
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/troyvassalotti/front-royal/issues"
   },
   "homepage": "https://github.com/troyvassalotti/front-royal#readme",
-  "dependencies": {
-    "@11ty/eleventy": "^1.0.0-beta.8",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@zachleat/details-utils": "^2.0.2",
+    "eleventy-plugin-add-web-component-definitions": "^2.1.2",
     "html-minifier-terser": "^7.0.0-alpha.0"
   }
 }

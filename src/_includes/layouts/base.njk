@@ -16,9 +16,6 @@
         <style>
             {% include 'css/sanitize.css' %}
             {% include 'css/main.css' %}
-            {% if css %}
-            {{ css | safe }}
-            {% endif %}
         </style>
     {% endblock %}
 
@@ -50,18 +47,15 @@
     <link rel="manifest" href="/site.webmanifest">
 
 </head>
-{% set bodyClass %}{% if page.fileSlug == '' %}home{% else %}{{ page.fileSlug }}{% endif %}{% endset %}
-<body class="{{ bodyClass }}">
+<body>
 
 {% block content %}{% endblock %}
 
 {% include "partials/footer.njk" %}
 
 {% block script %}
-    <script type="module">
-        {% if js %}
-        {{ js | safe }}
-        {% endif %}
+    <script>
+        document.body.classList.add("js");
     </script>
 {% endblock %}
 </body>
