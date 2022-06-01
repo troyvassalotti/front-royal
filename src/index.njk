@@ -14,20 +14,20 @@
 
         const animatedContentObserver = new IntersectionObserver(handleAnimatedContent);
         const contentToAnimate = document.querySelectorAll(".animated-content");
-        contentToAnimate.forEach(item => animatedContentObserver.observe(item));
+        contentToAnimate.forEach((item) => animatedContentObserver.observe(item));
 
         function loadBandsintown(entries) {
             entries.map((entry) => {
                 if (entry.isIntersecting) {
-                    let bandsintown = document.createElement('script');
-                    bandsintown.setAttribute('src', 'https://widget.bandsintown.com/main.min.js');
+                    let bandsintown = document.createElement("script");
+                    bandsintown.setAttribute("src", "https://widget.bandsintown.com/main.min.js");
                     entry.target.append(bandsintown);
                 }
             });
         }
 
         const bandsintownObserver = new IntersectionObserver(loadBandsintown);
-        const dates = document.getElementById('dates');
+        const dates = document.getElementById("dates");
         bandsintownObserver.observe(dates);
     </script>
 {% endblock %}
@@ -43,7 +43,8 @@
                             {% include "partials/logo.njk" %}
                             <div class="welcome full">
                                 <div class="welcome-text">
-                                    <h1>Long Story Short<br aria-hidden="true"><span class="smaller italic">Available Everywhere</span>
+                                    <h1>
+                                        Long Story Short<br aria-hidden="true"/><span class="smaller italic">Available Everywhere</span>
                                     </h1>
                                 </div>
                                 <div class="welcome-content">
@@ -54,31 +55,31 @@
                         <div class="hero full">
                             <div>
                                 <picture>
-                                    <source srcset="/assets/img/lss.webp" type="image/webp">
-                                    <img src="/assets/img/lss.jpg" alt="Long Story Short album cover"
-                                         width="700"
-                                         height="700" decoding="async" loading="lazy">
+                                    <source srcset="/assets/img/lss.webp" type="image/webp"/>
+                                    <img
+                                            src="/assets/img/lss.jpg"
+                                            alt="Long Story Short album cover"
+                                            width="700"
+                                            height="700"
+                                            decoding="async"
+                                            loading="lazy"/>
                                 </picture>
                             </div>
                             <div>
                                 <noscript>
-                                    <p>You don't have JavaScript enabled, but this is where an embedded player from
-                                        Bandcamp
-                                        would have showed up. You can click the button below instead to go directly
-                                        to
-                                        our
-                                        Bandcamp page, but I can't guarantee that'll work without JavaScript
-                                        either.</p>
+                                    <p>
+                                        You don't have JavaScript enabled, but this is where an embedded player from
+                                        Bandcamp would have showed up. You can click the button below instead to go
+                                        directly to our Bandcamp page, but I can't guarantee that'll work without
+                                        JavaScript either.
+                                    </p>
                                     <a class="button" href="{{ bandcamp.url }}">Visit Bandcamp</a>
                                 </noscript>
                                 {{ bandcampFrameLg("282570022", "long-story-short", "Long Story Short by Front Royal") }}
                             </div>
                         </div>
                         <section id="cta">
-                            <a class="button"
-                               href="{{ bandcamp.url }}/album/long-story-short">Buy
-                                The
-                                Album Now</a>
+                            <a class="button" href="{{ bandcamp.url }}/album/long-story-short">Buy The Album Now</a>
                         </section>
                     </section>
                 </div>
@@ -113,10 +114,14 @@
 
     <aside class="slideout">
         <picture>
-            <source srcset="/assets/img/footer.avif" type="image/avif">
-            <img src="/assets/img/footer.jpg"
-                 alt="Troy, Coleman, and Justin pointing to the top right of the scene and pretending to yell."
-                 loading="lazy" decoding="async" width="1920" height="823">
+            <source srcset="/assets/img/footer.avif" type="image/avif"/>
+            <img
+                    src="/assets/img/footer.jpg"
+                    alt="Troy, Coleman, and Justin pointing to the top right of the scene and pretending to yell."
+                    loading="lazy"
+                    decoding="async"
+                    width="1920"
+                    height="823"/>
         </picture>
     </aside>
 {% endblock %}

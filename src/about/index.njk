@@ -41,13 +41,13 @@
         const statsOptions = {
             root: null,
             rootMargin: "0px",
-            threshold: 1.0
-        }
+            threshold: 1.0,
+        };
 
         const statsObserver = new IntersectionObserver(handleAnimatedStats, statsOptions);
         if (!prefersReducedMotion.matches) {
-            metrics.forEach(metric => metric.innerHTML = "0");
-            metrics.forEach(metric => statsObserver.observe(metric));
+            metrics.forEach((metric) => (metric.innerHTML = "0"));
+            metrics.forEach((metric) => statsObserver.observe(metric));
         }
     </script>
 {% endblock %}
@@ -58,31 +58,29 @@
         <h1 class="center">This Is Front Royal</h1>
         <figure class="featured-image">
             <picture>
-                <source srcset="/assets/img/tw-vid-1.webp" type="image/webp">
-                <img src="/assets/img/tw-vid-1.jpg"
-                     width="1100" height="619" loading="eager" decoding="async"
-                     alt="From left, Coleman, Justin, and Troy, together recording a music video">
+                <source srcset="/assets/img/tw-vid-1.webp" type="image/webp"/>
+                <img
+                        src="/assets/img/tw-vid-1.jpg"
+                        width="1100"
+                        height="619"
+                        loading="eager"
+                        decoding="async"
+                        alt="From left, Coleman, Justin, and Troy, together recording a music video"/>
             </picture>
         </figure>
         <section class="full">
             {% include "partials/stats.njk" %}
-            <div class="wrapper">
-                {% include "partials/socials.njk" %}
-            </div>
+            <div class="wrapper">{% include "partials/socials.njk" %}</div>
         </section>
     </header>
     <main>
         <div class="wrapper" data-constrain="more">
             <h2>Who Is Front Royal?</h2>
-            <article class="biography__long">
-                {% include "partials/bio-long.njk" %}
-            </article>
+            <article class="biography__long">{% include "partials/bio-long.njk" %}</article>
             <details-utils close-esc animate>
                 <details class="biography__short">
                     <summary>Did you skip all that? Click me for the short version.</summary>
-                    <div class="content">
-                        {% include "partials/bio-short.njk" %}
-                    </div>
+                    <div class="content">{% include "partials/bio-short.njk" %}</div>
                 </details>
             </details-utils>
         </div>

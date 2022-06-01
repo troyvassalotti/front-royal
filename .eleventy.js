@@ -4,37 +4,37 @@ const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-de
 const jsDir = "/assets/js";
 
 module.exports = function (config) {
-    config.addPlugin(addWebComponentDefinitions, {
-        path: (tag) => `${jsDir}/components/${tag}.js`,
-    });
+  config.addPlugin(addWebComponentDefinitions, {
+    path: (tag) => `${jsDir}/components/${tag}.js`,
+  });
 
-    // Transforms
-    if (process.env.ELEVENTY_ENV === "production") {
-        config.addTransform("htmlmin", function (content, outputPath) {
-            if (this.outputPath && this.outputPath.endsWith(".html")) {
-                return htmlmin.minify(content, {
-                    useShortDoctype: true,
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    minifyCSS: true,
-                    minifyJS: true,
-                });
-            }
-            return content;
+  // Transforms
+  if (process.env.ELEVENTY_ENV === "production") {
+    config.addTransform("htmlmin", function (content, outputPath) {
+      if (this.outputPath && this.outputPath.endsWith(".html")) {
+        return htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyCSS: true,
+          minifyJS: true,
         });
-    }
-
-    // Passthroughs
-    config.addPassthroughCopy({"./public": "/"});
-    config.addPassthroughCopy({
-        "./node_modules/@zachleat/details-utils/details-utils.js": `${jsDir}/components/details-utils.js`,
+      }
+      return content;
     });
+  }
 
-    return {
-        htmlTemplateEngine: "njk",
-        dir: {
-            input: "src",
-            layouts: "_includes/layouts",
-        },
-    };
+  // Passthroughs
+  config.addPassthroughCopy({ "./public": "/" });
+  config.addPassthroughCopy({
+    "./node_modules/@zachleat/details-utils/details-utils.js": `${jsDir}/components/details-utils.js`,
+  });
+
+  return {
+    htmlTemplateEngine: "njk",
+    dir: {
+      input: "src",
+      layouts: "_includes/layouts",
+    },
+  };
 };

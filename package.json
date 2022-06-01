@@ -8,7 +8,9 @@
     "watch": "eleventy --watch",
     "serve": "ELEVENTY_ENV=production eleventy --serve",
     "dev": "ELEVENTY_ENV=development eleventy --serve --quiet",
-    "debug": "DEBUG=* eleventy"
+    "debug": "DEBUG=* eleventy",
+    "lint": "dprint check",
+    "lint::fix": "dprint fmt"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@zachleat/details-utils": "^2.0.2",
+    "dprint": "^0.29.1",
     "eleventy-plugin-add-web-component-definitions": "^2.1.2",
     "html-minifier-terser": "^7.0.0-alpha.0"
   }

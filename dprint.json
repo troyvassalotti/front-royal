@@ -1,0 +1,25 @@
+{
+  "json": {
+  },
+  "toml": {
+  },
+  "includes": ["**/*.{json,toml,js,vue,html,css}"],
+  "excludes": [
+    "**/*-lock.json",
+    "dist",
+    "_site"
+  ],
+  "plugins": [
+    "https://plugins.dprint.dev/json-0.15.3.wasm",
+    "https://plugins.dprint.dev/toml-0.5.4.wasm",
+    "https://plugins.dprint.dev/prettier-0.9.0.json@76c20538ea4231b3daa9b62059f90ec144200cab5477b7e95b730cbb3ed48957"
+  ],
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "printWidth": 100,
+    "quoteProps": "consistent",
+    "bracketSameLine": true,
+    "tabWidth": 2
+  }
+}

@@ -23,9 +23,9 @@
                 href="{{ bandcamp.url }}/album/{{ album }}">{{ title }}</a></iframe>
 {% endmacro %}
 
-{% macro merch(item, link, img, alt="") %}
+{% macro merch(item, link, img, alt) %}
     <figure>
-        <a href="{{ link }}">
+        <a href="{{ metadata.merch }}{{ link }}">
             <picture>
                 <source srcset="/assets/img/{{ img }}.webp" type="image/webp">
                 <img src="/assets/img/{{ img }}.jpg" width="509" height="509"
