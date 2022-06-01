@@ -2,17 +2,17 @@
     <div class="wrapper center" data-constrain="more">
         <h2>We've Got Merch</h2>
         <div class="grid merch-preview">
-            {{ merch("Hoodies", "/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666", "merch-hoodie_1", "Hoodie with Front Royal logo") }}
+            {{ merch("Hoodies", metadata.merch + "/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666", "merch-hoodie_1", "Hoodie with Front Royal logo") }}
 
-            {{ merch("T-Shirts", "/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361", "merch-tshirt_1", "T-shirt with Front Royal logo") }}
+            {{ merch("T-Shirts", metadata.merch + "/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361", "merch-tshirt_1", "T-shirt with Front Royal logo") }}
 
-            {{ merch("V-Necks", "/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854", "merch-tshirt_2", "T-shirt with a different Front Royal logo") }}
+            {{ merch("V-Necks", metadata.merch + "/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854", "merch-tshirt_2", "T-shirt with a different Front Royal logo") }}
 
-            {{ merch("Gaiters / Masks", "/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188", "merch-gaiter", "Face mask with Front Royal album artwork") }}
+            {{ merch("Gaiters / Masks", metadata.merch + "/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188", "merch-gaiter", "Face mask with Front Royal album artwork") }}
 
-            {{ merch("Pull Overs", "/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083", "merch-hoodie_2", "Pull Over Sweatshirt with Front Royal logo") }}
+            {{ merch("Pull Overs", metadata.merch + "/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083", "merch-hoodie_2", "Pull Over Sweatshirt with Front Royal logo") }}
 
-            {{ merch("Tote Bags", "/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936", "merch-tote_bag", "Tote Bag with Front Royal album artwork") }}
+            {{ merch("Tote Bags", metadata.merch + "/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936", "merch-tote_bag", "Tote Bag with Front Royal album artwork") }}
         </div>
         <a class="button" href="{{ metadata.merch }}">Shop Merch</a>
     </div>
