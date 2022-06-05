@@ -1,6 +1,7 @@
 const htmlmin = require("html-minifier-terser");
 const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
 
+const shortcodes = require("./utils/shortcodes");
 const jsDir = "/assets/js";
 
 module.exports = function (config) {
@@ -29,6 +30,12 @@ module.exports = function (config) {
   config.addPassthroughCopy({
     "./node_modules/@zachleat/details-utils/details-utils.js": `${jsDir}/components/details-utils.js`,
   });
+  config.addPassthroughCopy({
+    "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
+  });
+
+  // Shortcodes
+  config.addNunjucksAsyncShortcode("image", shortcodes.Image);
 
   return {
     htmlTemplateEngine: "njk",

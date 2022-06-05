@@ -1,0 +1,36 @@
+{% extends 'layouts/base.njk' %}
+
+{% block style %}
+    {{ super() }}
+    <style>
+        .gallery-list {
+            gap: 1rem;
+            justify-content: center;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        .gallery-title {
+            font-family: var(--headings);
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <header class="flex-center col">
+        {% include "partials/logo.njk" %}
+    </header>
+    <main>
+        <h1 class="center">Photo Galleries</h1>
+        <ul class="flex wrap gallery-list">
+            {% for gallery in collections.gallery %}
+                <li class="flex-center col">
+                    <a href="{{ gallery.url }}">
+                        <img src="/assets/img/{{ gallery.data.thumbnail }}" alt="">
+                        <p class="center gallery-title">{{ gallery.data.title }}</p>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+{% endblock %}
