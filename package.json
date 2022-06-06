@@ -24,7 +24,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
     "@11ty/eleventy-img": "^2.0.1",
-    "@troyv/web-components": "^3.1.2",
+    "@troyv/web-components": "^3.2.0",
     "@zachleat/details-utils": "^2.0.2",
     "dprint": "^0.29.1",
     "eleventy-plugin-add-web-component-definitions": "^2.1.2",
