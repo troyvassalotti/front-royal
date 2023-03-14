@@ -41,9 +41,12 @@
       }
     </script>
 
-    <style webc:is="global-css"></style>
+    <link rel="stylesheet" :href="url('/assets/css/sanitize.css')" webc:keep />
+    <link rel="stylesheet" :href="url('/assets/css/main.css')" webc:keep />
+
     <style @raw="getBundle('css')" webc:keep></style>
     <script @raw="getBundle('js')" webc:keep></script>
+    <script type="module" @raw="getBundle('js', 'module')" webc:keep></script>
 
     <!-- SEO -->
     <meta name="description" :content="returnDescriptionString()" />
@@ -74,5 +77,6 @@
   <body>
     <template @raw="content" webc:nokeep></template>
     <site-footer></site-footer>
+    <script @raw="getBundle('js', 'defer')" webc:keep></script>
   </body>
 </html>
