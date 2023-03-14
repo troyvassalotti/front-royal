@@ -1,44 +1,38 @@
-const htmlmin = require("html-minifier-terser");
 const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
 
-const shortcodes = require("./utils/shortcodes");
-const jsDir = "/assets/js";
+const SHORTCODES = require("./utils/shortcodes");
+const TRANSFORMS = require("./utils/transforms");
+const JS_DIR = "/assets/js";
 
 module.exports = function (config) {
   config.addPlugin(addWebComponentDefinitions, {
-    path: (tag) => `${jsDir}/components/${tag}.js`,
+    path: (tag) => `${JS_DIR}/components/${tag}.js`,
   });
 
-  // Transforms
-  if (process.env.ELEVENTY_ENV === "production") {
-    config.addTransform("htmlmin", function (content, outputPath) {
-      if (this.outputPath && this.outputPath.endsWith(".html")) {
-        return htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          minifyCSS: true,
-          minifyJS: true,
-        });
-      }
-      return content;
-    });
-  }
+  config.addPlugin(pluginWebc, {
+    components: "./src/_components/**/*.html",
+  });
 
   // Passthroughs
-  config.addPassthroughCopy({ "./public": "/" });
+  config.addPassthroughCopy({ public: "/" });
   config.addPassthroughCopy({
-    "./node_modules/@zachleat/details-utils/details-utils.js": `${jsDir}/components/details-utils.js`,
+    "./node_modules/@zachleat/details-utils/details-utils.js": `${JS_DIR}/components/details-utils.js`,
   });
   config.addPassthroughCopy({
-    "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
+    "./node_modules/@troyv/lightboxing/dist/**/*.js": `${JS_DIR}/components/`,
   });
 
   // Shortcodes
-  config.addNunjucksAsyncShortcode("image", shortcodes.Image);
+  config.addNunjucksAsyncShortcode("image", SHORTCODES.Image);
+
+  // Transforms
+  Object.keys(TRANSFORMS).forEach((transformName) => {
+    config.addTransform(transformName, TRANSFORMS[transformName]);
+  });
 
   return {
-    htmlTemplateEngine: "njk",
+    htmlTemplateEngine: "webc",
     dir: {
       input: "src",
       layouts: "_includes/layouts",
