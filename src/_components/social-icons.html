@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="icons full flex-center wrap">
+    <script webc:type="js" webc:is="template">
+      socials
+        .map(
+          (social) => `<a href="${social.url}">
+	  <img src="/assets/img/${social.img}.svg" alt="${social.alt}"
+			 loading="lazy" decoding="async" width="48" height="48">
+	</a>`
+        )
+        .join("");
+    </script>
+  </div>
+</div>
+
+<style webc:scoped>
+  .icons img {
+    filter: invert(100%);
+  }
+
+  .icons img:hover {
+    filter: invert(100%) contrast(2%);
+  }
+</style>
