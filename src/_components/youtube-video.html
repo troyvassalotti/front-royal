@@ -1,0 +1,47 @@
+<div class="video-embed">
+  <script webc:type="js" webc:is="template">
+    `<iframe
+    loading="${loading || "lazy"}"
+    width="560"
+    height="315"
+    src="https://www.youtube-nocookie.com/embed/${src}"
+    title="${title || "YouTube video player"}"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`;
+  </script>
+</div>
+
+<style webc:scoped>
+  .video-embed {
+    margin-block-end: clamp(3ch, 5vw, 7ch);
+    margin-inline: auto;
+    position: relative;
+  }
+
+  .video-embed iframe {
+    block-size: 100%;
+    inline-size: 100%;
+  }
+
+  @supports (aspect-ratio: 16 / 9) {
+    .video-embed iframe {
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  @supports not (aspect-ratio: 16 / 9) {
+    .video-embed::after {
+      content: "";
+      display: block;
+      padding-bottom: calc(100% / (16 / 9));
+    }
+
+    .video-embed iframe {
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      position: absolute;
+    }
+  }
+</style>
