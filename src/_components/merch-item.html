@@ -1,0 +1,19 @@
+<script webc:type="js" webc:is="template">
+  const { html } = require("common-tags");
+  /**
+   * @prop {string} item
+   * @prop {string} url
+   * @prop {string} img
+   * @prop {string} alt
+   */
+
+  html`<figure>
+    <a href="${url}">
+      <picture>
+        <source srcset="/assets/img/${img}.webp" type="image/webp" />
+        <img src="/assets/img/${img}.jpg" width="509" height="509" alt="${alt}" loading="lazy" decoding="async"
+      /></picture>
+    </a>
+    <figcaption>${item}</figcaption>
+  </figure>`;
+</script>

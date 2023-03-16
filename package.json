@@ -28,6 +28,7 @@
     "@troyv/common-config": "^1.0.1",
     "@troyv/lightboxing": "^2.0.0",
     "@zachleat/details-utils": "^2.0.2",
+    "common-tags": "^1.8.2",
     "dotenv": "^16.0.3",
     "dprint": "^0.29.1",
     "eleventy-plugin-add-web-component-definitions": "^2.1.2",

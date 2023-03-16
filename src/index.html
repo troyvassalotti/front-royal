@@ -33,14 +33,13 @@ description: Front Royal has an official website and you're looking at it right 
   bandsintownObserver.observe(dates);
 </script>
 
-{% from "macros.njk" import youtube, bandcampFrameSm, bandcampFrameLg, merch %}
 <main class="slideout-top">
   <div class="full backdrop">
     <div class="overlay">
       <div class="full" id="listen">
         <section class="wrapper center" data-constrain="some">
           <header class="flex-center col">
-            {% include "partials/logo.njk" %}
+            <site-logo></site-logo>
             <div class="welcome full">
               <div class="welcome-text">
                 <h1>
@@ -75,7 +74,7 @@ description: Front Royal has an official website and you're looking at it right 
                 </p>
                 <a class="button" :href="bandcamp.url">Visit Bandcamp</a>
               </noscript>
-              {{ bandcampFrameLg("282570022", "long-story-short", "Long Story Short by Front Royal") }}
+			  <bandcamp-frame @type="album" @album="long-story-short" @id="282570022" @title="Long Story Short by Front Royal"></bandcamp-frame>
             </div>
           </div>
           <section id="cta">
@@ -90,7 +89,7 @@ description: Front Royal has an official website and you're looking at it right 
         <div class="wrapper">
           <section class="content center">
             <h2>Follow Us</h2>
-            {% include "partials/socials.njk" %}
+            <social-icons></social-icons>
             <div class="wrapper" id="newsletter" data-constrain="most">
               <section class="flex-center col center content">
                 <h3>Sign Up For Our Newsletter</h3>
