@@ -4,35 +4,6 @@ title: The Band, Not The Town
 description: Front Royal has an official website and you're looking at it right now.
 ---
 
-<script webc:bucket="defer">
-  function handleAnimatedContent(entries) {
-    entries.map((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        animatedContentObserver.unobserve(entry.target);
-      }
-    });
-  }
-
-  const animatedContentObserver = new IntersectionObserver(handleAnimatedContent);
-  const contentToAnimate = document.querySelectorAll(".animated-content");
-  contentToAnimate.forEach((item) => animatedContentObserver.observe(item));
-
-  function loadBandsintown(entries) {
-    entries.map((entry) => {
-      if (entry.isIntersecting) {
-        let bandsintown = document.createElement("script");
-        bandsintown.setAttribute("src", "https://widget.bandsintown.com/main.min.js");
-        entry.target.append(bandsintown);
-      }
-    });
-  }
-
-  const bandsintownObserver = new IntersectionObserver(loadBandsintown);
-  const dates = document.getElementById("dates");
-  bandsintownObserver.observe(dates);
-</script>
-
 <main class="slideout-top">
   <div class="full backdrop">
     <div class="overlay">
@@ -74,7 +45,12 @@ description: Front Royal has an official website and you're looking at it right 
                 </p>
                 <a class="button" :href="bandcamp.url">Visit Bandcamp</a>
               </noscript>
-			  <bandcamp-frame @type="album" @album="long-story-short" @id="282570022" @title="Long Story Short by Front Royal"></bandcamp-frame>
+              <bandcamp-frame
+                @type="album"
+                @album="long-story-short"
+                @id="282570022"
+                @title="Long Story Short by Front Royal"
+              ></bandcamp-frame>
             </div>
           </div>
           <section id="cta">
@@ -83,7 +59,7 @@ description: Front Royal has an official website and you're looking at it right 
         </section>
       </div>
 
-      {% include "partials/arrow-cw.njk" %}
+      <arrow-drawing @direction="cw"></arrow-drawing>
 
       <article class="full skewed-background" id="follow">
         <div class="wrapper">
@@ -93,7 +69,7 @@ description: Front Royal has an official website and you're looking at it right 
             <div class="wrapper" id="newsletter" data-constrain="most">
               <section class="flex-center col center content">
                 <h3>Sign Up For Our Newsletter</h3>
-                {% include "partials/mailchimp.njk" %}
+                <mailchimp-form></mailchimp-form>
               </section>
             </div>
           </section>
@@ -102,23 +78,16 @@ description: Front Royal has an official website and you're looking at it right 
     </div>
   </div>
 
-  {% include "partials/arrow-ccw.njk" %} {% include "partials/merch.njk" %} {% include "partials/arrow-cw.njk" %} {%
-  include "partials/bandsintown.njk" %}
+  <arrow-drawing @direction="ccw"></arrow-drawing>
+
+  <merch-list></merch-list>
+
+  <arrow-drawing @direction="cw"></arrow-drawing>
+
+  <bandsintown-widget></bandsintown-widget>
 </main>
 
-<aside class="slideout">
-  <picture>
-    <source srcset="/assets/img/footer.avif" type="image/avif" />
-    <img
-      src="/assets/img/footer.jpg"
-      alt="Troy, Coleman, and Justin pointing to the top right of the scene and pretending to yell."
-      loading="lazy"
-      decoding="async"
-      width="1920"
-      height="823"
-    />
-  </picture>
-</aside>
+<slideout-image></slideout-image>
 
 <style>
   .slideout-top {
@@ -126,12 +95,6 @@ description: Front Royal has an official website and you're looking at it right 
     display: flex;
     flex-direction: column;
     inline-size: 100%;
-  }
-
-  .slideout {
-    bottom: 0;
-    position: sticky;
-    z-index: -2;
   }
 
   .backdrop {
@@ -184,115 +147,11 @@ description: Front Royal has an official website and you're looking at it right 
     margin-top: 5ch;
   }
 
-  #mailto {
-    color: var(--black);
-  }
-
-  .arrow {
-    --position: 55vw;
-    --size: 175px;
-    block-size: var(--size);
-    inline-size: 100%;
-    margin: clamp(3ch, 4vw, 3ch) 0;
-    position: relative;
-  }
-
-  .arrow img {
-    max-block-size: var(--size);
-    position: absolute;
-  }
-
-  .arrow img[width] {
-    inline-size: auto;
-  }
-
-  .arrow .ccw {
-    right: var(--position);
-    transform: rotate(-25deg) scaleX(-1);
-  }
-
-  .arrow .cw {
-    left: var(--position);
-    transform: rotate(25deg);
-  }
-
-  /* for animating */
-  .js .animated-content {
-    opacity: 0;
-    transform: translateY(-100px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
-
-  .js .animated-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  #merch .button {
-    background: var(--blue);
-    color: var(--black);
-    margin-block-start: 2ch;
-  }
-
-  #merch .button:hover {
-    background: var(--yellow);
-  }
-
-  .merch-preview {
-    font-family: var(--caps);
-    font-size: var(--step-0);
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    padding: 1ch;
-  }
-
-  .merch-preview figure {
-    margin: 0;
-  }
-
-  .merch-preview img {
-    inline-size: 100%;
-    margin-block-end: 1.25ch;
-    transition: 0.3s ease;
-  }
-
-  .merch-preview img:hover {
-    filter: opacity(0.6);
-  }
-
-  #covers {
-    --skew-direction: 3deg;
-    --skew-padding: 3ch 0 7ch;
-    --skew-text: var(--black);
-  }
-
-  #covers::before {
-    background-attachment: local;
-    background-attachment: fixed;
-    background-color: rebeccapurple;
-    background-blend-mode: luminosity;
-    background-image: url("/assets/img/covers-red.jpg");
-    background-position: top;
-    background-size: cover;
-  }
-
-  #covers .content {
-    padding-block: 2rem;
-  }
-
-  #covers .content .grid {
-    justify-items: center;
-    margin-block-end: 2rem;
-  }
-
   @media only screen and (min-width: 768px) {
     .hero {
       align-items: end;
       grid-template-columns: 1fr 1fr;
       max-inline-size: none;
-    }
-
-    .merch-preview {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
   }
 </style>

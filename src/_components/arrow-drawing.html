@@ -1,0 +1,68 @@
+<script webc:bucket="defer">
+  function handleAnimatedContent(entries) {
+    entries.map((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        animatedContentObserver.unobserve(entry.target);
+      }
+    });
+  }
+
+  const animatedContentObserver = new IntersectionObserver(handleAnimatedContent);
+  const contentToAnimate = document.querySelectorAll(".animated-content");
+  contentToAnimate.forEach((item) => animatedContentObserver.observe(item));
+</script>
+
+<div class="arrow animated-content">
+  <img
+    :class="direction"
+    src="/assets/img/arrow-down-2.png"
+    alt=""
+    width="300"
+    height="527"
+    loading="lazy"
+    decoding="async"
+  />
+</div>
+
+<style webc:scoped>
+  .arrow {
+    --position: 55vw;
+    --size: 175px;
+    block-size: var(--size);
+    inline-size: 100%;
+    margin: clamp(3ch, 4vw, 3ch) 0;
+    position: relative;
+  }
+
+  .arrow img {
+    max-block-size: var(--size);
+    position: absolute;
+  }
+
+  .arrow img[width] {
+    inline-size: auto;
+  }
+
+  .arrow .ccw {
+    right: var(--position);
+    transform: rotate(-25deg) scaleX(-1);
+  }
+
+  .arrow .cw {
+    left: var(--position);
+    transform: rotate(25deg);
+  }
+
+  /* for animating */
+  .js .animated-content {
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .js .animated-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

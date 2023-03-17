@@ -1,0 +1,83 @@
+<article class="full" id="merch">
+  <div class="wrapper center" data-constrain="more">
+    <h2>We've Got Merch</h2>
+    <div class="grid merch-preview">
+      <merch-item
+        @item="Hoodies"
+        @url="metadata.merch + '/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666'"
+        @img="merch-hoodie_1"
+        @alt="Hoodie with Front Royal logo"
+      ></merch-item>
+      <merch-item
+        @item="T-Shirts"
+        @url="metadata.merch + '/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361'"
+        @img="merch-tshirt_1"
+        @alt="T-shirt with Front Royal logo"
+      ></merch-item>
+      <merch-item
+        @item="V-Necks"
+        @url="metadata.merch + '/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854'"
+        @img="merch-tshirt_2"
+        @alt="T-shirt with a different Front Royal logo"
+      ></merch-item>
+      <merch-item
+        @item="Gaiters / Masks"
+        @url="metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188'"
+        @img="merch-gaiter"
+        @alt="Face mask with Front Royal album artwork"
+      ></merch-item>
+      <merch-item
+        @item="Pull Overs"
+        @url="metadata.merch + '/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083'"
+        @img="merch-hoodie_2"
+        @alt="Pull Over Sweatshirt with Front Royal logo"
+      ></merch-item>
+      <merch-item
+        @item="Tote Bags"
+        @url="metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936'"
+        @img="merch-tote_bag"
+        @alt="Tote bag with Front Royal album artwork"
+      ></merch-item>
+    </div>
+    <a class="button" :href="metadata.merch">Shop Merch</a>
+  </div>
+</article>
+
+<style webc:scoped>
+  #merch .button {
+    background: var(--blue);
+    color: var(--black);
+    margin-block-start: 2ch;
+  }
+
+  #merch .button:hover {
+    background: var(--yellow);
+  }
+
+  .merch-preview {
+    font-family: var(--caps);
+    font-size: var(--step-0);
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    padding: 1ch;
+  }
+
+  .merch-preview figure {
+    margin: 0;
+  }
+
+  .merch-preview img {
+    inline-size: 100%;
+    margin-block-end: 1.25ch;
+    transition: 0.3s ease;
+  }
+
+  .merch-preview img:hover {
+    filter: opacity(0.6);
+  }
+
+  @media only screen and (min-width: 768px) {
+    .merch-preview {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+  }
+</style>

@@ -13,3 +13,26 @@
         </section>
     </div>
 </article>
+<style>
+    #covers {
+        --skew-direction: 3deg;
+        --skew-padding: 3ch 0 7ch;
+        --skew-text: var(--black);
+    }
+    #covers::before {
+        background-attachment: local;
+        background-attachment: fixed;
+        background-color: rebeccapurple;
+        background-blend-mode: luminosity;
+        background-image: url("/assets/img/covers-red.jpg");
+        background-position: top;
+        background-size: cover;
+    }
+    #covers .content {
+        padding-block: 2rem;
+    }
+    #covers .content .grid {
+        justify-items: center;
+        margin-block-end: 2rem;
+    }
+</style>
