@@ -44,11 +44,6 @@ body {
   font-family: var(--body);
 }
 
-/* if javascript is disabled, hide the bandcamp iframe */
-body:not(.js) noscript + iframe {
-  display: none;
-}
-
 h1,
 h2,
 h3,
@@ -181,16 +176,6 @@ img[height] {
   font-weight: 700;
 }
 
-.logo a {
-  display: inline-block;
-  inline-size: auto;
-  block-size: auto;
-}
-
-.logo img {
-  inline-size: clamp(100px, 50vw, 200px);
-}
-
 .smaller {
   font-size: var(--step--1);
 }
@@ -216,30 +201,6 @@ img[height] {
   background: var(--skew-color);
 }
 
-.icons {
-  max-inline-size: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* because the icons are flexbox and safari doesn't support gap properties in flexbox */
-.icons a {
-  margin: 1.5ex;
-}
-
-.icons img {
-  max-inline-size: 48px;
-  transition: 0.2s ease;
-}
-
-.icons img:hover {
-  filter: contrast(10%);
-}
-
-.disclaimer {
-  font-size: var(--step--2);
-}
-
 a {
   color: var(--blue);
 }
@@ -263,32 +224,6 @@ a:hover {
 .button:hover {
   background: var(--yellow);
   color: var(--black);
-}
-
-.footer-main {
-  font-family: var(--caps);
-  font-size: var(--step--1);
-  margin-block-start: auto;
-}
-
-.footer-main .disclaimer {
-  text-align: center;
-}
-
-.footer-main img {
-  border-radius: 50%;
-}
-
-.footer-links {
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-  inline-size: 100%;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: var(--white);
 }
 
 a.animated-link {
@@ -317,12 +252,16 @@ a.animated-link::before {
   transform-origin: left;
 }
 
+*:not(:defined) {
+  display: block;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
   }
 
-  .js .animated-content {
+  .animated-content {
     opacity: 1;
     transform: translateY(0);
   }

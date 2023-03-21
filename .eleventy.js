@@ -6,10 +6,6 @@ const TRANSFORMS = require("./utils/transforms");
 const JS_DIR = "/assets/js";
 
 module.exports = function (config) {
-  config.addPlugin(addWebComponentDefinitions, {
-    path: (tag) => `${JS_DIR}/components/${tag}.js`,
-  });
-
   config.addPlugin(pluginWebc, {
     components: "./src/_components/**/*.html",
   });

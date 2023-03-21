@@ -31,7 +31,6 @@
     "common-tags": "^1.8.2",
     "dotenv": "^16.0.3",
     "dprint": "^0.29.1",
-    "eleventy-plugin-add-web-component-definitions": "^2.1.2",
     "fast-glob": "^3.2.11",
     "html-minifier-terser": "^7.1.0"
   }

@@ -4,7 +4,7 @@
 
 <footer class="footer-main">
   <nav class="footer-nav wrapper" data-constrain="most">
-    <ul class="footer-links">
+    <ul class="footer-links" role="list">
       <li><a class="animated-link" href="/">Home</a></li>
       <li><a class="animated-link" href="/about/">About</a></li>
       <li><a class="animated-link" :href="metadata.merch">Merch</a></li>
@@ -22,3 +22,40 @@
   />
   <p class="disclaimer" @html="copyrightString"></p>
 </footer>
+
+<style webc:scoped>
+  :host {
+    margin-block-start: auto;
+  }
+
+  .disclaimer {
+    font-size: var(--step--2);
+  }
+
+  .footer-main {
+    font-family: var(--caps);
+    font-size: var(--step--1);
+  }
+
+  .footer-main .disclaimer {
+    text-align: center;
+  }
+
+  .footer-main img {
+    border-radius: 50%;
+  }
+
+  .footer-links {
+    align-items: center;
+    display: inline-flex;
+    inline-size: 100%;
+    justify-content: space-around;
+    margin-block: 1rem;
+    padding: 0;
+  }
+
+  .footer-links a {
+    color: var(--white);
+    text-decoration: none;
+  }
+</style>

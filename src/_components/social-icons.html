@@ -1,11 +1,20 @@
 <div class="wrapper">
   <div class="icons full flex-center wrap">
     <script webc:type="js">
+      /**
+       * @prop {"on-light"|"on-dark"} mode
+       */
+
+      let iconClass = "on-light";
+
+      if (mode === "on-dark") {
+        iconClass = "on-dark";
+      }
+
       socials
         .map(
           (social) => `<a href="${social.url}">
-	  <img src="/assets/img/${social.img}.svg" alt="${social.alt}"
-			 loading="lazy" decoding="async" width="48" height="48">
+      <img class="${iconClass}" src="/assets/img/${social.img}.svg" alt="${social.alt}" loading="lazy" decoding="async" width="48" height="48">
 	</a>`
         )
         .join("");
@@ -14,11 +23,31 @@
 </div>
 
 <style webc:scoped>
+  .icons {
+    max-inline-size: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* because the icons are flexbox and safari doesn't support gap properties in flexbox */
+  .icons a {
+    margin: 1.5ex;
+  }
+
   .icons img {
-    filter: invert(100%);
+    max-inline-size: 48px;
+    transition: 0.2s ease;
   }
 
   .icons img:hover {
+    filter: contrast(10%);
+  }
+
+  img.on-dark {
+    filter: invert(100%);
+  }
+
+  img.on-dark:hover {
     filter: invert(100%) contrast(2%);
   }
 </style>

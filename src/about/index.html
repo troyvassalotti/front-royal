@@ -4,6 +4,10 @@ title: Story Time
 description: Learn everything you need to know about the band Front Royal, not the town Front Royal.
 ---
 
+<script webc:bucket="module">
+  import "/assets/js/components/details-utils.js";
+</script>
+
 <header class="flex-center col">
   <site-logo></site-logo>
   <h1 class="center">This Is Front Royal</h1>
@@ -22,7 +26,7 @@ description: Learn everything you need to know about the band Front Royal, not t
   </figure>
   <section class="full">
     <streaming-metrics></streaming-metrics>
-    <social-icons></social-icons>
+    <social-icons @mode="on-dark"></social-icons>
   </section>
 </header>
 <main>
