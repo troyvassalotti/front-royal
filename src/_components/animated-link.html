@@ -1,0 +1,37 @@
+<style webc:scoped>
+  a {
+    position: relative;
+    text-decoration: none;
+  }
+
+  a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    block-size: 0.06em;
+    inline-size: 100%;
+    background-color: currentColor;
+    transition: transform 400ms ease-out;
+  }
+
+  a:hover::before {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  a::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    a {
+      text-decoration: underline;
+    }
+
+    a::before {
+      inline-size: 0;
+    }
+  }
+</style>

@@ -46,11 +46,13 @@ description: Front Royal has an official website and you're looking at it right 
             </div>
           </div>
           <section id="cta">
-            <a class="button" :href="bandcamp.url + '/album/long-story-short'">Buy The Album Now</a>
+            <froro-button>
+              <a :href="bandcamp.url + '/album/long-story-short'">Buy The Album Now</a>
+            </froro-button>
           </section>
         </section>
       </div>
-      
+
       <arrow-drawing @direction="cw"></arrow-drawing>
 
       <article class="full skewed-background" id="follow">
@@ -66,6 +68,7 @@ description: Front Royal has an official website and you're looking at it right 
           </section>
         </div>
       </article>
+      <p>1</p>
     </div>
   </div>
 

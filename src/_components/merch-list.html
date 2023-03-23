@@ -39,19 +39,18 @@
         @alt="Tote bag with Front Royal album artwork"
       ></merch-item>
     </div>
-    <a class="button" :href="metadata.merch">Shop Merch</a>
+    <froro-button>
+      <a :href="metadata.merch">Shop Merch</a>
+    </froro-button>
   </div>
 </article>
 
 <style webc:scoped>
-  #merch .button {
-    background: var(--blue);
-    color: var(--black);
+  froro-button {
+    --button-background: var(--blue);
+    --button-background--hover: var(--yellow);
+    --button-color: var(--black);
     margin-block-start: 2ch;
-  }
-
-  #merch .button:hover {
-    background: var(--yellow);
   }
 
   .merch-preview {

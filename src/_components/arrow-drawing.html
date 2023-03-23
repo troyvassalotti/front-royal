@@ -10,7 +10,7 @@
 
   const animatedContentObserver = new IntersectionObserver(handleAnimatedContent);
   const contentToAnimate = document.querySelectorAll(".animated-content");
-  
+
   contentToAnimate.forEach((item) => animatedContentObserver.observe(item));
 </script>
 
@@ -65,5 +65,12 @@
   .animated-content.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animated-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>

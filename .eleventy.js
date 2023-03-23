@@ -1,8 +1,8 @@
-const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 
 const SHORTCODES = require("./utils/shortcodes");
 const TRANSFORMS = require("./utils/transforms");
+const FILTERS = require("./utils/filters");
 const JS_DIR = "/assets/js";
 
 module.exports = function (config) {
@@ -25,6 +25,11 @@ module.exports = function (config) {
   // Transforms
   Object.keys(TRANSFORMS).forEach((transformName) => {
     config.addTransform(transformName, TRANSFORMS[transformName]);
+  });
+
+  // Filters
+  Object.keys(FILTERS).forEach((filterName) => {
+    config.addFilter(filterName, FILTERS[filterName]);
   });
 
   return {

@@ -3,6 +3,7 @@
   src: url("/assets/fonts/Bebas-Neue.woff2") format("woff2");
   font-style: normal;
   font-weight: 400;
+  font-display: fallback;
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC,
     U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
@@ -29,26 +30,25 @@ html {
   --step-3: clamp(2.2681rem, 2.0098rem + 1.2915vw, 2.93rem);
   --step-4: clamp(2.7219rem, 2.355rem + 1.8341vw, 3.6619rem);
   --step-5: clamp(3.2656rem, 2.7537rem + 2.5598vw, 4.5775rem);
+
   scroll-behavior: smooth;
 }
 
 body {
   background: var(--black);
   color: var(--white);
-  min-block-size: 100vh;
-  inline-size: 100%;
-  display: flex;
-  line-height: 1.35;
-  flex-direction: column;
-  font-size: var(--step--1);
   font-family: var(--body);
+  font-size: var(--step--1);
+  inline-size: 100%;
+  min-block-size: 100vh;
+  /* display: flex; */
+  /* flex-direction: column; */
 }
 
 h1,
 h2,
 h3,
 h4 {
-  margin-top: 0;
   font-family: var(--headings);
 }
 
@@ -92,16 +92,9 @@ h4 {
   font-size: var(--step-0);
 }
 
-img {
-  display: block;
-  max-inline-size: 100%;
-  margin: auto;
+/* img[height] {
   block-size: auto;
-}
-
-img[height] {
-  block-size: auto;
-}
+} */
 
 .wrapper {
   inline-size: 95%;
@@ -209,49 +202,6 @@ a:hover {
   color: var(--yellow);
 }
 
-.button {
-  display: inline-block;
-  padding: 1ch 2ch;
-  background: var(--black);
-  color: var(--white);
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s ease-out;
-  font-size: var(--step-1);
-  font-family: var(--caps);
-}
-
-.button:hover {
-  background: var(--yellow);
-  color: var(--black);
-}
-
-a.animated-link {
-  position: relative;
-  text-decoration: none;
-}
-
-a.animated-link::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  block-size: 0.06em;
-  inline-size: 100%;
-  background-color: currentColor;
-  transition: transform 400ms ease-out;
-}
-
-a.animated-link:hover::before {
-  transform: scaleX(0);
-  transform-origin: right;
-}
-
-a.animated-link::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
 *:not(:defined) {
   display: block;
 }
@@ -259,23 +209,4 @@ a.animated-link::before {
 /* Create equal spacing between elements in a flow context without setting display */
 .flow > * + * {
   margin-block-start: var(--flow-space, 1.45em);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-  }
-
-  .animated-content {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  a.animated-link {
-    text-decoration: underline;
-  }
-
-  a.animated-link::before {
-    inline-size: 0;
-  }
 }

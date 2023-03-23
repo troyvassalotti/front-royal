@@ -1,32 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script webc:setup>
-      function returnTitleString(options = {}) {
-        if (title) {
-          if (options.pipe) {
-            return `${title} | ${metadata.title}`;
-          }
-
-          return title;
-        } else {
-          const slug = page.fileSlug;
-          return slug.charAt(0).toUpperCase() + slug.slice(1);
-        }
-      }
-
-      function returnDescriptionString() {
-        if (description) {
-          return description;
-        } else {
-          return `${returnTitleString()} - a page on ${metadata.domain}`;
-        }
-      }
-    </script>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title @text="returnTitleString({pipe: true})"></title>
+    <title @text="titleString(title, {pipe: true})"></title>
     <!-- Troy Vassalotti, www.troyv.dev -->
 
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" />
@@ -49,21 +26,21 @@
     <script type="module" @raw="getBundle('js', 'module')" webc:keep></script>
 
     <!-- SEO -->
-    <meta name="description" :content="returnDescriptionString()" />
+    <meta name="description" :content="descriptionString(description)" />
     <link rel="canonical" :href="metadata.url + page.url" />
 
     <!-- Facebook Meta Tags -->
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
     <meta property="og:site_name" :content="metadata.domain" />
-    <meta property="og:title" :content="returnTitleString()" />
-    <meta property="og:description" :content="returnDescriptionString()" />
+    <meta property="og:title" :content="titleString(title)" />
+    <meta property="og:description" :content="descriptionString(description)" />
     <meta property="og:image" :content="metadata.url + '/assets/img/tw-vid-1.jpg'" />
 
     <!-- Twitter Meta Tags -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta roperty="twitter:title" :content="returnTitleString()" />
-    <meta property="twitter:description" :content="returnDescriptionString()" />
+    <meta roperty="twitter:title" :content="titleString(title)" />
+    <meta property="twitter:description" :content="descriptionString(description)" />
     <meta property="twitter:creator" content="@frontroyalband" />
     <meta property="twitter:domain" :content="metadata.domain" />
     <meta property="twitter:image" :content="metadata.url + '/assets/img/tw-vid-1.jpg'" />
