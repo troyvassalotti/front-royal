@@ -39,10 +39,6 @@ body {
   color: var(--white);
   font-family: var(--body);
   font-size: var(--step--1);
-  inline-size: 100%;
-  min-block-size: 100vh;
-  /* display: flex; */
-  /* flex-direction: column; */
 }
 
 h1,
@@ -90,6 +86,10 @@ h4 {
 
 .font-base {
   font-size: var(--step-0);
+}
+
+.font-caps {
+    font-family: var(--caps);
 }
 
 /* img[height] {
@@ -208,5 +208,5 @@ a:hover {
 
 /* Create equal spacing between elements in a flow context without setting display */
 .flow > * + * {
-  margin-block-start: var(--flow-space, 1.45em);
+  margin-block-start: var(--flow-space, 1em);
 }

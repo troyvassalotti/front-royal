@@ -5,24 +5,26 @@ description: Front Royal has an official website and you're looking at it right 
 ---
 
 <main class="slideout-top">
-  <div class="full backdrop">
+  <div class="backdrop">
     <div class="overlay">
-      <div class="full" id="listen">
+      <div id="listen">
         <section class="wrapper center" data-constrain="some">
-          <header class="flex-center col">
+          <header>
             <site-logo></site-logo>
-            <div class="welcome full">
+            <div class="welcome flow">
               <div class="welcome-text">
                 <h1>
-                  Long Story Short<br aria-hidden="true" /><span class="smaller italic">Available Everywhere</span>
+                  Long Story Short
                 </h1>
+                <p class="smaller italic font-caps">Available Everywhere
+                </p>
               </div>
               <div class="welcome-content">
                 <youtube-video @src="K15CnLEDLRw" @title="What's Left music video"></youtube-video>
               </div>
             </div>
           </header>
-          <div class="hero full">
+          <div class="hero">
             <div>
               <picture>
                 <source srcset="/assets/img/lss.webp" type="image/webp" />
@@ -55,13 +57,13 @@ description: Front Royal has an official website and you're looking at it right 
 
       <arrow-drawing @direction="cw"></arrow-drawing>
 
-      <article class="full skewed-background" id="follow">
+      <article class="skewed-background" id="follow">
         <div class="wrapper">
           <section class="content center">
             <h2>Follow Us</h2>
             <social-icons></social-icons>
             <div class="wrapper" id="newsletter" data-constrain="most">
-              <section class="flex-center col center content">
+              <section class="center content">
                 <newsletter-form class="flow"></newsletter-form>
               </section>
             </div>
@@ -106,7 +108,6 @@ description: Front Royal has an official website and you're looking at it right 
 
   #listen h1 {
     font-family: var(--caps);
-    line-height: 1.75ch;
   }
 
   #listen youtube-video {

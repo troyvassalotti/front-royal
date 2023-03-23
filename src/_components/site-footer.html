@@ -45,7 +45,8 @@
 
 <style webc:scoped>
   :host {
-    margin-block-start: auto;
+      inset-block-start: 100vh;
+    position: sticky;
   }
 
   .disclaimer {
@@ -58,6 +59,7 @@
   }
 
   .copyright {
+      margin-block: revert;
     text-align: center;
   }
 
@@ -71,7 +73,7 @@
     display: inline-flex;
     inline-size: 100%;
     justify-content: space-around;
-    margin-block: 1rem;
+    margin-block: 1em;
     padding: 0;
   }
 
