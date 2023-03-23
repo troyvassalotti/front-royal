@@ -1,15 +1,17 @@
 <div class="video-embed">
   <script webc:type="js">
-    `<iframe
-    loading="${loading || "lazy"}"
-    width="560"
-    height="315"
-    src="https://www.youtube-nocookie.com/embed/${src}"
-    title="${title || "YouTube video player"}"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  	></iframe>`;
+    const { html } = require("common-tags");
+
+    html`<iframe
+      loading="${loading || "lazy"}"
+      width="560"
+      height="315"
+      src="https://www.youtube-nocookie.com/embed/${src}"
+      title="${title || "YouTube video player"}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>`;
   </script>
 </div>
 
