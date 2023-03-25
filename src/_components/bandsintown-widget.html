@@ -10,13 +10,10 @@
   }
 
   const bandsintownObserver = new IntersectionObserver(loadBandsintown);
-  const dates = document.getElementById("dates");
-  bandsintownObserver.observe(dates);
+  const widget = document.querySelector(".bit-widget-initializer");
+  bandsintownObserver.observe(widget);
 </script>
 
-<article class="full" id="dates">
-  <section class="wrapper center">
-    <h2>Dates</h2>
     <a
       class="bit-widget-initializer"
       data-artist-name="Front Royal"
@@ -35,5 +32,4 @@
       data-font="var(--body)"
       data-display-logo="false"
     ></a>
-  </section>
-</article>
+

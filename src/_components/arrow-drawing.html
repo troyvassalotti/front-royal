@@ -32,7 +32,7 @@
     --size: 175px;
     block-size: var(--size);
     inline-size: 100%;
-    margin: clamp(3ch, 4vw, 3ch) 0;
+    margin-block: clamp(3ch, 4vw, 3ch);
     position: relative;
   }
 
@@ -46,12 +46,12 @@
   }
 
   .arrow .ccw {
-    right: var(--position);
+    inset-inline-end: var(--position);
     transform: rotate(-25deg) scaleX(-1);
   }
 
   .arrow .cw {
-    left: var(--position);
+    inset-inline-start: var(--position);
     transform: rotate(25deg);
   }
 

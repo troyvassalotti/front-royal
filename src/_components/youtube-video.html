@@ -1,4 +1,3 @@
-<div class="video-embed">
   <script webc:type="js">
     const { html } = require("common-tags");
 
@@ -13,41 +12,16 @@
       allowfullscreen
     ></iframe>`;
   </script>
-</div>
 
 <style webc:scoped>
   :host {
-    margin-inline: auto;
-  }
-
-  .video-embed {
     margin-block-end: clamp(3ch, 5vw, 7ch);
     margin-inline: auto;
-    position: relative;
   }
 
-  .video-embed iframe {
+  iframe {
+      aspect-ratio: 16 / 9;
     block-size: 100%;
     inline-size: 100%;
-  }
-
-  @supports (aspect-ratio: 16 / 9) {
-    .video-embed iframe {
-      aspect-ratio: 16 / 9;
-    }
-  }
-
-  @supports not (aspect-ratio: 16 / 9) {
-    .video-embed::after {
-      content: "";
-      display: block;
-      padding-bottom: calc(100% / (16 / 9));
-    }
-
-    .video-embed iframe {
-      inset-block-start: 0;
-      inset-inline-start: 0;
-      position: absolute;
-    }
   }
 </style>

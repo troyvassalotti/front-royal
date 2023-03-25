@@ -1,7 +1,6 @@
-<article class="full" id="merch">
-  <div class="wrapper center" data-constrain="more">
-    <h2>We've Got Merch</h2>
-    <div class="grid merch-preview">
+  <div class="wrapper u-text-center flow" data-constrain="more">
+      <slot></slot>
+    <div class="grid fluid-col merch-preview">
       <merch-item
         @item="Hoodies"
         @url="metadata.merch + '/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666'"
@@ -34,7 +33,6 @@
       ></merch-item>
       <merch-item
         @item="Tote Bags"
-        @url="metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936'"
         @img="merch-tote_bag"
         @alt="Tote bag with Front Royal album artwork"
       ></merch-item>
@@ -50,33 +48,29 @@
     --button-background: var(--blue);
     --button-background--hover: var(--yellow);
     --button-color: var(--black);
+    
     margin-block-start: 2ch;
   }
 
   .merch-preview {
+      --fluid-type: auto-fill;
+      --fluid-col-size: 175px;
+
     font-family: var(--caps);
     font-size: var(--step-0);
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    padding: 1ch;
   }
 
-  .merch-preview figure {
-    margin: 0;
-  }
-
-  .merch-preview img {
-    inline-size: 100%;
-    margin-block-end: 1.25ch;
+img {
     transition: 0.3s ease;
   }
 
-  .merch-preview img:hover {
+  img:hover {
     filter: opacity(0.6);
   }
 
   @media only screen and (min-width: 768px) {
     .merch-preview {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        --fluid-col-size: 300px;
     }
   }
 </style>

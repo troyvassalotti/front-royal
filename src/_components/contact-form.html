@@ -1,4 +1,5 @@
-<form class="contact-form" name="contact" netlify netlify-honeypot="bot-field">
+<slot></slot>
+<form class="contact-form flow" name="contact" netlify netlify-honeypot="bot-field">
   <label style="display: none">Don't fill this out: <input name="bot-field" /></label>
   <label for="name">Who are you?<input name="name" type="text" id="name" required /></label>
   <label for="email">What's your email?<input name="email" type="email" id="email" required /></label>
@@ -23,7 +24,7 @@
   .contact-form label {
     display: flex;
     flex-direction: column;
-    font-family: var(--headings);
+    font-family: var(--caps);
     font-size: var(--step--1);
     font-weight: 700;
     margin: 1ch 0;

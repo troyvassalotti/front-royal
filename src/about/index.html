@@ -8,9 +8,9 @@ description: Learn everything you need to know about the band Front Royal, not t
   import "/assets/js/components/details-utils.js";
 </script>
 
-<header class="flex-center col">
+<header class="u-text-center">
   <site-logo></site-logo>
-  <h1 class="center">This Is Front Royal</h1>
+  <h1>This Is Front Royal</h1>
   <figure class="featured-image">
     <picture>
       <source srcset="/assets/img/tw-vid-1.webp" type="image/webp" />
@@ -24,34 +24,29 @@ description: Learn everything you need to know about the band Front Royal, not t
       />
     </picture>
   </figure>
-  <section class="full">
+  <div class="flow">
     <streaming-metrics></streaming-metrics>
     <social-icons class="on-dark"></social-icons>
-  </section>
+  </div>
 </header>
 <main>
-  <div class="wrapper" data-constrain="more">
+  <div class="wrapper flow" data-constrain="more">
     <h2>Who Is Front Royal?</h2>
-    <article class="biography__long flow">
-      <bio-long></bio-long>
-    </article>
+    <band-bio @length="long"></band-bio>
     <details-utils close-esc animate>
-      <details class="biography__short">
+      <details class="biography__short flow">
         <summary>Did you skip all that? Click me for the short version.</summary>
-        <div class="content flow">
-          <bio-short></bio-short>
-        </div>
+            <band-bio @length="short"></band-bio>
       </details>
     </details-utils>
   </div>
-  <section class="skewed-background" id="contact">
+  <skewed-background id="contact">
     <div class="wrapper" data-constrain="more">
-      <section class="full content">
-        <h2 class="center">Use This Form To Talk To Us</h2>
-        <contact-form></contact-form>
-      </section>
+        <contact-form>
+        <h2 class="u-text-center">Use This Form To Talk To Us</h2>
+        </contact-form>
     </div>
-  </section>
+  </skewed-background>
 </main>
 
 <style>
@@ -59,26 +54,19 @@ description: Learn everything you need to know about the band Front Royal, not t
     margin-bottom: 5ch;
   }
 
-  h1 {
-    margin-bottom: 0;
-  }
-
-  .featured-image {
-    font-size: var(--step--2);
-    margin-inline: 0;
-  }
-
   .featured-image img {
-    max-inline-size: 100%;
+    margin-inline: auto;
   }
 
   .biography__short summary {
     cursor: pointer;
-    font-family: var(--headings);
-    font-size: var(--step-1);
-    font-weight: 700;
-    list-style: none;
+    font-family: var(--caps);
+    font-size: var(--step-2);
     text-decoration: underline;
+  }
+
+  details-utils {
+      display: block;
   }
 
   #contact {
@@ -86,6 +74,7 @@ description: Learn everything you need to know about the band Front Royal, not t
     --skew-direction: -3deg;
     --skew-padding: 3ch 0 6ch;
     --skew-text: var(--black);
+
     margin-block: 5em;
   }
 </style>

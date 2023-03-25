@@ -1,45 +1,38 @@
-<div class="wrapper">
-  <div class="icons full flex-center wrap">
     <script webc:type="js">
       const { html } = require("common-tags");
 
       socials
         .map(
-          (social) => `<a href="${social.url}">
+          (social) => html`<a href="${social.url}">
       <img src="/assets/img/${social.img}.svg" alt="${social.alt}" loading="lazy" decoding="async" width="48" height="48">
 	</a>`
         )
         .join("");
     </script>
-  </div>
-</div>
 
 <style webc:scoped>
-  .icons {
+  :host {
     --icon-filter: none;
     --icon-filter-hover: contrast(10%);
 
-    margin-inline-end: auto;
-    margin-inline-start: auto;
-    max-inline-size: 800px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5ex;
+    justify-content: center;
   }
 
-  /* because the icons are flexbox and safari doesn't support gap properties in flexbox */
-  .icons a {
-    margin: 1.5ex;
-  }
-
-  .icons img {
+  img {
     filter: var(--icon-filter);
     max-inline-size: 48px;
     transition: 0.2s ease;
   }
 
-  .icons img:hover {
+  img:hover {
     filter: var(--icon-filter-hover);
   }
 
-  :host(.on-dark) .icons {
+  :host(.on-dark) {
     --icon-filter: invert(100%);
     --icon-filter-hover: invert(100%) contrast(2%);
   }

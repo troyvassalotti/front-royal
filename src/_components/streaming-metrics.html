@@ -47,7 +47,7 @@
   }
 </script>
 
-<div class="wrapper statistics center" data-constrain="more">
+<div class="wrapper statistics" data-constrain="more">
   <div class="stat-box">
     <p class="metric"><span id="listeners">22</span>k+</p>
     <p>Listeners on Spotify</p>
@@ -66,16 +66,13 @@
   .statistics {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .stat-box {
-    flex: 1;
+    font-family: var(--caps);
+    gap: 1rem;
+    justify-content: space-evenly;
   }
 
   .metric {
-    font-family: var(--headings);
-    font-size: var(--step-2);
+    font-size: var(--step-3);
     font-weight: 700;
     margin: 0;
   }

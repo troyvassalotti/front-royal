@@ -6,129 +6,97 @@ description: Front Royal has an official website and you're looking at it right 
 
 <main class="slideout-top">
   <div class="backdrop">
-    <div class="overlay">
-      <div id="listen">
-        <section class="wrapper center" data-constrain="some">
+        <article id="listen" class="wrapper u-text-center" data-constrain="some">
           <header>
             <site-logo></site-logo>
-            <div class="welcome flow">
-              <div class="welcome-text">
+            <div class="flow">
                 <h1>
                   Long Story Short
                 </h1>
-                <p class="smaller italic font-caps">Available Everywhere
+                <p class="u-font-sm-1 u-text-italic u-font-caps">New EP Available Everywhere (online)
                 </p>
-              </div>
-              <div class="welcome-content">
                 <youtube-video @src="K15CnLEDLRw" @title="What's Left music video"></youtube-video>
-              </div>
             </div>
           </header>
-          <div class="hero">
-            <div>
-              <picture>
-                <source srcset="/assets/img/lss.webp" type="image/webp" />
-                <img
-                  src="/assets/img/lss.jpg"
-                  alt="Long Story Short album cover"
-                  width="700"
-                  height="700"
-                  decoding="async"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
-            <div>
-              <bandcamp-frame
+              <bandcamp-frame webc:keep
                 @type="album"
                 @album="long-story-short"
                 @id="282570022"
                 @title="Long Story Short by Front Royal"
               ></bandcamp-frame>
-            </div>
-          </div>
-          <section id="cta">
-            <froro-button>
+            <froro-button class="cta">
               <a :href="bandcamp.url + '/album/long-story-short'">Buy The Album Now</a>
             </froro-button>
-          </section>
-        </section>
-      </div>
+        </article>
 
       <arrow-drawing @direction="cw"></arrow-drawing>
 
-      <article class="skewed-background" id="follow">
-        <div class="wrapper">
-          <section class="content center">
-            <h2>Follow Us</h2>
-            <social-icons></social-icons>
-            <div class="wrapper" id="newsletter" data-constrain="most">
-              <section class="center content">
-                <newsletter-form class="flow"></newsletter-form>
-              </section>
-            </div>
-          </section>
-        </div>
-      </article>
-      <p>1</p>
-    </div>
+      <skewed-background id="follow">
+          <div class="wrapper u-text-center flow">
+              <h2>Follow Us</h2>
+              <social-icons></social-icons>
+              <div class="wrapper" id="newsletter" data-constrain="most">
+                  <newsletter-form class="flow">
+                      <h3>Sign Up For Our Newsletter</h3>
+                  </newsletter-form>
+              </div>
+          </div>
+      </skewed-background>
   </div>
 
   <arrow-drawing @direction="ccw"></arrow-drawing>
 
-  <merch-list></merch-list>
+  <article id="merch">
+      <merch-list>
+          <h2>We've Got Merch</h2>
+      </merch-list>
+  </article>
 
   <arrow-drawing @direction="cw"></arrow-drawing>
 
+  <article id="dates">
+      <div class="wrapper u-text-center flow">
+          <h2>Dates</h2>
   <bandsintown-widget></bandsintown-widget>
+      </div>
+  </article>
 </main>
 
-<slideout-image></slideout-image>
+<slideout-image>
+  <picture>
+    <source srcset="/assets/img/footer.avif" type="image/avif" />
+    <img
+      src="/assets/img/footer.jpg"
+      alt="Troy, Coleman, and Justin pointing to the top right of the scene and pretending to yell."
+      loading="lazy"
+      decoding="async"
+      width="1920"
+      height="823"
+    />
+  </picture>
+</slideout-image>
 
 <style>
   .slideout-top {
     background: var(--black);
-    display: flex;
-    flex-direction: column;
-    inline-size: 100%;
   }
 
   .backdrop {
     background-attachment: local;
     background-attachment: fixed;
-    background-color: var(--black);
+    background-blend-mode: overlay;
+    background-color: var(--overlay);
     background-image: url("/assets/img/lss-wallpaper-blur.jpg");
     background-position: center;
     background-size: cover;
   }
 
-  .overlay {
-    background: var(--overlay);
+  youtube-video {
+    max-inline-size: 1100px;
   }
 
-  #listen h1 {
-    font-family: var(--caps);
-  }
-
-  #listen youtube-video {
-    max-width: 1100px;
-  }
-
-  .hero {
-    display: grid;
-    gap: var(--mainGap);
-    margin: auto;
-    max-inline-size: 700px;
-  }
-
-  .hero img {
-    box-shadow: 0 0 25px 2px var(--black);
-    inline-size: 100%;
-    max-inline-size: 500px;
-  }
-
-  #cta {
-    padding: 2em 0;
+  .cta {
+    padding-block: 2em;
   }
 
   #follow {
@@ -139,14 +107,7 @@ description: Front Royal has an official website and you're looking at it right 
   }
 
   #newsletter {
-    margin-top: 5ch;
-  }
-
-  @media only screen and (min-width: 768px) {
-    .hero {
-      align-items: end;
-      grid-template-columns: 1fr 1fr;
-      max-inline-size: none;
-    }
+    margin-block-start: 3em;
   }
 </style>
+

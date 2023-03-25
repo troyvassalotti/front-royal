@@ -1,0 +1,26 @@
+<div class="content">
+    <slot></slot>
+</div>
+
+<style webc:scoped>
+:host {
+    padding: var(--skew-padding);
+    position: relative;
+}
+
+:host::before {
+    background: var(--skew-color);
+    block-size: 100%;
+    content: "";
+    inline-size: 100%;
+    inset-block-start: -10px;
+    position: absolute;
+    transform: skewy(var(--skew-direction));
+}
+
+.content {
+    background: var(--skew-color);
+    color: var(--skew-text);
+    position: relative;
+}
+</style>
