@@ -32,11 +32,11 @@ description: Learn everything you need to know about the band Front Royal, not t
 <main>
   <div class="wrapper flow" data-constrain="more">
     <h2>Who Is Front Royal?</h2>
-    <band-bio @length="long"></band-bio>
+    <band-bio @length="long" webc:nokeep></band-bio>
     <details-utils close-esc animate>
       <details class="biography__short flow">
         <summary>Did you skip all that? Click me for the short version.</summary>
-            <band-bio @length="short"></band-bio>
+            <band-bio @length="short" webc:nokeep></band-bio>
       </details>
     </details-utils>
   </div>

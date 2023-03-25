@@ -1102,13 +1102,13 @@ description: Create your own Front Royal song.
   }).mount();
 </script>
 
-<header class="flex-center">
+<header>
   <site-logo></site-logo>
 </header>
-<main class="flex-center col full">
+<main>
   <div class="wrapper" data-constrain="more">
-    <h1 class="center">Song Generator</h1>
-    <div v-scope id="app">
+    <h1 class="u-text-center">Song Generator</h1>
+    <div v-scope id="app" class="flow">
       <label
         >What do you want?
         <select v-model="type" v-on:keyup.enter="generate">
@@ -1120,34 +1120,28 @@ description: Create your own Front Royal song.
         >How many of them?
         <input type="number" v-model="number" v-on:keyup.enter="generate" autofocus />
       </label>
+          <froro-button>
       <button v-on:click="generate">Generate</button>
+          </froro-button>
       <p>{{ loremipsum }}</p>
     </div>
   </div>
 </main>
 
 <style webc:scoped>
-  #app {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
   #app label {
     display: flex;
     flex-direction: column;
     font-size: var(--step-2);
-    margin-inline: auto;
-    max-inline-size: max-content;
   }
 
   #app :is(label, input, button) {
-    font-family: var(--headings);
+    font-family: var(--caps);
   }
 
-  #app button {
+  #app froro-button {
     font-size: var(--step-1);
     margin-inline: auto;
-    max-inline-size: max-content;
   }
 </style>
+

@@ -10,8 +10,7 @@
 html {
   --mainGap: 3ex;
   --smGap: 1.5ex;
-  --fallbackFonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,
-    "Helvetica Neue", sans-serif;
+    --fallbackFonts: Avenir, 'Avenir Next LT Pro', Montserrat, Corbel, 'URW Gothic', source-sans-pro, sans-serif; 
   --body: var(--fallbackFonts);
   --caps: "Bebas Neue", var(--fallbackFonts);
   --black: #0a0a0a;
