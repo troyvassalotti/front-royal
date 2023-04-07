@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title @text="titleString(page, title, {pipe: true})"></title>
+    <!-- Troy Vassalotti, www.troyv.dev -->
+
+    <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" />
+    <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net" />
+
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.5/dist/es-module-shims.js" webc:keep></script>
+    <script type="importmap" webc:keep>
+      {
+        "imports": {
+          "lit": "https://cdn.skypack.dev/lit@2"
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" :href="url('/assets/css/reset.css')" webc:keep />
+    <link rel="stylesheet" :href="url('/assets/css/main.css')" webc:keep />
+
+    <style @raw="getBundle('css')" webc:keep></style>
+    <script @raw="getBundle('js')" webc:keep></script>
+    <script type="module" @raw="getBundle('js', 'module')" webc:keep></script>
+
+    <!-- SEO -->
+    <meta name="description" :content="descriptionString(page, description)" />
+    <link rel="canonical" :href="metadata.url + page.url" />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" :content="metadata.domain" />
+    <meta property="og:title" :content="titleString(page, title)" />
+    <meta property="og:description" :content="descriptionString(page, description)" />
+    <meta property="og:image" :content="metadata.url + '/assets/img/tw-vid-1.jpg'" />
+
+    <!-- Twitter Meta Tags -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta roperty="twitter:title" :content="titleString(page, title)" />
+    <meta property="twitter:description" :content="descriptionString(page, description)" />
+    <meta property="twitter:creator" content="@frontroyalband" />
+    <meta property="twitter:domain" :content="metadata.domain" />
+    <meta property="twitter:image" :content="metadata.url + '/assets/img/tw-vid-1.jpg'" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <template @raw="content" webc:nokeep></template>
+    <site-footer></site-footer>
+    <script @raw="getBundle('js', 'defer')" webc:keep></script>
+  </body>
+</html>

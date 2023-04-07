@@ -1,44 +1,50 @@
-const htmlmin = require("html-minifier-terser");
-const addWebComponentDefinitions = require("eleventy-plugin-add-web-component-definitions");
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+const { eleventyImagePlugin } = require("@11ty/eleventy-img");
 
-const shortcodes = require("./utils/shortcodes");
-const jsDir = "/assets/js";
+const TRANSFORMS = require("./utils/transforms");
+const FILTERS = require("./utils/filters");
+const JS_DIR = "/assets/js";
 
 module.exports = function (config) {
-  config.addPlugin(addWebComponentDefinitions, {
-    path: (tag) => `${jsDir}/components/${tag}.js`,
+  config.addPlugin(pluginWebc, {
+    components: ["./src/_components/**/*.html", "npm:@11ty/eleventy-img/*.webc"],
+  });
+
+  // Image plugin
+  config.addPlugin(eleventyImagePlugin, {
+    formats: ["webp", "jpeg"],
+    urlPath: "/assets/img/",
+
+    // Notably `outputDir` is resolved automatically
+    // to the project output directory
+
+    defaultAttributes: {
+      loading: "lazy",
+      decoding: "async",
+    },
+  });
+
+  // Passthroughs
+  config.addPassthroughCopy({ public: "/" });
+  config.addPassthroughCopy({
+    "./node_modules/@zachleat/details-utils/details-utils.js": `${JS_DIR}/components/details-utils.js`,
+  });
+  config.addPassthroughCopy({
+    "./node_modules/@troyv/lightboxing/dist/**/*.js": `${JS_DIR}/components/`,
   });
 
   // Transforms
-  if (process.env.ELEVENTY_ENV === "production") {
-    config.addTransform("htmlmin", function (content, outputPath) {
-      if (this.outputPath && this.outputPath.endsWith(".html")) {
-        return htmlmin.minify(content, {
-          useShortDoctype: true,
-          removeComments: true,
-          collapseWhitespace: true,
-          minifyCSS: true,
-          minifyJS: true,
-        });
-      }
-      return content;
-    });
-  }
-
-  // Passthroughs
-  config.addPassthroughCopy({ "./public": "/" });
-  config.addPassthroughCopy({
-    "./node_modules/@zachleat/details-utils/details-utils.js": `${jsDir}/components/details-utils.js`,
-  });
-  config.addPassthroughCopy({
-    "./node_modules/@troyv/web-components/dist/**/*.js": `${jsDir}/components/`,
+  Object.keys(TRANSFORMS).forEach((transformName) => {
+    config.addTransform(transformName, TRANSFORMS[transformName]);
   });
 
-  // Shortcodes
-  config.addNunjucksAsyncShortcode("image", shortcodes.Image);
+  // Filters
+  Object.keys(FILTERS).forEach((filterName) => {
+    config.addFilter(filterName, FILTERS[filterName]);
+  });
 
   return {
-    htmlTemplateEngine: "njk",
+    htmlTemplateEngine: "webc",
     dir: {
       input: "src",
       layouts: "_includes/layouts",

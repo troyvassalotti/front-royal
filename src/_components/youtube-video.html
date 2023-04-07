@@ -1,0 +1,33 @@
+<script webc:type="js">
+  /**
+   * @prop {string} title
+   * @prop {"lazy" | "eager"} loading
+   * @prop {string} src
+   */
+
+  const { html } = require("common-tags");
+
+  html`<iframe
+    loading="${loading || "lazy"}"
+    width="560"
+    height="315"
+    src="https://www.youtube-nocookie.com/embed/${src}"
+    title="${title || "YouTube video player"}"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>`;
+</script>
+
+<style webc:scoped>
+  :host {
+    margin-block-end: clamp(3ch, 5vw, 7ch);
+    margin-inline: auto;
+  }
+
+  iframe {
+    aspect-ratio: 16 / 9;
+    block-size: 100%;
+    inline-size: 100%;
+  }
+</style>

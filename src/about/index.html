@@ -1,0 +1,74 @@
+---
+layout: base.html
+title: Story Time
+description: Learn everything you need to know about the band Front Royal, not the town Front Royal.
+---
+
+<script webc:bucket="module">
+  import "/assets/js/components/details-utils.js";
+</script>
+
+<header class="u-text-center">
+  <site-logo></site-logo>
+  <h1>This Is Front Royal</h1>
+  <figure class="featured-image">
+    <img
+      webc:is="eleventy-image"
+      src="./public/assets/img/tw-vid-1.jpg"
+      alt="From left, Coleman, Justin, and Troy, together recording a music video"
+    />
+  </figure>
+  <div class="flow">
+    <streaming-metrics></streaming-metrics>
+    <social-icons class="on-dark"></social-icons>
+  </div>
+</header>
+<main>
+  <div class="wrapper flow" data-constrain="more">
+    <h2>Who Is Front Royal?</h2>
+    <band-bio @length="long"></band-bio>
+    <details-utils close-esc animate>
+      <details class="biography__short flow">
+        <summary>Did you skip all that? Click me for the short version.</summary>
+        <band-bio @length="short" p></band-bio>
+      </details>
+    </details-utils>
+  </div>
+  <skewed-background id="contact">
+    <div class="wrapper" data-constrain="more">
+      <contact-form>
+        <h2 class="u-text-center">Use This Form To Talk To Us</h2>
+      </contact-form>
+    </div>
+  </skewed-background>
+</main>
+
+<style>
+  header {
+    margin-bottom: 5ch;
+  }
+
+  .featured-image img {
+    margin-inline: auto;
+  }
+
+  .biography__short summary {
+    cursor: pointer;
+    font-family: var(--caps);
+    font-size: var(--step-2);
+    text-decoration: underline;
+  }
+
+  details-utils {
+    display: block;
+  }
+
+  #contact {
+    --skew-color: var(--blue);
+    --skew-direction: -3deg;
+    --skew-padding: 3ch 0 6ch;
+    --skew-text: var(--black);
+
+    margin-block: 5em;
+  }
+</style>

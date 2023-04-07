@@ -5,6 +5,9 @@ publish = "_site"
 [build.processing]
 skip_processing = true
 
+[build.environment]
+NODE_VERSION = "18"
+
 # Redirect from the default Netlify site to my custom domain
 [[redirects]]
 from = "https://frontroyalband.netlify.app/*"

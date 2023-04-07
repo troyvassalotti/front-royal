@@ -1,0 +1,53 @@
+---
+layout: base.html
+---
+
+<script webc:bucket="module">
+  import "/assets/js/components/lightboxing.js";
+</script>
+
+<header>
+  <site-logo></site-logo>
+</header>
+<div class="album wrapper flow">
+  <div class="album__info">
+    <h1 @text="title"></h1>
+    <p webc:if="description" @text="description" class="album-description"></p>
+  </div>
+  <hr />
+  <main>
+    <lightbox-carousel>
+      <script webc:type="js">
+        const { html } = require("common-tags");
+
+        photos[album]
+          .map(
+            (image) =>
+              html`<light-box>
+                <img webc:is="eleventy-image" src="./src/photos/${image.path}" alt="${image.name}" />
+              </light-box>`
+          )
+          .join("");
+      </script>
+    </lightbox-carousel>
+  </main>
+</div>
+
+<style>
+  .album {
+    --flow-space: clamp(2rem, 10vw, 5rem);
+  }
+
+  .album__info {
+    padding-block-start: 5%;
+  }
+
+  .album hr {
+    inline-size: clamp(5rem, 50vw, 25rem);
+  }
+
+  light-box:first-of-type {
+    max-block-size: none;
+    grid-column: initial;
+  }
+</style>

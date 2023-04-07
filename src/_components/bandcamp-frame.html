@@ -1,0 +1,38 @@
+<script webc:type="js">
+  /**
+   * @prop {"track" | "album"} type
+   * @prop {string} title
+   * @prop {string} id
+   * @prop {string} track
+   * @prop {string} album
+   */
+
+  const { html } = require("common-tags");
+
+  let iframeCode;
+
+  if (type === "track") {
+    iframeCode = html`
+      <iframe
+        title="${title || "Bandcamp Embedded Track Player"}"
+        loading="lazy"
+        style="border: 0; width: 100%; height: 120px;"
+        src="https://bandcamp.com/EmbeddedPlayer/track=${id}/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/"
+        seamless
+      >
+        <a href="${$data.bandcamp.url}/track/${track}">${title}</a>
+      </iframe>
+    `;
+  } else {
+    iframeCode = html` <iframe
+      style="border: 0; width: 500px; height: 738px;"
+      src="https://bandcamp.com/EmbeddedPlayer/album=${id}/size=large/bgcol=333333/linkcol=4ec5ec/transparent=true/"
+      seamless
+      loading="lazy"
+      title="${title || "Bandcamp embedded album player"}"
+      ><a href="${$data.bandcamp.url}/album/${album}">${title}</a></iframe
+    >`;
+  }
+
+  iframeCode;
+</script>

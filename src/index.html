@@ -1,0 +1,109 @@
+---
+layout: base.html
+title: The Band, Not The Town
+description: Front Royal has an official website and you're looking at it right now.
+---
+
+<main class="slideout-top">
+  <div class="backdrop">
+    <article id="listen" class="wrapper u-text-center" data-constrain="some">
+      <header>
+        <site-logo></site-logo>
+        <div class="flow">
+          <h1>Long Story Short</h1>
+          <p class="u-font-sm-1 u-text-italic u-font-caps">New EP Available Everywhere (online)</p>
+          <youtube-video @src="K15CnLEDLRw" @title="What's Left music video"></youtube-video>
+        </div>
+      </header>
+      <bandcamp-frame
+        webc:keep
+        @type="album"
+        @album="long-story-short"
+        @id="282570022"
+        @title="Long Story Short by Front Royal"
+      ></bandcamp-frame>
+      <froro-button class="cta">
+        <a :href="bandcamp.url + '/album/long-story-short'">Buy The Album Now</a>
+      </froro-button>
+    </article>
+
+    <arrow-drawing @direction="cw"></arrow-drawing>
+
+    <skewed-background id="follow">
+      <div class="wrapper u-text-center flow">
+        <h2>Follow Us</h2>
+        <social-icons></social-icons>
+        <div class="wrapper" id="newsletter" data-constrain="most">
+          <newsletter-form class="flow">
+            <h3>Sign Up For Our Newsletter</h3>
+          </newsletter-form>
+        </div>
+      </div>
+    </skewed-background>
+  </div>
+
+  <arrow-drawing @direction="ccw"></arrow-drawing>
+
+  <article id="merch">
+    <merch-list>
+      <h2>We've Got Merch</h2>
+    </merch-list>
+  </article>
+
+  <arrow-drawing @direction="cw"></arrow-drawing>
+
+  <article id="dates">
+    <div class="wrapper u-text-center flow">
+      <h2>Dates</h2>
+      <bandsintown-widget></bandsintown-widget>
+    </div>
+  </article>
+</main>
+
+<slideout-image>
+  <img
+    webc:is="eleventy-image"
+    :widths="[1280, 1920]"
+    src="./public/assets/img/footer.jpg"
+    alt="Troy, Coleman, and Justin pointing to the top right of the scene and pretending to yell."
+    loading="lazy"
+    decoding="async"
+  />
+</slideout-image>
+
+<style>
+  .slideout-top {
+    background: var(--black);
+  }
+
+  .backdrop {
+    background-attachment: local;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    background-color: var(--overlay);
+    background-image: url("/assets/img/lss-wallpaper-blur.webp");
+    background-position: center;
+    background-size: cover;
+  }
+
+  youtube-video {
+    max-inline-size: 1100px;
+  }
+
+  .cta {
+    padding-block: 2em;
+  }
+
+  #follow {
+    --skew-color: var(--white);
+    --skew-direction: -3deg;
+    --skew-padding: 3ch 0 7ch;
+    --skew-text: var(--black);
+  }
+
+  #newsletter {
+    --flow-space: 2em;
+
+    margin-block-start: 3em;
+  }
+</style>

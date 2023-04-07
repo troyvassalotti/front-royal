@@ -1,0 +1,81 @@
+<slot></slot>
+<!-- Begin Mailchimp Signup Form -->
+<form
+  action="https://frontroyalband.us17.list-manage.com/subscribe/post?u=4e13673cf275ea95a06b67103&amp;id=fc567fa48a"
+  method="post"
+  id="mc-embedded-subscribe-form"
+  name="mc-embedded-subscribe-form"
+  class="flow"
+  target="_blank"
+  novalidate
+>
+  <div class="fields">
+    <fieldset name="interestgroup_field">
+      <legend>What do you want?</legend>
+      <label class="checkbox subfield" for="gdpr_4549"
+        ><input type="checkbox" id="gdpr_4549" name="gdpr[4549]" value="Y" required />Emails, Please</label
+      >
+    </fieldset>
+    <div class="email-field">
+      <label for="mce-EMAIL" class="mc_a11y_label">Your email:</label>
+      <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="you@example.com" required />
+    </div>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px" aria-hidden="true">
+      <input type="text" name="b_4e13673cf275ea95a06b67103_fc567fa48a" tabindex="-1" value="" />
+    </div>
+  </div>
+  <froro-button>
+    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button submit" />
+  </froro-button>
+  <div class="content__gdpr">
+    <p class="disclaimer">
+      *We only use your email address to send you our newsletter. If you hate our emails, you can unsubscribe at any
+      time. Questions? Send&nbsp;<a id="mailto" :href="'mailto:' + $data.metadata.newsletterEmail">us an email</a
+      >&nbsp;instead.
+    </p>
+  </div>
+</form>
+<!--End Mailchimp Signup Form -->
+
+<style webc:scoped>
+  form {
+    color-scheme: light dark;
+    font-size: var(--step--2);
+  }
+
+  input.email {
+    font-family: var(--headings);
+    inline-size: 100%;
+  }
+
+  label {
+    display: block;
+    text-align: start;
+  }
+
+  fieldset {
+    border: 0;
+    padding: 0;
+  }
+
+  fieldset label {
+    display: flex;
+    font-weight: normal;
+    gap: 1ch;
+  }
+
+  .fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .button.submit {
+    border: 0;
+    font-size: var(--step--1);
+  }
+
+  #mailto {
+    color: var(--black);
+  }
+</style>
