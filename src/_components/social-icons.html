@@ -1,14 +1,21 @@
-    <script webc:type="js">
-      const { html } = require("common-tags");
+<script webc:type="js">
+  const { html } = require("common-tags");
 
-      socials
-        .map(
-          (social) => html`<a href="${social.url}">
-      <img src="/assets/img/${social.img}.svg" alt="${social.alt}" loading="lazy" decoding="async" width="48" height="48">
-	</a>`
-        )
-        .join("");
-    </script>
+  $data.socials
+    .map(
+      (social) => html`<a href="${social.url}">
+        <img
+          src="/assets/img/${social.img}.svg"
+          alt="${social.alt}"
+          loading="lazy"
+          decoding="async"
+          width="48"
+          height="48"
+        />
+      </a>`
+    )
+    .join("");
+</script>
 
 <style webc:scoped>
   :host {

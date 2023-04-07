@@ -32,19 +32,19 @@ description: Learn everything you need to know about the band Front Royal, not t
 <main>
   <div class="wrapper flow" data-constrain="more">
     <h2>Who Is Front Royal?</h2>
-    <band-bio @length="long" webc:nokeep></band-bio>
+    <band-bio @length="long"></band-bio>
     <details-utils close-esc animate>
       <details class="biography__short flow">
         <summary>Did you skip all that? Click me for the short version.</summary>
-            <band-bio @length="short" webc:nokeep></band-bio>
+        <band-bio @length="short"p></band-bio>
       </details>
     </details-utils>
   </div>
   <skewed-background id="contact">
     <div class="wrapper" data-constrain="more">
-        <contact-form>
+      <contact-form>
         <h2 class="u-text-center">Use This Form To Talk To Us</h2>
-        </contact-form>
+      </contact-form>
     </div>
   </skewed-background>
 </main>
@@ -66,7 +66,7 @@ description: Learn everything you need to know about the band Front Royal, not t
   }
 
   details-utils {
-      display: block;
+    display: block;
   }
 
   #contact {

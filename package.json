@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/troyvassalotti/front-royal#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-img": "^2.0.1",
-    "@11ty/eleventy-plugin-webc": "^0.9.4",
+    "@11ty/eleventy-plugin-webc": "^0.11.0",
     "@troyv/common-config": "^1.0.1",
     "@troyv/lightboxing": "^2.0.0",
     "@zachleat/details-utils": "^2.0.2",

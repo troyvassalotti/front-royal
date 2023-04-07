@@ -2,19 +2,19 @@
 
 <style webc:scoped>
   a {
-      display: inline-block;
+    display: inline-block;
     position: relative;
     text-decoration: none;
   }
 
   a::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    block-size: 0.06em;
-    inline-size: 100%;
     background-color: currentColor;
+    block-size: 0.06em;
+    content: "";
+    inline-size: 100%;
+    inset-block-end: 0;
+    inset-inline-start: 0;
+    position: absolute;
     transition: transform 400ms ease-out;
   }
 

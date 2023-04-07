@@ -6,29 +6,19 @@
   <nav class="wrapper" data-constrain="most">
     <ul role="list">
       <li>
-        <animated-link @href="/">
-        Home
-        </animated-link>
+        <animated-link @href="/">Home</animated-link>
       </li>
       <li>
-        <animated-link @href="/about/">
-        About
-        </animated-link>
+        <animated-link @href="/about/">About</animated-link>
       </li>
       <li>
-        <animated-link :href="metadata.merch">
-        Merch
-        </animated-link>
+        <animated-link :href="$data.metadata.merch">Merch</animated-link>
       </li>
       <li>
-        <animated-link @href="/photos/">
-          Photos
-        </animated-link>
+        <animated-link @href="/photos/">Photos</animated-link>
       </li>
       <li>
-        <animated-link @href="/song-generator/">
-          Song Generator
-        </animated-link>
+        <animated-link @href="/song-generator/">Song Generator</animated-link>
       </li>
     </ul>
   </nav>
@@ -45,7 +35,7 @@
 
 <style webc:scoped>
   :host {
-      inset-block-start: 100vh;
+    inset-block-start: 100vh;
     position: sticky;
   }
 
@@ -55,8 +45,8 @@
   }
 
   .copyright {
-      font-size: var(--step--2);
-      margin-block: revert;
+    font-size: var(--step--2);
+    margin-block: revert;
     text-align: center;
   }
 

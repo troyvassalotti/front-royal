@@ -6,59 +6,57 @@ description: Front Royal has an official website and you're looking at it right 
 
 <main class="slideout-top">
   <div class="backdrop">
-        <article id="listen" class="wrapper u-text-center" data-constrain="some">
-          <header>
-            <site-logo></site-logo>
-            <div class="flow">
-                <h1>
-                  Long Story Short
-                </h1>
-                <p class="u-font-sm-1 u-text-italic u-font-caps">New EP Available Everywhere (online)
-                </p>
-                <youtube-video @src="K15CnLEDLRw" @title="What's Left music video"></youtube-video>
-            </div>
-          </header>
-              <bandcamp-frame webc:keep
-                @type="album"
-                @album="long-story-short"
-                @id="282570022"
-                @title="Long Story Short by Front Royal"
-              ></bandcamp-frame>
-            <froro-button class="cta">
-              <a :href="bandcamp.url + '/album/long-story-short'">Buy The Album Now</a>
-            </froro-button>
-        </article>
+    <article id="listen" class="wrapper u-text-center" data-constrain="some">
+      <header>
+        <site-logo></site-logo>
+        <div class="flow">
+          <h1>Long Story Short</h1>
+          <p class="u-font-sm-1 u-text-italic u-font-caps">New EP Available Everywhere (online)</p>
+          <youtube-video @src="K15CnLEDLRw" @title="What's Left music video"></youtube-video>
+        </div>
+      </header>
+      <bandcamp-frame
+        webc:keep
+        @type="album"
+        @album="long-story-short"
+        @id="282570022"
+        @title="Long Story Short by Front Royal"
+      ></bandcamp-frame>
+      <froro-button class="cta">
+        <a :href="bandcamp.url + '/album/long-story-short'">Buy The Album Now</a>
+      </froro-button>
+    </article>
 
-      <arrow-drawing @direction="cw"></arrow-drawing>
+    <arrow-drawing @direction="cw"></arrow-drawing>
 
-      <skewed-background id="follow">
-          <div class="wrapper u-text-center flow">
-              <h2>Follow Us</h2>
-              <social-icons></social-icons>
-              <div class="wrapper" id="newsletter" data-constrain="most">
-                  <newsletter-form class="flow">
-                      <h3>Sign Up For Our Newsletter</h3>
-                  </newsletter-form>
-              </div>
-          </div>
-      </skewed-background>
+    <skewed-background id="follow">
+      <div class="wrapper u-text-center flow">
+        <h2>Follow Us</h2>
+        <social-icons></social-icons>
+        <div class="wrapper" id="newsletter" data-constrain="most">
+          <newsletter-form class="flow">
+            <h3>Sign Up For Our Newsletter</h3>
+          </newsletter-form>
+        </div>
+      </div>
+    </skewed-background>
   </div>
 
   <arrow-drawing @direction="ccw"></arrow-drawing>
 
   <article id="merch">
-      <merch-list>
-          <h2>We've Got Merch</h2>
-      </merch-list>
+    <merch-list>
+      <h2>We've Got Merch</h2>
+    </merch-list>
   </article>
 
   <arrow-drawing @direction="cw"></arrow-drawing>
 
   <article id="dates">
-      <div class="wrapper u-text-center flow">
-          <h2>Dates</h2>
-  <bandsintown-widget></bandsintown-widget>
-      </div>
+    <div class="wrapper u-text-center flow">
+      <h2>Dates</h2>
+      <bandsintown-widget></bandsintown-widget>
+    </div>
   </article>
 </main>
 
@@ -107,7 +105,8 @@ description: Front Royal has an official website and you're looking at it right 
   }
 
   #newsletter {
+    --flow-space: 2em;
+
     margin-block-start: 3em;
   }
 </style>
-
