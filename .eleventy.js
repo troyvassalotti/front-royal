@@ -1,13 +1,27 @@
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
+const { eleventyImagePlugin } = require("@11ty/eleventy-img");
 
-const SHORTCODES = require("./utils/shortcodes");
 const TRANSFORMS = require("./utils/transforms");
 const FILTERS = require("./utils/filters");
 const JS_DIR = "/assets/js";
 
 module.exports = function (config) {
   config.addPlugin(pluginWebc, {
-    components: "./src/_components/**/*.html",
+    components: ["./src/_components/**/*.html", "npm:@11ty/eleventy-img/*.webc"],
+  });
+
+  // Image plugin
+  config.addPlugin(eleventyImagePlugin, {
+    formats: ["webp", "jpeg"],
+    urlPath: "/assets/img/",
+
+    // Notably `outputDir` is resolved automatically
+    // to the project output directory
+
+    defaultAttributes: {
+      loading: "lazy",
+      decoding: "async",
+    },
   });
 
   // Passthroughs
@@ -18,9 +32,6 @@ module.exports = function (config) {
   config.addPassthroughCopy({
     "./node_modules/@troyv/lightboxing/dist/**/*.js": `${JS_DIR}/components/`,
   });
-
-  // Shortcodes
-  config.addNunjucksAsyncShortcode("image", SHORTCODES.Image);
 
   // Transforms
   Object.keys(TRANSFORMS).forEach((transformName) => {
