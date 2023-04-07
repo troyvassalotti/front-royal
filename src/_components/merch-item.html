@@ -9,10 +9,7 @@
 
   html`<figure class="flow">
     <a href="${url}">
-      <picture>
-        <source srcset="/assets/img/${img}.webp" type="image/webp" />
-        <img src="/assets/img/${img}.jpg" width="509" height="509" alt="${alt}" loading="lazy" decoding="async"
-      /></picture>
+      <img webc:is="eleventy-image" alt="${alt}" src="./public/assets/img/${img}" />
     </a>
     <figcaption>${item}</figcaption>
   </figure>`;

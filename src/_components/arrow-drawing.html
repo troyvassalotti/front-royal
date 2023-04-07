@@ -1,4 +1,8 @@
 <script webc:bucket="defer">
+  /**
+   * @prop {"cw" | "ccw"} direction
+   */
+
   function handleAnimatedContent(entries) {
     entries.map((entry) => {
       if (entry.isIntersecting) {
@@ -17,7 +21,7 @@
 <div class="arrow animated-content">
   <img
     :class="direction"
-    src="/assets/img/arrow-down-2.png"
+    src="/assets/img/arrow-down.png"
     alt=""
     width="300"
     height="527"
@@ -47,12 +51,12 @@
 
   .arrow .ccw {
     inset-inline-end: var(--position);
-    transform: rotate(-25deg) scaleX(-1);
+    transform: rotate(-25deg);
   }
 
   .arrow .cw {
     inset-inline-start: var(--position);
-    transform: rotate(25deg);
+    transform: rotate(25deg) rotateY(180deg);
   }
 
   /* for animating */

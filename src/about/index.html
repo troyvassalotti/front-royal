@@ -12,17 +12,11 @@ description: Learn everything you need to know about the band Front Royal, not t
   <site-logo></site-logo>
   <h1>This Is Front Royal</h1>
   <figure class="featured-image">
-    <picture>
-      <source srcset="/assets/img/tw-vid-1.webp" type="image/webp" />
-      <img
-        src="/assets/img/tw-vid-1.jpg"
-        width="1100"
-        height="619"
-        loading="eager"
-        decoding="async"
-        alt="From left, Coleman, Justin, and Troy, together recording a music video"
-      />
-    </picture>
+    <img
+      webc:is="eleventy-image"
+      src="./public/assets/img/tw-vid-1.jpg"
+      alt="From left, Coleman, Justin, and Troy, together recording a music video"
+    />
   </figure>
   <div class="flow">
     <streaming-metrics></streaming-metrics>
@@ -36,7 +30,7 @@ description: Learn everything you need to know about the band Front Royal, not t
     <details-utils close-esc animate>
       <details class="biography__short flow">
         <summary>Did you skip all that? Click me for the short version.</summary>
-        <band-bio @length="short"p></band-bio>
+        <band-bio @length="short" p></band-bio>
       </details>
     </details-utils>
   </div>

@@ -9,7 +9,7 @@ layout: base.html
 <header>
   <site-logo></site-logo>
 </header>
-<div class="album wrapper">
+<div class="album wrapper flow">
   <div class="album__info">
     <h1 @text="title"></h1>
     <p webc:if="description" @text="description" class="album-description"></p>
@@ -39,10 +39,15 @@ layout: base.html
   }
 
   .album__info {
-    padding-block-start: 7%;
+    padding-block-start: 5%;
   }
 
   .album hr {
     inline-size: clamp(5rem, 50vw, 25rem);
+  }
+
+  light-box:first-of-type {
+    max-block-size: none;
+    grid-column: initial;
   }
 </style>

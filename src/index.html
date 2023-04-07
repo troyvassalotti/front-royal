@@ -61,17 +61,14 @@ description: Front Royal has an official website and you're looking at it right 
 </main>
 
 <slideout-image>
-  <picture>
-    <source srcset="/assets/img/footer.avif" type="image/avif" />
-    <img
-      src="/assets/img/footer.jpg"
-      alt="Troy, Coleman, and Justin pointing to the top right of the scene and pretending to yell."
-      loading="lazy"
-      decoding="async"
-      width="1920"
-      height="823"
-    />
-  </picture>
+  <img
+    webc:is="eleventy-image"
+    :widths="[1280, 1920]"
+    src="./public/assets/img/footer.jpg"
+    alt="Troy, Coleman, and Justin pointing to the top right of the scene and pretending to yell."
+    loading="lazy"
+    decoding="async"
+  />
 </slideout-image>
 
 <style>
@@ -84,7 +81,7 @@ description: Front Royal has an official website and you're looking at it right 
     background-attachment: fixed;
     background-blend-mode: overlay;
     background-color: var(--overlay);
-    background-image: url("/assets/img/lss-wallpaper-blur.jpg");
+    background-image: url("/assets/img/lss-wallpaper-blur.webp");
     background-position: center;
     background-size: cover;
   }

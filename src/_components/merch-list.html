@@ -1,44 +1,45 @@
   <div class="wrapper u-text-center flow" data-constrain="more">
-      <slot></slot>
+    <slot></slot>
     <div class="u-grid merch-preview" data-grid-columns="fluid">
       <merch-item
         @item="Hoodies"
-        @url="metadata.merch + '/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666'"
-        @img="merch-hoodie_1"
+        :url="$data.metadata.merch + '/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666'"
+        @img="merch-hoodie_1.jpg"
         @alt="Hoodie with Front Royal logo"
       ></merch-item>
       <merch-item
         @item="T-Shirts"
-        @url="metadata.merch + '/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361'"
-        @img="merch-tshirt_1"
+        :url="$data.metadata.merch + '/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361'"
+        @img="merch-tshirt_1.jpg"
         @alt="T-shirt with Front Royal logo"
       ></merch-item>
       <merch-item
         @item="V-Necks"
-        @url="metadata.merch + '/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854'"
-        @img="merch-tshirt_2"
+        :url="$data.metadata.merch + '/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854'"
+        @img="merch-tshirt_2.jpg"
         @alt="T-shirt with a different Front Royal logo"
       ></merch-item>
       <merch-item
         @item="Gaiters / Masks"
-        @url="metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188'"
-        @img="merch-gaiter"
+        :url="$data.metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188'"
+        @img="merch-gaiter.jpg"
         @alt="Face mask with Front Royal album artwork"
       ></merch-item>
       <merch-item
         @item="Pull Overs"
-        @url="metadata.merch + '/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083'"
-        @img="merch-hoodie_2"
+        :url="$data.metadata.merch + '/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083'"
+        @img="merch-hoodie_2.jpg"
         @alt="Pull Over Sweatshirt with Front Royal logo"
       ></merch-item>
       <merch-item
         @item="Tote Bags"
-        @img="merch-tote_bag"
+        :url="$data.metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936'"
+        @img="merch-tote_bag.jpg"
         @alt="Tote bag with Front Royal album artwork"
       ></merch-item>
     </div>
     <froro-button>
-      <a :href="metadata.merch">Shop Merch</a>
+      <a :href="$data.metadata.merch">Shop Merch</a>
     </froro-button>
   </div>
 </article>
