@@ -1,0 +1,38 @@
+---
+layout: base.html
+title: Photo Galleries
+---
+
+<header>
+  <site-logo></site-logo>
+</header>
+<main class="flow">
+  <h1 class="u-text-center" @text="title"></h1>
+  <ul class="gallery-list u-flex-center" role="list">
+    <script webc:type="js">
+      const { html } = require("common-tags");
+
+      collections.gallery
+        .map(
+          (gallery) => html`<li>
+            <a href="${gallery.url}">
+              <img decoding="async" src="/assets/img/${gallery.data.thumbnail}" alt="" />
+              <p class="gallery-title u-font-caps u-text-center">${gallery.data.title}</p>
+            </a>
+          </li>`
+        )
+        .join("");
+    </script>
+  </ul>
+</main>
+
+<style>
+  main {
+    padding: var(--smGap);
+  }
+
+  .gallery-list {
+    flex-wrap: wrap;
+    gap: var(--mainGap);
+  }
+</style>

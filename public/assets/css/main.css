@@ -123,20 +123,20 @@ a:hover {
   --wrapper-size: 600px;
 }
 
-.grid {
+.u-grid {
   display: grid;
   gap: var(--grid-gap, 3ex);
 }
 
-.two-col {
+[data-grid-columns="2"] {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.three-col {
+[data-grid-columns="3"] {
   grid-template-columns: repeat(3, 1fr);
 }
 
-.fluid-col {
+[data-grid-columns="fluid"] {
   grid-template-columns: repeat(var(--fluid-type, auto-fit), minmax(var(--fluid-col-size, 20rem), 1fr));
 }
 
