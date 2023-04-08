@@ -26,7 +26,7 @@
     "@11ty/eleventy-img": "^3.1.0",
     "@11ty/eleventy-plugin-webc": "^0.11.0",
     "@troyv/common-config": "^1.0.1",
-    "@troyv/lightboxing": "^2.0.0",
+    "@troyv/lightboxing": "^2.0.2",
     "@zachleat/details-utils": "^2.0.2",
     "common-tags": "^1.8.2",
     "dotenv": "^16.0.3",
