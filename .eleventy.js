@@ -32,6 +32,9 @@ module.exports = function (config) {
   config.addPassthroughCopy({
     "./node_modules/@troyv/lightboxing/dist/**/*.js": `${JS_DIR}/components/`,
   });
+  config.addPassthroughCopy({
+    "./node_modules/@troyv/word-salad/dist/**/*.js": `${JS_DIR}/components/`,
+  });
 
   // Transforms
   Object.keys(TRANSFORMS).forEach((transformName) => {
