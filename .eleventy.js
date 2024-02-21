@@ -1,13 +1,15 @@
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const { eleventyImagePlugin } = require("@11ty/eleventy-img");
 
-const TRANSFORMS = require("./utils/transforms");
 const FILTERS = require("./utils/filters");
 const JS_DIR = "/assets/js";
 
 module.exports = function (config) {
   config.addPlugin(pluginWebc, {
-    components: ["./src/_components/**/*.html", "npm:@11ty/eleventy-img/*.webc"],
+    components: [
+      "./src/_components/**/*.html",
+      "npm:@11ty/eleventy-img/*.webc",
+    ],
   });
 
   // Image plugin
@@ -30,15 +32,10 @@ module.exports = function (config) {
     "./node_modules/@zachleat/details-utils/details-utils.js": `${JS_DIR}/components/details-utils.js`,
   });
   config.addPassthroughCopy({
-    "./node_modules/@troyv/lightboxing/dist/**/*.js": `${JS_DIR}/components/`,
+    "./node_modules/@troyv/lightboxing/*.js": `${JS_DIR}/components/`,
   });
   config.addPassthroughCopy({
     "./node_modules/@troyv/word-salad/dist/**/*.js": `${JS_DIR}/components/`,
-  });
-
-  // Transforms
-  Object.keys(TRANSFORMS).forEach((transformName) => {
-    config.addTransform(transformName, TRANSFORMS[transformName]);
   });
 
   // Filters

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -9,11 +9,15 @@
     <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net" />
     <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net" />
 
-    <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.5/dist/es-module-shims.js" webc:keep></script>
+    <script
+      async
+      src="https://ga.jspm.io/npm:es-module-shims@1.5.5/dist/es-module-shims.js"
+      webc:keep
+    ></script>
     <script type="importmap" webc:keep>
       {
         "imports": {
-          "lit": "https://cdn.skypack.dev/lit@2"
+          "lit": "https://esm.sh/lit@3"
         }
       }
     </script>
@@ -34,21 +38,47 @@
     <meta property="og:type" content="article" />
     <meta property="og:site_name" :content="metadata.domain" />
     <meta property="og:title" :content="titleString(page, title)" />
-    <meta property="og:description" :content="descriptionString(page, description)" />
-    <meta property="og:image" :content="metadata.url + '/assets/img/tw-vid-1.jpg'" />
+    <meta
+      property="og:description"
+      :content="descriptionString(page, description)"
+    />
+    <meta
+      property="og:image"
+      :content="metadata.url + '/assets/img/tw-vid-1.jpg'"
+    />
 
     <!-- Twitter Meta Tags -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta roperty="twitter:title" :content="titleString(page, title)" />
-    <meta property="twitter:description" :content="descriptionString(page, description)" />
+    <meta
+      property="twitter:description"
+      :content="descriptionString(page, description)"
+    />
     <meta property="twitter:creator" content="@frontroyalband" />
     <meta property="twitter:domain" :content="metadata.domain" />
-    <meta property="twitter:image" :content="metadata.url + '/assets/img/tw-vid-1.jpg'" />
+    <meta
+      property="twitter:image"
+      :content="metadata.url + '/assets/img/tw-vid-1.jpg'"
+    />
 
     <!-- Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/img/icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/img/icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/img/icons/favicon-16x16.png"
+    />
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>

@@ -9,7 +9,7 @@
     "dev": "npx eleventy --serve --quiet",
     "lint": "npx dprint check",
     "lint::fix": "npx dprint fmt",
-    "serve": "ELEVENTY_ENV=production npx eleventy --serve",
+    "start": "npm run dev",
     "watch": "npx eleventy --quiet --watch"
   },
   "repository": {
@@ -26,13 +26,12 @@
     "@11ty/eleventy-img": "^3.1.0",
     "@11ty/eleventy-plugin-webc": "^0.11.0",
     "@troyv/common-config": "^1.0.1",
-    "@troyv/lightboxing": "^2.0.2",
+    "@troyv/lightboxing": "^3.0.3",
     "@troyv/word-salad": "^1.0.1",
     "@zachleat/details-utils": "^2.0.2",
     "common-tags": "^1.8.2",
     "dotenv": "^16.0.3",
     "dprint": "^0.35.3",
-    "fast-glob": "^3.2.12",
-    "html-minifier-terser": "^7.1.0"
+    "fast-glob": "^3.2.12"
   }
 }

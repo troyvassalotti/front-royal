@@ -24,8 +24,14 @@ layout: base.html
           .map(
             (image) =>
               html`<light-box>
-                <img webc:is="eleventy-image" src="./src/photos/${image.path}" alt="${image.name}" />
-              </light-box>`
+                <button>
+                  <img
+                    webc:is="eleventy-image"
+                    src="./src/photos/${image.path}"
+                    alt="${image.name}"
+                  />
+                </button>
+              </light-box>`,
           )
           .join("");
       </script>
