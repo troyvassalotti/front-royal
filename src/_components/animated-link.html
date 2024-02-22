@@ -1,41 +1,40 @@
-<!-- @prop {string} href -->
 <a :href="href"><slot></slot></a>
 
 <style webc:scoped>
-  a {
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-  }
+	a {
+		display: inline-block;
+		position: relative;
+		text-decoration: none;
+	}
 
-  a::before {
-    background-color: currentColor;
-    block-size: 0.06em;
-    content: "";
-    inline-size: 100%;
-    inset-block-end: 0;
-    inset-inline-start: 0;
-    position: absolute;
-    transition: transform 400ms ease-out;
-  }
+	a::before {
+		background-color: currentColor;
+		block-size: 0.06em;
+		content: "";
+		inline-size: 100%;
+		inset-block-end: 0;
+		inset-inline-start: 0;
+		position: absolute;
+		transition: transform 400ms ease-out;
+	}
 
-  a:hover::before {
-    transform: scaleX(0);
-    transform-origin: right;
-  }
+	a:hover::before {
+		transform: scaleX(0);
+		transform-origin: right;
+	}
 
-  a::before {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
+	a::before {
+		transform: scaleX(1);
+		transform-origin: left;
+	}
 
-  @media (prefers-reduced-motion: reduce) {
-    a {
-      text-decoration: underline;
-    }
+	@media (prefers-reduced-motion: reduce) {
+		a {
+			text-decoration: underline;
+		}
 
-    a::before {
-      inline-size: 0;
-    }
-  }
+		a::before {
+			inline-size: 0;
+		}
+	}
 </style>

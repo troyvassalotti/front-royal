@@ -1,16 +1,19 @@
 <script webc:type="js">
-  const { html } = require("common-tags");
-  /**
-   * @prop {string} item
-   * @prop {string} url
-   * @prop {string} img
-   * @prop {string} alt
-   */
+	const {html} = require("common-tags");
+	/**
+	 * @prop {string} item
+	 * @prop {string} url
+	 * @prop {string} img
+	 * @prop {string} alt
+	 */
 
-  html`<figure class="flow">
-    <a href="${url}">
-      <img webc:is="eleventy-image" alt="${alt}" src="./public/assets/img/${img}" />
-    </a>
-    <figcaption>${item}</figcaption>
-  </figure>`;
+	html`<figure class="flow">
+		<a href="${url}">
+			<img
+				webc:is="eleventy-image"
+				alt="${alt}"
+				src="./public/assets/img/${img}" />
+		</a>
+		<figcaption>${item}</figcaption>
+	</figure>`;
 </script>

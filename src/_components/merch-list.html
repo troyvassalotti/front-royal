@@ -1,77 +1,74 @@
-  <div class="wrapper u-text-center flow" data-constrain="more">
-    <slot></slot>
-    <div class="u-grid merch-preview" data-grid-columns="fluid">
-      <merch-item
-        @item="Hoodies"
-        :url="$data.metadata.merch + '/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666'"
-        @img="merch-hoodie_1.jpg"
-        @alt="Hoodie with Front Royal logo"
-      ></merch-item>
-      <merch-item
-        @item="T-Shirts"
-        :url="$data.metadata.merch + '/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361'"
-        @img="merch-tshirt_1.jpg"
-        @alt="T-shirt with Front Royal logo"
-      ></merch-item>
-      <merch-item
-        @item="V-Necks"
-        :url="$data.metadata.merch + '/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854'"
-        @img="merch-tshirt_2.jpg"
-        @alt="T-shirt with a different Front Royal logo"
-      ></merch-item>
-      <merch-item
-        @item="Gaiters / Masks"
-        :url="$data.metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188'"
-        @img="merch-gaiter.jpg"
-        @alt="Face mask with Front Royal album artwork"
-      ></merch-item>
-      <merch-item
-        @item="Pull Overs"
-        :url="$data.metadata.merch + '/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083'"
-        @img="merch-hoodie_2.jpg"
-        @alt="Pull Over Sweatshirt with Front Royal logo"
-      ></merch-item>
-      <merch-item
-        @item="Tote Bags"
-        :url="$data.metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936'"
-        @img="merch-tote_bag.jpg"
-        @alt="Tote bag with Front Royal album artwork"
-      ></merch-item>
-    </div>
-    <froro-button>
-      <a :href="$data.metadata.merch">Shop Merch</a>
-    </froro-button>
-  </div>
-</article>
+<div
+	class="wrapper u-text-center flow"
+	data-constrain="more">
+	<slot></slot>
+	<div
+		class="u-grid merch-preview"
+		data-grid-columns="fluid">
+		<merch-item
+			@item="Hoodies"
+			:url="$data.metadata.merch + '/listing/crown-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=2666'"
+			@img="merch-hoodie_1.jpg"
+			@alt="Hoodie with Front Royal logo"></merch-item>
+		<merch-item
+			@item="T-Shirts"
+			:url="$data.metadata.merch + '/listing/new-front-royal-logo-t-shirt?page=1&product=46&tsmac=store&tsmic=front-royal&variation=101361'"
+			@img="merch-tshirt_1.jpg"
+			@alt="T-shirt with Front Royal logo"></merch-item>
+		<merch-item
+			@item="V-Necks"
+			:url="$data.metadata.merch + '/listing/front-royal-modern?page=1&product=76&tsmac=store&tsmic=front-royal&variation=5854'"
+			@img="merch-tshirt_2.jpg"
+			@alt="T-shirt with a different Front Royal logo"></merch-item>
+		<merch-item
+			@item="Gaiters / Masks"
+			:url="$data.metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=1121&tsmac=store&tsmic=front-royal&variation=104188'"
+			@img="merch-gaiter.jpg"
+			@alt="Face mask with Front Royal album artwork"></merch-item>
+		<merch-item
+			@item="Pull Overs"
+			:url="$data.metadata.merch + '/listing/album-artwork-hoodie-pull-over?page=1&product=227&tsmac=store&tsmic=front-royal&variation=6083'"
+			@img="merch-hoodie_2.jpg"
+			@alt="Pull Over Sweatshirt with Front Royal logo"></merch-item>
+		<merch-item
+			@item="Tote Bags"
+			:url="$data.metadata.merch + '/listing/album-artwork-tote-bag?page=1&product=526&tsmac=store&tsmic=front-royal&variation=101936'"
+			@img="merch-tote_bag.jpg"
+			@alt="Tote bag with Front Royal album artwork"></merch-item>
+	</div>
+	<froro-button>
+		<a :href="$data.metadata.merch">Shop Merch</a>
+	</froro-button>
+</div>
 
 <style webc:scoped>
-  froro-button {
-    --button-background: var(--blue);
-    --button-background--hover: var(--yellow);
-    --button-color: var(--black);
-    
-    margin-block-start: 2ch;
-  }
+	froro-button {
+		--button-background: var(--blue);
+		--button-background--hover: var(--yellow);
+		--button-color: var(--black);
 
-  .merch-preview {
-      --fluid-type: auto-fill;
-      --fluid-col-size: 175px;
+		margin-block-start: 2ch;
+	}
 
-    font-family: var(--caps);
-    font-size: var(--step-0);
-  }
+	.merch-preview {
+		--fluid-type: auto-fill;
+		--fluid-col-size: 175px;
 
-img {
-    transition: 0.3s ease;
-  }
+		font-family: var(--caps);
+		font-size: var(--step-0);
+	}
 
-  img:hover {
-    filter: opacity(0.6);
-  }
+	img {
+		transition: 0.3s ease;
+	}
 
-  @media only screen and (min-width: 768px) {
-    .merch-preview {
-        --fluid-col-size: 300px;
-    }
-  }
+	img:hover {
+		filter: opacity(0.6);
+	}
+
+	@media only screen and (min-width: 768px) {
+		.merch-preview {
+			--fluid-col-size: 300px;
+		}
+	}
 </style>

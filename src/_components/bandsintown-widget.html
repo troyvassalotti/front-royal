@@ -1,34 +1,36 @@
 <script webc:bucket="defer">
-  function loadBandsintown(entries) {
-    entries.map((entry) => {
-      if (entry.isIntersecting) {
-        let bandsintown = document.createElement("script");
-        bandsintown.setAttribute("src", "https://widget.bandsintown.com/main.min.js");
-        entry.target.append(bandsintown);
-      }
-    });
-  }
+	function loadBandsintown(entries) {
+		entries.map((entry) => {
+			if (entry.isIntersecting) {
+				let bandsintown = document.createElement("script");
+				bandsintown.setAttribute(
+					"src",
+					"https://widget.bandsintown.com/main.min.js",
+				);
+				entry.target.append(bandsintown);
+			}
+		});
+	}
 
-  const bandsintownObserver = new IntersectionObserver(loadBandsintown);
-  const widget = document.querySelector(".bit-widget-initializer");
-  bandsintownObserver.observe(widget);
+	const bandsintownObserver = new IntersectionObserver(loadBandsintown);
+	const widget = document.querySelector(".bit-widget-initializer");
+	bandsintownObserver.observe(widget);
 </script>
 
 <a
-  class="bit-widget-initializer"
-  data-artist-name="Front Royal"
-  data-display-local-dates="false"
-  data-display-past-dates="false"
-  data-auto-style="false"
-  data-text-color="#f5f5f5"
-  data-link-color="#f5f5f5"
-  data-background-color="#0a0a0a"
-  data-display-limit="15"
-  data-link-text-color="#0a0a0a"
-  data-display-lineup="false"
-  data-display-play-my-city="false"
-  data-separator-color="rgba(255, 255, 255, 0.5)"
-  data-display-start-time="true"
-  data-font="var(--body)"
-  data-display-logo="false"
-></a>
+	class="bit-widget-initializer"
+	data-artist-name="Front Royal"
+	data-display-local-dates="false"
+	data-display-past-dates="false"
+	data-auto-style="false"
+	data-text-color="#f5f5f5"
+	data-link-color="#f5f5f5"
+	data-background-color="#0a0a0a"
+	data-display-limit="15"
+	data-link-text-color="#0a0a0a"
+	data-display-lineup="false"
+	data-display-play-my-city="false"
+	data-separator-color="rgba(255, 255, 255, 0.5)"
+	data-display-start-time="true"
+	data-font="var(--body)"
+	data-display-logo="false"></a>

@@ -1,37 +1,32 @@
 {
-  "name": "front-royal",
-  "version": "1.0.0",
-  "description": "Front Royal (the band, not the town) now has a website. Cool!",
-  "main": "index.js",
-  "scripts": {
-    "build": "npx eleventy",
-    "debug": "DEBUG=* npx eleventy",
-    "dev": "npx eleventy --serve --quiet",
-    "lint": "npx dprint check",
-    "lint::fix": "npx dprint fmt",
-    "start": "npm run dev",
-    "watch": "npx eleventy --quiet --watch"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/troyvassalotti/front-royal.git"
-  },
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/troyvassalotti/front-royal/issues"
-  },
-  "homepage": "https://github.com/troyvassalotti/front-royal#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "@11ty/eleventy-img": "^3.1.0",
-    "@11ty/eleventy-plugin-webc": "^0.11.0",
-    "@troyv/common-config": "^1.0.1",
-    "@troyv/lightboxing": "^3.0.3",
-    "@troyv/word-salad": "^1.0.1",
-    "@zachleat/details-utils": "^2.0.2",
-    "common-tags": "^1.8.2",
-    "dotenv": "^16.0.3",
-    "dprint": "^0.35.3",
-    "fast-glob": "^3.2.12"
-  }
+	"name": "front-royal",
+	"version": "1.0.0",
+	"description": "Front Royal (the band, not the town) now has a website. Cool!",
+	"main": "index.js",
+	"scripts": {
+		"build": "npx eleventy",
+		"debug": "DEBUG=* npx eleventy",
+		"dev": "npx eleventy --serve",
+		"lint::fix": "npx prettier --write .",
+		"start": "npm run dev"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/troyvassalotti/front-royal.git"
+	},
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/troyvassalotti/front-royal/issues"
+	},
+	"homepage": "https://github.com/troyvassalotti/front-royal#readme",
+	"devDependencies": {
+		"@11ty/eleventy": "^2.0.1",
+		"@11ty/eleventy-img": "^4.0.2",
+		"@11ty/eleventy-plugin-webc": "^0.11.2",
+		"@troyv/common-config": "^1.1.0",
+		"common-tags": "^1.8.2",
+		"fast-glob": "^3.3.2",
+		"prettier": "^3.2.5"
+	},
+	"prettier": "@troyv/common-config/.prettierrc.json"
 }

@@ -1,46 +1,46 @@
 <script webc:type="js">
-  const { html } = require("common-tags");
+	const {html} = require("common-tags");
 
-  $data.socials
-    .map(
-      (social) => html`<a href="${social.url}">
-        <img
-          src="/assets/img/${social.img}.svg"
-          alt="${social.alt}"
-          loading="lazy"
-          decoding="async"
-          width="48"
-          height="48"
-        />
-      </a>`
-    )
-    .join("");
+	$data.socials
+		.map(
+			(social) =>
+				html`<a href="${social.url}">
+					<img
+						src="/assets/img/${social.img}.svg"
+						alt="${social.alt}"
+						loading="lazy"
+						decoding="async"
+						width="48"
+						height="48" />
+				</a>`,
+		)
+		.join("");
 </script>
 
 <style webc:scoped>
-  :host {
-    --icon-filter: none;
-    --icon-filter-hover: contrast(10%);
+	:host {
+		--icon-filter: none;
+		--icon-filter-hover: contrast(10%);
 
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5ex;
-    justify-content: center;
-  }
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.5ex;
+		justify-content: center;
+	}
 
-  img {
-    filter: var(--icon-filter);
-    max-inline-size: 48px;
-    transition: 0.2s ease;
-  }
+	img {
+		filter: var(--icon-filter);
+		max-inline-size: 48px;
+		transition: 0.2s ease;
+	}
 
-  img:hover {
-    filter: var(--icon-filter-hover);
-  }
+	img:hover {
+		filter: var(--icon-filter-hover);
+	}
 
-  :host(.on-dark) {
-    --icon-filter: invert(100%);
-    --icon-filter-hover: invert(100%) contrast(2%);
-  }
+	:host(.on-dark) {
+		--icon-filter: invert(100%);
+		--icon-filter-hover: invert(100%) contrast(2%);
+	}
 </style>

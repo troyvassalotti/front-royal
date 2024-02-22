@@ -1,80 +1,83 @@
 <script webc:bucket="defer">
-  /**
-   * @prop {"cw" | "ccw"} direction
-   */
+	/**
+	 * @prop {"cw" | "ccw"} direction
+	 */
 
-  function handleAnimatedContent(entries) {
-    entries.map((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        animatedContentObserver.unobserve(entry.target);
-      }
-    });
-  }
+	function handleAnimatedContent(entries) {
+		entries.map((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add("visible");
+				animatedContentObserver.unobserve(entry.target);
+			}
+		});
+	}
 
-  const animatedContentObserver = new IntersectionObserver(handleAnimatedContent);
-  const contentToAnimate = document.querySelectorAll(".animated-content");
+	const animatedContentObserver = new IntersectionObserver(
+		handleAnimatedContent,
+	);
+	const contentToAnimate = document.querySelectorAll(".animated-content");
 
-  contentToAnimate.forEach((item) => animatedContentObserver.observe(item));
+	contentToAnimate.forEach((item) => animatedContentObserver.observe(item));
 </script>
 
 <div class="arrow animated-content">
-  <img
-    :class="direction"
-    src="/assets/img/arrow-down.png"
-    alt=""
-    width="300"
-    height="527"
-    loading="lazy"
-    decoding="async"
-  />
+	<img
+		:class="direction"
+		src="/assets/img/arrow-down.png"
+		alt=""
+		width="300"
+		height="527"
+		loading="lazy"
+		decoding="async" />
 </div>
 
 <style webc:scoped>
-  .arrow {
-    --position: 55vw;
-    --size: 175px;
-    block-size: var(--size);
-    inline-size: 100%;
-    margin-block: clamp(3ch, 4vw, 3ch);
-    position: relative;
-  }
+	.arrow {
+		--position: 55vw;
+		--size: 175px;
+		block-size: var(--size);
+		inline-size: 100%;
+		margin-block: clamp(3ch, 4vw, 3ch);
+		position: relative;
+	}
 
-  .arrow img {
-    max-block-size: var(--size);
-    position: absolute;
-  }
+	.arrow img {
+		max-block-size: var(--size);
+		position: absolute;
+	}
 
-  .arrow img[width] {
-    inline-size: auto;
-  }
+	.arrow img[width] {
+		inline-size: auto;
+	}
 
-  .arrow .ccw {
-    inset-inline-end: var(--position);
-    transform: rotate(-25deg);
-  }
+	.arrow .ccw {
+		inset-inline-end: var(--position);
+		transform: rotate(-25deg);
+	}
 
-  .arrow .cw {
-    inset-inline-start: var(--position);
-    transform: rotate(25deg) rotateY(180deg);
-  }
+	.arrow .cw {
+		inset-inline-start: var(--position);
+		transform: rotate(25deg) rotateY(180deg);
+	}
 
-  /* for animating */
-  .animated-content {
-    opacity: 0;
-    transform: translateY(-100px);
-    transition: opacity 1s ease, transform 1s ease;
-  }
+	/* for animating */
+	.animated-content {
+		opacity: 0;
+		transform: translateY(-100px);
+		transition:
+			opacity 1s ease,
+			transform 1s ease;
+	}
 
-  .animated-content.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	.animated-content.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
 
-  @media (prefers-reduced-motion: reduce) {
-    .animated-content {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+	@media (prefers-reduced-motion: reduce) {
+		.animated-content {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 </style>
