@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"build": "npx eleventy",
+		"deploy": "netlify deploy --prod",
 		"debug": "DEBUG=* npx eleventy",
 		"dev": "npx eleventy --serve",
 		"lint::fix": "npx prettier --write .",
@@ -20,13 +21,13 @@
 	},
 	"homepage": "https://github.com/troyvassalotti/front-royal#readme",
 	"devDependencies": {
-		"@11ty/eleventy": "^2.0.1",
-		"@11ty/eleventy-img": "^4.0.2",
+		"@11ty/eleventy": "^3.1.2",
+		"@11ty/eleventy-img": "^6.0.4",
 		"@11ty/eleventy-plugin-webc": "^0.11.2",
-		"@troyv/common-config": "^1.1.0",
+		"@troyv/common-config": "^2.0.0",
 		"common-tags": "^1.8.2",
-		"fast-glob": "^3.3.2",
-		"prettier": "^3.2.5"
+		"fast-glob": "^3.3.3",
+		"prettier": "^3.6.2"
 	},
 	"prettier": "@troyv/common-config/.prettierrc.json"
 }
